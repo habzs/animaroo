@@ -73,7 +73,6 @@
   }
 }
 
-
 #fh5co-counter .feature-center-steps:hover .counter {
   color: #fff;
 }
@@ -81,4 +80,9 @@
   #fh5co-counter .feature-center-steps {
     margin-bottom: 30px;
   }
+}
+.table {
+  table-layout: fixed;
+  width:100%;
+  border: 0px;
 }
