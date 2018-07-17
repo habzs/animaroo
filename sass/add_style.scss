@@ -1,0 +1,20 @@
+// Variables
+//
+// Colors
+
+$theme-colors: (
+  primary: #12bbad,
+  secondary: #4f70ce,
+  light: #f3f3f3,
+  dark: #151515,
+  info: #ccc,
+  success: #28a745,
+  warning: #ffc107,
+  danger: #dc3545
+);
+
+.bg-gradient {
+	overflow: hidden;
+	color: color-yiq(map-get($theme-colors, 'primary'));
+	background: linear-gradient(-30deg, theme-color("secondary") 0%, theme-color("primary") 50%, theme-color("primary") 100%);
+  }
