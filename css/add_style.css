@@ -85,7 +85,9 @@
   table-layout: fixed;
   width:100%;
   border: 0px;
-  color: black;
-  
-  
+}
+
+.walk {
+  font-size: 200px;
+  color: white;
 }
