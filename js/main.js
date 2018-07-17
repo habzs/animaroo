@@ -134,7 +134,7 @@
 		var i = 0;
 		$('.animate-box').waypoint( function( direction ) {
 
-			if( direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
+			if (direction === 'down' && !$(this.element).hasClass('animated-fast') ) {
 				
 				i++;
 
@@ -151,6 +151,8 @@
 								el.addClass('fadeInLeft animated-fast');
 							} else if ( effect === 'fadeInRight') {
 								el.addClass('fadeInRight animated-fast');
+							} else if ( effect === 'flash') {
+								el.addClass('flash animated-fast');
 							} else {
 								el.addClass('fadeInUp animated-fast');
 							}
