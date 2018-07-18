@@ -153,6 +153,8 @@
 								el.addClass('fadeInRight animated-fast');
 							} else if ( effect === 'bounceIn') {
 								el.addClass('bounceIn animated-fast');
+							} else if ( effect === 'flash') {
+								el.addClass('flash animated-fast');
 							} else {
 								el.addClass('fadeInUp animated-fast');
 							}
