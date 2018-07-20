@@ -1,96 +1,6 @@
-<!DOCTYPE HTML>
-<!--
-	Concept by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>animaroo. &mdash; we groom.</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" />
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/add_style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">animaroo<span>.</span></a></div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li class="has-dropdown">
-							<a href="services.html">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Bath</a></li>
-								<li><a href="#">Grooming</a></li>
-								<li><a href="#">Walk</a></li>
-								<li><a href="#">Rates</a></li>
-							</ul>
-						</li>
-						<li class="has-dropdown">
-								<a href="productsdog.html">Products</a>
-								<ul class="dropdown">
-									<li><a href="productsdog.html">Dog</a></li>
-									<li><a href="productscat.html">Cat</a></li>
-								</ul>
-							</li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="blog.html">Feedback</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						<li><a href="#">Login</a></li>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
+<?php
+include ('header.html');
+?>
 
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/corgi.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -142,18 +52,18 @@
 						</a>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="images/cat_grooming.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
-							<div class="fh5co-copy">
-								<h3>Grooming</h3>
-								<p>A good looking kat is a happy kat.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
 						<a href="services.html"><img src="images/dog_washing.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
 								<h3>Bath</h3>
 								<p>We'll wash your pets. Arf.</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+						<a href="services.html"><img src="images/dog_grooming.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+							<div class="fh5co-copy">
+								<h3>Grooming</h3>
+								<p>A good looking pup is a happy pup.</p>
 							</div>
 						</a>
 					</div>
@@ -333,23 +243,31 @@
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="services.html">Services</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Meetups</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="products.html">Shop</a></li>
-						<li><a href="about.html">About Us</a></li>
-						
+						<li><a href="#">Shop</a></li>
+						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Testimonials</a></li>
+						<li><a href="#">Handbook</a></li>
+						<li><a href="#">Held Desk</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-							<li><a href="blog.html">Testimonials</a></li>
-							<li><a href="contact.html">Contact</a></li>
+						<li><a href="#">Find Designers</a></li>
+						<li><a href="#">Find Developers</a></li>
+						<li><a href="#">Teams</a></li>
+						<li><a href="#">Advertise</a></li>
+						<li><a href="#">API</a></li>
 					</ul>
 				</div>
 			</div>
@@ -357,9 +275,9 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2018 Animaroo Pte Ltd.</small>
+						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
 					</p>
-
 					<p>
 						<ul class="fh5co-social-icons">
 							<li><a href="#"><i class="icon-twitter"></i></a></li>

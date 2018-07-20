@@ -75,7 +75,13 @@
 							</ul>
 						</li>
 
-						<li class="active"><a href="products.html">Products</a></li>
+						<li class="has-dropdown">
+								<a href="productsdog.html">Products</a>
+								<ul class="dropdown">
+									<li><a href="productsdog.html">Dog</a></li>
+									<li><a href="productscat.html">Cat</a></li>
+								</ul>
+							</li>
 						<li><a href="about.html">About</a></li>
 						<li><a href="blog.html">Feedback</a></li>
 						<li><a href="contact.html">Contact</a></li>
@@ -95,7 +101,7 @@
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">Our Pet Peeves.</h1>
+							<h1 class="mb30">Our Products</h1>
 						</div>
 					</div>
 				</div>
@@ -104,8 +110,15 @@
 	</header>
 
 	<!-- Test -->
-	<div class="page_wrapper_2 clearfix">
-			<div class="row">
+    <div class="page_wrapper_2 clearfix">
+			<div class="container" id="columns"><div class="breadcrumb">
+<div class="breadcrumb_inset">
+				<a title="Return to Home" class="breadcrumb-home" href="index.html"><i class="icon-home"></i></a>
+				<span class="navigation-pipe">&gt;</span> 
+						<span class="navigation_page">Dog</span>
+				</div>
+	</div>
+					<div class="row">
 					<!-- Left -->
 
 <!-- Center -->
@@ -117,10 +130,10 @@
 <ul class="toggle_content tree store_list dhtml">
 
 <li class="category_18">
-<i class="grower icon-minus-sign"></i><a title="" class="selected" href="#"><i class="icon-caret-right"></i>Canine</a>
+<i class="grower icon-minus-sign"></i><a title="" class="selected" href="#"><i class="icon-caret-right"></i>Dog</a>
 
 <li class="category_19">
-<i class="grower icon-plus-sign"></i><a title="" href="#"><i class="icon-caret-right"></i>Feline</a>
+<i class="grower icon-plus-sign"></i><a title="" href="productscat.html"><i class="icon-caret-right"></i>Cat</a>
 <ul style="display: none;">
 
 </ul>
@@ -136,135 +149,46 @@ $('div#categories_block_left ul.dhtml').hide();
 
 <!-- Block manufacturers module -->
 <section class="block blockmanufacturer column_box" id="manufacturers_block_left">
-<h4 class="title_block"><span>Manufacturers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
-<div class="block_content toggle_content">
-<form action="/index.php" method="get">
-
-<select class="form-control" id="manufacturer_list" onchange="autoUrl('manufacturer_list', '');">
-<option value="0">All manufacturers</option>
-<option value="https://www.beary.com.sg/47_active-care">Active Care</option>
-<option value="https://www.beary.com.sg/1_addiction">Addiction</option>
-<option value="https://www.beary.com.sg/140_afp">AFP</option>
-<option value="https://www.beary.com.sg/35_alex">Alex</option>
-<option value="https://www.beary.com.sg/25_alfalfa-king">Alfalfa King</option>
-<option value="https://www.beary.com.sg/95_alice">Alice</option>
-<option value="https://www.beary.com.sg/78_american-pet-diner">American Pet Diner</option>
-<option value="https://www.beary.com.sg/26_angel-s-treat">Angel's Treat</option>
-<option value="https://www.beary.com.sg/125_apt1022">APT.1022</option>
-<option value="https://www.beary.com.sg/43_avoderm">Avoderm</option>
-<option value="https://www.beary.com.sg/72_back-2-nature">Back 2 Nature</option>
-<option value="https://www.beary.com.sg/104_barking-head">Barking Head</option>
-<option value="https://www.beary.com.sg/153_basic-instinct">Basic Instinct</option>
-<option value="https://www.beary.com.sg/80_bosch">Bosch</option>
-<option value="https://www.beary.com.sg/65_bow-wow">Bow Wow</option>
-<option value="https://www.beary.com.sg/73_breeder-celect">Breeder Celect</option>
-<option value="https://www.beary.com.sg/82_brit-care">Brit Care</option>
-<option value="https://www.beary.com.sg/34_burgess-excel">Burgess Excel</option>
-<option value="https://www.beary.com.sg/146_burns">Burns</option>
-<option value="https://www.beary.com.sg/131_busy-bunny">Busy Bunny</option>
-<option value="https://www.beary.com.sg/143_canada-cat-litter">Canada Cat Litter</option>
-<option value="https://www.beary.com.sg/3_canine-caviar">Canine Caviar</option>
-<option value="https://www.beary.com.sg/68_canz-real-meat">Canz Real Meat</option>
-<option value="https://www.beary.com.sg/54_catit">Catit</option>
-<option value="https://www.beary.com.sg/149_cherie">Cherie</option>
-<option value="https://www.beary.com.sg/57_chitocure">Chitocure</option>
-<option value="https://www.beary.com.sg/141_ciao">Ciao</option>
-<option value="https://www.beary.com.sg/98_cloudstar">Cloudstar</option>
-<option value="https://www.beary.com.sg/67_coat-handler">Coat Handler</option>
-<option value="https://www.beary.com.sg/111_daily-delight">Daily Delight </option>
-<option value="https://www.beary.com.sg/53_dogit">Dogit</option>
-<option value="https://www.beary.com.sg/101_eagle-pack">Eagle Pack</option>
-<option value="https://www.beary.com.sg/4_eagle-pro">Eagle Pro</option>
-<option value="https://www.beary.com.sg/44_earthbath">Earthbath</option>
-<option value="https://www.beary.com.sg/5_eukanuba">Eukanuba</option>
-<option value="https://www.beary.com.sg/59_eye-envy">Eye Envy</option>
-<option value="https://www.beary.com.sg/94_ferplast">Ferplast</option>
-<option value="https://www.beary.com.sg/130_firstmate">FirstMate</option>
-<option value="https://www.beary.com.sg/46_fussie-cat">Fussie Cat</option>
-<option value="https://www.beary.com.sg/110_gex">Gex</option>
-<option value="https://www.beary.com.sg/50_greedy-dog">Greedy Dog</option>
-<option value="https://www.beary.com.sg/133_green-bark-gummies">Green Bark Gummies</option>
-<option value="https://www.beary.com.sg/27_habitrail">Habitrail</option>
-<option value="https://www.beary.com.sg/90_happi-doggy">Happi Doggy</option>
-<option value="https://www.beary.com.sg/91_happi-hamster">Happi Hamster</option>
-<option value="https://www.beary.com.sg/159_herbsmith">Herbsmith</option>
-<option value="https://www.beary.com.sg/107_holistic-blend">Holistic Blend</option>
-<option value="https://www.beary.com.sg/102_holistic-select">Holistic Select</option>
-<option value="https://www.beary.com.sg/88_hrss">HRSS</option>
-<option value="https://www.beary.com.sg/17_iams">IAMS</option>
-<option value="https://www.beary.com.sg/76_janp">JANP</option>
-<option value="https://www.beary.com.sg/37_jolly">Jolly</option>
-<option value="https://www.beary.com.sg/134_just-fish">Just Fish</option>
-<option value="https://www.beary.com.sg/84_k9">K9</option>
-<option value="https://www.beary.com.sg/148_kasiks">Kasiks</option>
-<option value="https://www.beary.com.sg/103_kaytee">Kaytee</option>
-<option value="https://www.beary.com.sg/32_living-world">Living World</option>
-<option value="https://www.beary.com.sg/55_marukan">Marukan</option>
-<option value="https://www.beary.com.sg/116_meowing-heads">Meowing Heads</option>
-<option value="https://www.beary.com.sg/128_merrick">Merrick</option>
-<option value="https://www.beary.com.sg/142_microcynah">MicrocynAH</option>
-<option value="https://www.beary.com.sg/150_mini-show">Mini Show</option>
-<option value="https://www.beary.com.sg/120_momi">Momi</option>
-<option value="https://www.beary.com.sg/126_mr-groom">Mr Groom</option>
-<option value="https://www.beary.com.sg/136_ms-pet">Ms Pet</option>
-<option value="https://www.beary.com.sg/139_muddy-paws">Muddy Paws</option>
-<option value="https://www.beary.com.sg/127_natural-balance">Natural Balance</option>
-<option value="https://www.beary.com.sg/69_naturvet">NaturVet</option>
-<option value="https://www.beary.com.sg/151_new-age">New Age</option>
-<option value="https://www.beary.com.sg/83_nina-ottosson">Nina Ottosson</option>
-<option value="https://www.beary.com.sg/160_northwest">Northwest</option>
-<option value="https://www.beary.com.sg/144_nurture-pro">Nurture Pro</option>
-<option value="https://www.beary.com.sg/161_nutragold">Nutragold</option>
-<option value="https://www.beary.com.sg/10_old-mother-hubbard">Old Mother Hubbard</option>
-<option value="https://www.beary.com.sg/137_opie-dixie">Opie &amp; Dixie</option>
-<option value="https://www.beary.com.sg/138_organicfuls">Organicfuls</option>
-<option value="https://www.beary.com.sg/121_oven-baked-tradition">Oven-Baked Tradition</option>
-<option value="https://www.beary.com.sg/19_oxbow">Oxbow</option>
-<option value="https://www.beary.com.sg/79_pee-wee">Pee Wee</option>
-<option value="https://www.beary.com.sg/39_pet-link">Pet Link</option>
-<option value="https://www.beary.com.sg/38_pets-88">Pets 88</option>
-<option value="https://www.beary.com.sg/135_petty-man">Petty Man</option>
-<option value="https://www.beary.com.sg/48_pinnacle">Pinnacle</option>
-<option value="https://www.beary.com.sg/132_platinum-pets">Platinum Pets</option>
-<option value="https://www.beary.com.sg/49_pompey">Pompey</option>
-<option value="https://www.beary.com.sg/89_pro-line">Pro Line</option>
-<option value="https://www.beary.com.sg/70_puppy-angel">Puppy Angel</option>
-<option value="https://www.beary.com.sg/145_reliq">Reliq</option>
-<option value="https://www.beary.com.sg/157_roam">Roam</option>
-<option value="https://www.beary.com.sg/96_safemade">Safemade</option>
-<option value="https://www.beary.com.sg/81_sanabelle">Sanabelle</option>
-<option value="https://www.beary.com.sg/156_schesir">Schesir</option>
-<option value="https://www.beary.com.sg/56_science-diet">Science Diet</option>
-<option value="https://www.beary.com.sg/122_small-pet-select">Small Pet Select</option>
-<option value="https://www.beary.com.sg/30_snack-21">Snack 21</option>
-<option value="https://www.beary.com.sg/158_soul-good">Soul Good</option>
-<option value="https://www.beary.com.sg/109_spa-lavish">Spa Lavish</option>
-<option value="https://www.beary.com.sg/147_supreme-science-selective">Supreme Science Selective</option>
-<option value="https://www.beary.com.sg/155_taste-of-the-wild">Taste of the Wild</option>
-<option value="https://www.beary.com.sg/13_timberwolf">Timberwolf</option>
-<option value="https://www.beary.com.sg/118_tom-pus">Tom &amp; Pus</option>
-<option value="https://www.beary.com.sg/100_tropiclean">Tropiclean</option>
-<option value="https://www.beary.com.sg/152_vicky">Vicky</option>
-<option value="https://www.beary.com.sg/20_vitakraft">Vitakraft</option>
-<option value="https://www.beary.com.sg/14_wellness">Wellness</option>
-<option value="https://www.beary.com.sg/28_wild-sanko">Wild Sanko</option>
-<option value="https://www.beary.com.sg/42_wishbone">Wishbone</option>
-<option value="https://www.beary.com.sg/154_zeal">Zeal</option>
-<option value="https://www.beary.com.sg/108_zignature">Zignature</option>
-<option value="https://www.beary.com.sg/41_zuke-s">Zuke's</option>
-</select>
-</form>
-</div>
-</section>
+	<h4 class="title_block"><span>Manufacturers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+	<div class="block_content toggle_content">
+		<form action="/index.php" method="get">		
+		</div>
+	</section>
 <!-- /Block manufacturers module -->
 
 <!-- MODULE Block best sellers -->
-<section class="block products_block column_box" id="blockbestsellers">
-</section>
-</div><div class="center_column col-xs-12 col-sm-9 clearfix" id="center_column">
-
-
-
+     <!-- MODULE Block best sellers -->
+	 <section class="block products_block column_box" id="blockbestsellers">
+            <h4><span>Best sellers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+            <div class="block_content toggle_content">
+                <ul>
+                                <li class="clearfix shop_box">
+                                <a title="Oxbow Western Timothy Hay" class="products_block_img" href="#"><img alt="Oxbow Western Timothy Hay" src="https://www.beary.com.sg/2778-medium_default/oxbow-western-timothy-hay.jpg"></a>
+                    <div>
+                                    <h5><a title="Oxbow Western Timothy Hay" class="product_link" href="#">Oxbow Western Timothy Hay</a></h5>
+                                
+                    </div>
+                            </li>
+                                        <li class="clearfix shop_box">
+                                <a title="Oxbow Adult Rabbit" class="products_block_img" href="#"><img alt="Oxbow Adult Rabbit" src="https://www.beary.com.sg/3273-medium_default/oxbow-bunny-basics-t.jpg"></a>
+                    <div>
+                                    <h5><a title="Oxbow Adult Rabbit" class="product_link" href="#">Oxbow Adult Rabbit</a></h5>
+                                
+                    </div>
+                            </li>
+                                        <li class="clearfix shop_box">
+                                <a title="APD Timothy Gold Hay" class="products_block_img" href="#"><img alt="APD Timothy Gold Hay" src="https://www.beary.com.sg/2518-medium_default/apd-timothy-gold-hay.jpg"></a>
+                    <div>
+                                    <h5><a title="APD Timothy Gold Hay" class="product_link" href="#">APD Timothy Gold Hay</a></h5>
+                                
+                    </div>
+                            </li>
+                                                                                                                                            </ul>
+            <a title="All best sellers" class="btn btn-default button_large" href="#">All best sellers</a>
+                </div>
+        </section>
+				</div>
+							<div class="center_column col-xs-12 col-sm-9 clearfix" id="center_column">
 <!-- Breadcrumb -->
 
 <!-- /Breadcrumb -->
@@ -272,7 +196,7 @@ $('div#categories_block_left ul.dhtml').hide();
 
 <h1>
 <span>
-Canine
+Dog
 </span>
 </h1>
 <div class="row_category clearfix">
@@ -284,43 +208,50 @@ Canine
 <h2>Subcategories</h2>
 <ul class="row">
 <li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
-<a title="Dry Food" href="https://www.beary.com.sg/23-dry-food">
+<a title="Dry Food" href="#">
+		<img alt="" src="#">
 
 </a>
 <a title="Dry Food" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Dry Food</a>
 </li>
 <li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
 <a title="Canned Food" href="#">
+		<img alt="" src="#">
 
 </a>
 <a title="Canned Food" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Canned Food</a>
 </li>
 <li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2   product_list_3 ">
 <a title="Treats" href="#">
+		<img alt="" src="#">
 
 </a>
 <a title="Treats" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Treats</a>
 </li>
 <li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2  product_list_4  product_list_4">
 <a title="Health" href="#">
+		<img alt="" src="#">
 
 </a>
 <a title="Health" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Health</a>
 </li>
 <li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2 product_list_5   ">
 <a title="Grooming" href="#">
+		<img alt="" src="#">
 
 </a>
 <a title="Grooming" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Grooming</a>
 </li>
 <li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2   product_list_3 ">
 <a title="Accessories" href="#">
+		<img alt="" src="#">
 
 </a>
 <a title="Accessories" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Accessories</a>
 </li>
 <li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
 <a title="Toys" href="#">
+		<img alt="" src="#">
 
 </a>
 <a title="Toys" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Toys</a>
@@ -354,7 +285,9 @@ $(document).ready(function(){
 $('#productsSortForm .selectProductSort, .nb_item').uniform();
 });
 //]]>
-</script>
+</script>     
+<ul class="product_view clearfix hidden-xs">
+</ul>
 <!-- Doesn't work. -->   	
 <form class="nbrItemPage productsSortForm" id="productsSortForm" action="https://www.beary.com.sg/18-dog">
 <label for="selectPrductSort">Sort by</label>
@@ -780,7 +713,7 @@ createCookie('tabCookie'+ulIndex, $(this).index(), 365);
 </ul>
 
 <div class="bottom_pagination shop_box_row  clearfix">
-
+</div>
 <script type="text/javascript">
 // <![CDATA[
 var min_item = "Please select at least one product";
@@ -842,31 +775,22 @@ var max_item = "You cannot add more than 3 product(s) to the product comparison"
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="services.html">Services</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Shop</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
+							<li><a href="products.html">Shop</a></li>
+							<li><a href="about.html">About Us</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
+							<li><a href="blog.html">Testimonials</a></li>
+							<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -874,8 +798,7 @@ var max_item = "You cannot add more than 3 product(s) to the product comparison"
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
+							<small class="block">&copy; 2018 Animaroo Pte Ltd </small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">

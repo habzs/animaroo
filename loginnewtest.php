@@ -1,9 +1,72 @@
-<!DOCTYPE HTML>
-<!--
-	Concept by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+include('config.php');
+
+if (isset($_POST['username']))
+{
+	$username = $_POST['username'];
+} else {
+	$username = '';
+}
+
+if (isset($_POST['pass']))
+{
+	$pass = $_POST['pass'];
+} else {
+	$pass = '';
+}
+
+
+if (isset($_POST['username']))
+{
+    $encryptedpass = sha1($pass);
+
+	$sql_statement  = "SELECT user_id,first_name,last_name ";
+    $sql_statement .= "FROM users ";
+    $sql_statement .= "WHERE user_id = '".$username."' ";
+    $sql_statement .= "AND pass = '".$encryptedpass."' ";
+
+
+    $result = mysqli_query($con, $sql_statement);
+    $row = mysqli_fetch_row($result);
+
+
+    $outputDisplay = "";
+    $myrowcount = 0;
+
+    if (!$row) {
+
+        $outputDisplay = "Wrong Username/Password";
+    } else {
+
+    	$numresults = mysqli_num_rows($result);
+
+    	if ($numresults == 0)
+    	{
+	    	$outputDisplay .= "Invalid Login <br /> ";
+    		$outputDisplay .= "Please Go BACK and try again";
+    	} else {
+
+            $_SESSION["user_id"] = $row[0];
+            $_SESSION["first_name"] = $row[1];
+            $_SESSION["last_name"] = $row[2];
+           
+           $db = mysqli_connect("localhost:8889","root","root","animaroo"); 
+$sql = "SELECT * FROM users WHERE user_id = $username";
+$sth = $db->query($sql);
+        }
+      //  
+    }
+} else {
+	
+
+}
+
+}
+?>
+
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -52,6 +115,17 @@
 
 	</head>
 	<body>
+
+	<?php
+		/* Form Required Field Validation */
+	foreach($_POST as $key=>$value) {
+		if(empty($_POST[$key])) {
+		$error_message = "All Fields are required";
+		break;
+		}
+	}
+
+	?>
 		
 	<div class="fh5co-loader"></div>
 	
@@ -77,10 +151,9 @@
 
 						<li><a href="products.html">Products</a></li>
 						<li><a href="about.html">About</a></li>
-						<li class="active"><a href="blog.html">Feedback</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="blog.html">Feedback</a></li>
+						<li class="active"><a href="contact.html">Contact</a></li>
 						<li><a href="#">Login</a></li>
-						
 
 					</ul>
 				</div>
@@ -89,14 +162,14 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/shibainu.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/cat2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">Your Feedback</h1>
+							<h1 class="mb30">Contact Us</h1>
 						</div>
 					</div>
 				</div>
@@ -106,81 +179,62 @@
 
 	
 
-	<div id="fh5co-blog" class="fh5co-bg-section">
+	<div id="fh5co-contact">
 		<div class="container">
-			<div class="row animate-box row-pb-md" data-animate-effect="fadeInUp">
-				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
-					<span>Thoughts &amp; Ideas</span>
-					<h2>Testimonials</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
 			<div class="row">
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 12th</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 23rd</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-				<div class="clearfix visible-sm-block"></div>
 
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 24th</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
+			<?php if(empty($_SESSION["user_id"])) { ?>
 
-				<div class="clearfix visible-md-block"></div>
+<form name="loginForm" method="post" action="">
+	<table border="0" width="500" align="center" class="demo-table">
 
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 12th</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
+		<?php if(!empty($success_message)) { ?>	
+		<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
+		<?php } ?>
 
-				<div class="clearfix visible-sm-block"></div>
+		<?php if(!empty($error_message)) { ?>	
+		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
+		<?php } elseif (!empty($outputDisplay)) {?>
+        <div class="error-message"><?php if(isset($outputDisplay)) echo $outputDisplay; ?></div>
+        <?php } ?>
+		<tr>
+			<td>User Name</td>
+            <td><input type="text" class="demoInputBox" name="username"></td>
+		</tr>
+		
+		<tr>
+			<td>Password</td>
+			<td><input type="password" class="demoInputBox" name="pass"></td>
+		</tr>
+        
+		<tr>
+			<td colspan=2>
+			<input type="submit" name="Login" value="Login" class="btnLogin"></td>
+		</tr>
 
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 23rd</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
+        <tr>
+			<td colspan=1>
+            <h6><a href="Password Change.php">Forgot Password?</h6></a>
+		</tr>
 
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 24th</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-				
-				<div class="clearfix visible-md-block"></div>
+	</table>
+</form>
 
+<?php } else { ?>
+    <div align="center">
+    <h2>Welcome 
+    
+<?php
+    $fname = $_SESSION["first_name"];
+    $lname = $_SESSION["last_name"];
+    echo "$fname, $lname"; 
+    ?></h2>
+<?php } ?>
 
 			</div>
+			
 		</div>
 	</div>
-
 
 
 	
@@ -200,29 +254,37 @@
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget ">
-						<h3>animaroo<span>.</span></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-					<p><a href="#">Learn More</a></p>
+				<div class="col-md-4 fh5co-widget">
+					<h3>animaroo<span style="color:#F73859;">.</span></h3>
+					<p>Groom with convenience.</p>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="services.html">Services</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Meetups</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-							<li><a href="products.html">Shop</a></li>
-							<li><a href="about.html">About Us</a></li>
+						<li><a href="#">Shop</a></li>
+						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Testimonials</a></li>
+						<li><a href="#">Handbook</a></li>
+						<li><a href="#">Held Desk</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-							<li><a href="blog.html">Testimonials</a></li>
-							<li><a href="contact.html">Contact</a></li>
+						<li><a href="#">Find Designers</a></li>
+						<li><a href="#">Find Developers</a></li>
+						<li><a href="#">Teams</a></li>
+						<li><a href="#">Advertise</a></li>
+						<li><a href="#">API</a></li>
 					</ul>
 				</div>
 			</div>
@@ -230,7 +292,8 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-							<small class="block">&copy; 2018 Animaroo Pte Ltd </small>
+						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
