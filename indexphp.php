@@ -1,8 +1,12 @@
 <?php
-include ('header.html');
+session_start();
+include ('header.php');
 ?>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/corgi.jpg);" data-stellar-background-ratio="0.5">
+<link rel="stylesheet" href="css/hero-video.css">
+
+	<header id="fh5co-header" class="fh5co-cover heropanel--video" role="banner" data-stellar-background-ratio="0.5" data-vide-bg="mp4: videos/cat_walking.mp4,  data-vide-options="
+	data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -52,18 +56,18 @@ include ('header.html');
 						</a>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="images/dog_washing.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+						<a href="services.html"><img src="images/cat_grooming.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
-								<h3>Bath</h3>
-								<p>We'll wash your pets. Arf.</p>
+								<h3>Grooming</h3>
+								<p>A good looking kat is a happy kat.</p>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="images/dog_grooming.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+						<a href="services.html"><img src="images/dog_washing.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
-								<h3>Grooming</h3>
-								<p>A good looking pup is a happy pup.</p>
+								<h3>Bath</h3>
+								<p>We'll wash your pets. Arf.</p>
 							</div>
 						</a>
 					</div>
@@ -243,31 +247,23 @@ include ('header.html');
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="services.html">Services</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Shop</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
+						<li><a href="products.html">Shop</a></li>
+						<li><a href="about.html">About Us</a></li>
+						
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
+							<li><a href="blog.html">Testimonials</a></li>
+							<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -275,9 +271,9 @@ include ('header.html');
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
+						<small class="block">&copy; 2018 Animaroo Pte Ltd.</small>
 					</p>
+
 					<p>
 						<ul class="fh5co-social-icons">
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -314,6 +310,7 @@ include ('header.html');
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+
 
 	</body>
 </html>

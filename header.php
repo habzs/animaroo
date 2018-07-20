@@ -50,6 +50,13 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<!-- hero video -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://www.gordonmac.com/wp-content/themes/2016/vendor/vide/jquery.vide.min.js"></script>
+
+
 	</head>
 	<body>
 		
@@ -64,7 +71,13 @@
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
+						<li class="has-dropdown">
+							<a href="index.html">Home</a>
+							<ul class="dropdown">
+								<li><a href="indexphp.php">IndexPHP</a></li>
+							</ul>
+						</li>
+						<!-- <li class="active"><a href="index.html">Home</a></li> -->
 						<li class="has-dropdown">
 							<a href="services.html">Services</a>
 							<ul class="dropdown">
@@ -84,7 +97,7 @@
 						<li><a href="about.html">About</a></li>
 						<li><a href="blog.html">Feedback</a></li>
 						<li><a href="contact.html">Contact</a></li>
-						<li><a href="#">Login</a></li>
+						<!-- <li><a href="#">Login</a></li> -->
 						<?php 
 						if ( isset( $_SESSION["user_id"] ) ) {
 							echo '<li><a href="login.php? action=logout">SIGN OUT</a></li>';
