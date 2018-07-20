@@ -6,7 +6,7 @@ include ('header.php');
 <link rel="stylesheet" href="css/hero-video.css">
 
 	<header id="fh5co-header" class="fh5co-cover heropanel--video" role="banner" data-stellar-background-ratio="0.5" data-vide-bg="mp4: videos/cat_walking.mp4,  data-vide-options="
-	data-stellar-background-ratio="0.5">
+	>
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">

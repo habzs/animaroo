@@ -28,6 +28,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
 	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -67,10 +68,10 @@
 						<li class="has-dropdown">
 							<a href="services.html">Services</a>
 							<ul class="dropdown">
-								<li><a href="#">Bath</a></li>
-								<li><a href="#">Grooming</a></li>
-								<li><a href="#">Walk</a></li>
-								<li><a href="#">Rate</a></li>
+									<li><a href="services.html#test">Bath</a></li>
+									<li><a href="services.html#test">Grooming</a></li>
+									<li><a href="services.html#test">Walk</a></li>
+									<li><a href="services.html#rate">Rates</a></li>
 							</ul>
 						</li>
 
@@ -217,17 +218,15 @@
 		</div>
 	</div>
 
-
-
-	
-	<div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<span>Let's work together</span>
-					<h2>Try this template for free</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><button type="submit" class="btn btn-default">Get In Touch</button></p>
+	<div>
+		
+						<img class="mySlides w3-animate-fading" src="images/flash1.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/flash2.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/flash3.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/flash4.jpg" style="width:100%">
+					  </div>
+					  
+					
 				</div>
 			</div>
 		</div>
@@ -305,5 +304,24 @@
 	<script src="js/main.js"></script>
 
 	</body>
+
+	<script>
+			var myIndex = 0;
+			carousel();
+			
+			function carousel() {
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				for (i = 0; i < x.length; i++) {
+				   x[i].style.display = "none";  
+				}
+				myIndex++;
+				if (myIndex > x.length) {myIndex = 1}    
+				x[myIndex-1].style.display = "block";  
+				setTimeout(carousel, 9000);    
+			}
+			</script>
+			
+
 </html>
 
