@@ -1,5 +1,5 @@
 <?php
-include ('header.html');
+include ('header.php');
 ?>
 
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/corgi.jpg);" data-stellar-background-ratio="0.5">

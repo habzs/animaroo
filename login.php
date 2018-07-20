@@ -54,7 +54,7 @@ if (isset($_POST['username']))
             $_SESSION["first_name"] = $row[1];
             $_SESSION["last_name"] = $row[2];
            
-           $db = mysqli_connect("localhost:8889","root","root","animaroo"); 
+           $db = mysqli_connect("localhost:3306","root","","animaroo"); 
 $sql = "SELECT * FROM users WHERE user_id = $username";
 $sth = $db->query($sql);
         }
