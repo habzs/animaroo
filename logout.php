@@ -1,5 +1,6 @@
 <?php
 session_start();
+include ('header.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 include('config.php');
@@ -23,9 +24,9 @@ if (isset($_POST['username']))
 {
     $encryptedpass = sha1($pass);
 
-	$sql_statement  = "SELECT user_id,first_name,last_name ";
+	$sql_statement  = "SELECT email,first_name,last_name ";
     $sql_statement .= "FROM users ";
-    $sql_statement .= "WHERE user_id = '".$username."' ";
+    $sql_statement .= "WHERE email = '".$username."' ";
     $sql_statement .= "AND pass = '".$encryptedpass."' ";
 
 
@@ -49,12 +50,12 @@ if (isset($_POST['username']))
     		$outputDisplay .= "Please Go BACK and try again";
     	} else {
 
-            $_SESSION["user_id"] = $row[0];
+            $_SESSION["email"] = $row[0];
             $_SESSION["first_name"] = $row[1];
             $_SESSION["last_name"] = $row[2];
            
            $db = mysqli_connect("localhost:8889","root","root","animaroo"); 
-$sql = "SELECT * FROM users WHERE user_id = $username";
+$sql = "SELECT * FROM users WHERE email = $username";
 $sth = $db->query($sql);
         }
       //  
@@ -65,102 +66,22 @@ $sth = $db->query($sql);
 }
 
 }
+
+
+// LOG OUT SYSTEM
+
+if ( isset( $_GET["action"] ) and $_GET["action"] == "logout" ) {
+	logout();
+} else {
+	//
+}
+
+
+function logout() {
+	unset( $_SESSION["email"] );
+	session_write_close();
+  }
 ?>
-
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>animaroo. &mdash; we groom.</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" />
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
-
-	<link rel"stylesheet" href="css/add_style.css">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-
-	<?php
-		/* Form Required Field Validation */
-	foreach($_POST as $key=>$value) {
-		if(empty($_POST[$key])) {
-		$error_message = "All Fields are required";
-		break;
-		}
-	}
-
-	?>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">animaroo<span>.</span></a></div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li class="has-dropdown">
-							<a href="services.html">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Bath</a></li>
-								<li><a href="#">Grooming</a></li>
-								<li><a href="#">Walk</a></li>
-								<li><a href="#">Rate</a></li>
-							</ul>
-						</li>
-
-						<li><a href="products.html">Products</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="blog.html">Feedback</a></li>
-						<li class="active"><a href="contact.html">Contact</a></li>
-						<li><a href="#">Login</a></li>
-
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
 
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/cat2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -169,7 +90,18 @@ $sth = $db->query($sql);
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">Contact Us</h1>
+							<?php 
+							$returnTxt = "Welcome back, " . $_SESSION["first_name"] . ".";
+
+							if ( isset( $_SESSION["email"] ) ) {
+
+								echo "<h1> $returnTxt </h1>";
+
+							} else {
+								echo '<h1 class="mb30">We&#39;ll miss you! </h1>';
+							}
+							?>
+							
 						</div>
 					</div>
 				</div>
@@ -179,65 +111,67 @@ $sth = $db->query($sql);
 
 	
 
+	
+
 	<div id="fh5co-contact">
 		<div class="container">
 			<div class="row">
+				<div class="animate-box">
+					
+					<?php
+						/* Form Required Field Validation */
+					foreach($_POST as $key=>$value) {
+						if(empty($_POST[$key])) {
+						$error_message = "All Fields are required";
+						break;
+						}
+					}
 
-			<?php if(empty($_SESSION["user_id"])) { ?>
+					?>
 
-<form name="loginForm" method="post" action="">
-	<table border="0" width="500" align="center" class="demo-table">
+					<?php if(empty($_SESSION["email"])) { ?>
 
-		<?php if(!empty($success_message)) { ?>	
-		<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
-		<?php } ?>
+					<form name="loginForm" method="post" action="">
+						<table border="0" width="500" align="center" class="demo-table">
 
-		<?php if(!empty($error_message)) { ?>	
-		<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
-		<?php } elseif (!empty($outputDisplay)) {?>
-        <div class="error-message"><?php if(isset($outputDisplay)) echo $outputDisplay; ?></div>
-        <?php } ?>
-		<tr>
-			<td>User Name</td>
-            <td><input type="text" class="demoInputBox" name="username"></td>
-		</tr>
-		
-		<tr>
-			<td>Password</td>
-			<td><input type="password" class="demoInputBox" name="pass"></td>
-		</tr>
-        
-		<tr>
-			<td colspan=2>
-			<input type="submit" name="Login" value="Login" class="btnLogin"></td>
-		</tr>
+							<?php if(!empty($success_message)) { ?>	
+							<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
+							<?php } ?>
 
-        <tr>
-			<td colspan=1>
-            <h6><a href="Password Change.php">Forgot Password?</h6></a>
-		</tr>
+							<?php if(!empty($error_message)) { ?>	
+							<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
+							<?php } elseif (!empty($outputDisplay)) {?>
+							<div class="error-message"><?php if(isset($outputDisplay)) echo $outputDisplay; ?></div>
+							<?php } ?>
 
-	</table>
-</form>
 
-<?php } else { ?>
-    <div align="center">
-    <h2>Welcome 
-    
-<?php
-    $fname = $_SESSION["first_name"];
-    $lname = $_SESSION["last_name"];
-    echo "$fname, $lname"; 
-    ?></h2>
-<?php } ?>
+							<div class="row centered" style="margin-top:50px;">
+								<div>
+									<h1>You've successfully signed out.</h1>
+									<br>
+									<h3>Please hold while we redirect you.</h3>
+								</div>
+							</div>	
 
+
+						</table>
+					</form>
+
+					<?php } else { ?>
+						<div>
+						<h2><a href="indexphp.php? action=logout">Log Out.</a></h2> 
+						
+				
+					<?php } ?>
+						</div>
+					</div>
+
+				</div>
 			</div>
 			
 		</div>
 	</div>
 
-
-	
 	<div id="fh5co-started">
 		<div class="container">
 			<div class="row animate-box">
@@ -331,6 +265,13 @@ $sth = $db->query($sql);
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<!-- Redirect -->
+	<script language="javascript" type="text/javascript">
+	setTimeout(function () {
+	window.location.href = "indexphp.php"; // points to indexphp.php for redirection
+	}, 2000); // redirects after 2 seconds
+ 	</script>
+
 
 	</body>
 </html>

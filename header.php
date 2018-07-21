@@ -99,10 +99,10 @@
 						<li><a href="contact.html">Contact</a></li>
 						<!-- <li><a href="#">Login</a></li> -->
 						<?php 
-						if ( isset( $_SESSION["user_id"] ) ) {
-							echo '<li><a href="login.php? action=logout">SIGN OUT</a></li>';
+						if ( isset( $_SESSION["email"] ) ) {
+							echo '<li><a href="my_account.php ">My Account</a></li>';
 						} else {
-							echo '<li><a href="login.php">SIGN IN</a></li>';
+							echo '<li><a href="login.php">Log In</a></li>';
 						}
 						?>
 					</ul>
