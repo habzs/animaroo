@@ -89,14 +89,19 @@ function logout() {
 			<div class="row">
 				<div class="col-md-7 text-left">
 					<div class="display-t">
-						<div class="display-tc animate-box" data-animate-effect="fadeInUp">					
+						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<?php 
+							$returnTxt = "Welcome back, " . $_SESSION["first_name"] . ".";
+
 							if ( isset( $_SESSION["email"] ) ) {
-								echo '<h1 class="mb30">You&#39;re Logged In.</h1>';
+
+								echo "<h1> $returnTxt </h1>";
+
 							} else {
-								echo '<h1 class="mb30">Log In.</h1>';
+								echo '<h1 class="mb30">Hi! Please Log In. </h1>';
 							}
 							?>
+							
 						</div>
 					</div>
 				</div>
@@ -112,7 +117,10 @@ function logout() {
 		<div class="container">
 			<div class="row">
 				<div class="animate-box">
-					<h3>Connect.</h3>
+					<h3>Your Account.</h3>
+						<p>
+							Change everything, or update your profile.
+						</p>
 					
 					<?php
 						/* Form Required Field Validation */
@@ -141,27 +149,10 @@ function logout() {
 							<?php } ?>
 
 
-							<div class="row form-group">
-								<div style="width:300px;" class="centered">
-									<!-- <label>Username</label> -->
-									<input name="username" type="text" class="form-control" placeholder="Email">
-								</div>
-								<br>
-								<div style="width:300px;" class="centered">
-									<!-- <label>Password</label> -->
-									<input type="password" name="pass"  class="form-control" placeholder="Password">
-								</div>
+							<div class="row centered" style="margin-top:50px;">
+								<div><h1>You're not logged in!</h1></div>
 							</div>	
-							
-							<div class="row">
-								<div class="centered">
-									<input type="submit" value="Login" class="btn btn-lg btn-primary centered">
-								</div>
-
-								<div class="centered">
-									<h6><a href="Password Change.php">Forgot Password?</h6></a>
-								</div>
-							</div>
+						
 
 
 
@@ -169,14 +160,10 @@ function logout() {
 					</form>
 
 					<?php } else { ?>
-						<div align="center">
-						<h2>Welcome 
+						<div>
+						<h2><a href="logout.php? action=logout">Log Out.</a></h2> 
 						
-					<?php
-						$fname = $_SESSION["first_name"];
-						$lname = $_SESSION["last_name"];
-						echo "$fname, $lname"; 
-						?></h2>
+				
 					<?php } ?>
 						</div>
 					</div>
@@ -200,7 +187,7 @@ function logout() {
 		</div>
 	</div>
 
-<?php
+<?php 
 include ("footer.php");
 ?>
 
