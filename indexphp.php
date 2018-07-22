@@ -15,8 +15,17 @@ include ('header.php');
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<h1 class="mb30">Grooming without the hassle.</h1>
 							<p>
-								<a href="http://gettemplates.co/" target="_blank" class="btn btn-primary">Get Started</a>  <em class="or">or</em> 
-								<a href="login.php" class="link-watch popup-vimeo">Log In</a>
+								<!--<a href="http://gettemplates.co/" target="_blank" class="btn btn-primary">Get Started</a>  <em class="or">or</em>--> 
+								
+								<?php 
+									if ( isset( $_SESSION["email"] ) ) {
+										echo '<li><a href="my_account.php ">My Account</a></li>';
+									} else {
+										echo '<a href="login.php" target="_blank" class="btn btn-primary">LOGIN</a>  <em class="or">or</em> ';
+									}
+								?>
+
+								<a href="register.php" class="link-watch">Register</a>
 							</p>
 						</div>
 					</div>

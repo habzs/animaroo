@@ -29,7 +29,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
 
-	<!--<link rel="stylesheet" href="css/popupemail.css">-->
+	<link rel="stylesheet" href="css/popupemail.css">
 
 	<link rel="stylesheet" href="css/searchbar.css">
 	
@@ -198,20 +198,20 @@
 			<div class="row">
 					<div class="feature-center-steps animate-box" data-animate-effect="bounceIn">
 							<h2><span>Step 1</span></h2>
-							<h3 style="color: #F73859; font-weight: 600; font-size:30px">REGISTER</h3>
+							<h3 style="color: #F73859; font-weight: 600;">REGISTER</h3>
 							<p>We'll need to know more about you.<br>
 							So go ahead and register and we'll move onto the next step!</p>
 						</div>
 					<div class="clearfix visible-md-block"></div>
 					<div class="feature-center-steps animate-box" data-animate-effect="bounceIn">
 							<h2><span>Step 2</span></h2>
-							<h3 style="color: #F73859; font-weight: 600; font-size:30px">APPOINTMENT</h3>
+							<h3 style="color: #F73859; font-weight: 600;">APPOINTMENT</h3>
 							<p>Set a date with us, and we'll be there!</p>
 						</div>
 					<div class="clearfix visible-md-block"></div>
 					<div class="feature-center-steps animate-box" data-animate-effect="bounceIn">
 							<h2><span>Step 3</span></h2>
-							<h3 style="color: #F73859; font-weight: 600; font-size:30px">RELAX</h3>
+							<h3 style="color: #F73859; font-weight: 600;">RELAX</h3>
 							<p>Now that you've set a date with us, relax!<br>
 							We'll clear everything off your hands.</p>
 						</div>
@@ -399,6 +399,86 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
+
+
+	<div class="box">
+			<span class="box-title text">MORE STORIES</span>
+			<div>
+				test
+				<!--<a href="#"><img width="326" height="150" src="http://dummyimage.com/326x150/23a343/edfcf7&text=Detect+scroll"></a>
+				<h3><a href="#">Lorem ipsum</a></h3>
+				<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>-->
+			</div>
+		</div>
+
+
+	<script>
+            var available;
+                    var percentage_of_page;
+                    var half_screen;
+                    var height;
+                    
+                    $(window).scroll(function (e) {
+                        available = $(document).height();
+                        percentage_of_page = 0.5;
+                        half_screen = available * percentage_of_page;
+                        height = $(window).scrollTop();
+                        if ( height > half_screen ) {
+                            $('#element').show();
+                        } else {
+                            $('#element').hide();
+                        }
+                    });
+                   
+                    var available;
+                    var percentage_of_page;
+                    var half_screen;
+                    var height;
+
+                    $(window).scroll(function (e) {
+    available = $(document).height();
+    percentage_of_page = 0.5;
+    half_screen = available * percentage_of_page;
+    height = $(window).scrollTop();
+    if ( height > half_screen ) {
+        $('#element').show();
+    } else {
+        $('#element').hide();
+    }
+});
+
+                    var height;
+                    var available;
+                    var percentage_of_page;
+                    var half_screen;
+
+                    function write_status() {
+                    // Document minus Viewport
+                    // https://stackoverflow.com/a/1304384/1287812
+                    // available = $(document).height() - $(window).height(); 
+                    available = $(document).height();
+                    percentage_of_page = 0.5;
+                    half_screen = available * percentage_of_page;
+                    $('#scroll-val').html( height + '/' + available + ' - Show at: ' + half_screen );
+                    }
+
+                    $(window).scroll(function (e) {
+    height = $(window).scrollTop();
+    write_status();
+    if (height > half_screen ) {
+        $('.box').addClass('display-block');
+    } else {
+        $('.box').removeClass('display-block');
+    }
+});
+
+                    $('#remove').click(function(){
+    $('.aux').last().remove();
+    write_status();
+    $(this).text( 'Remove div (' + $('.aux').length + ')' );
+});
+
+            </script>
 
 	
 	<!-- jQuery -->
