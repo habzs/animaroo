@@ -2,7 +2,7 @@
 // This script performs an INSERT query to add a record to the users table.
 
 $page_title = 'Register';
-include ('header.html');
+// include ('includes/header.html');
 
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -97,4 +97,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<p>Confirm Password: <input type="password" name="pass2" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>"  /></p>
 	<p><input type="submit" name="submit" value="Register" /></p>
 </form>
-<?php include ('footer.html'); ?>
