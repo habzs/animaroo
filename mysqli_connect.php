@@ -7,8 +7,8 @@
 // Set the database access information as constants:
 DEFINE ('DB_USER', 'root');
 DEFINE ('DB_PASSWORD', 'root');
-DEFINE ('DB_HOST', 'localhost:8889');
-DEFINE ('DB_NAME', 'sitename');
+DEFINE ('DB_HOST', 'localhost:3308');
+DEFINE ('DB_NAME', 'animaroo');
 
 // Make the connection:
 $dbc = @mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
