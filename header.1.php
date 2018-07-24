@@ -79,7 +79,7 @@
 					
 				</div> -->
 
-				<div class="col-xs-10 text-right menu-1" style="float:right">
+				<div class="col-xs-10-new text-right menu-1" style="float:right">
 					<ul>
 						<li class="has-dropdown">
 							<a href="index.html">Home</a>
@@ -112,7 +112,7 @@
 						if ( isset( $_SESSION["email"] ) ) {
 							echo '<li><a href="my_account.php ">My Account</a></li>';
 						} else {
-							echo '<li><a href="login.php">Log In</a></li>';
+							#echo '<li><a href="login.php">Log In</a></li>';
 						}
 						?>
 					</ul>
