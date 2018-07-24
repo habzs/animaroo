@@ -106,7 +106,7 @@
 							</li>
 						<li><a href="about.html">About</a></li>
 						<li><a href="blog.html">Feedback</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="contact_us.php">Contact</a></li>
 						<!-- <li><a href="#">Login</a></li> -->
 						<?php 
 						if ( isset( $_SESSION["email"] ) ) {
