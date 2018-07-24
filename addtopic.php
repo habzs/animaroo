@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE HTML>
 <!--
 	Concept by gettemplates.co
@@ -126,7 +129,13 @@
                         <div class="form-group">
                           <label>Post Text</label>
                           <textarea name="post_text" rows=8 cols=40 wrap=virtual class="form-control" placeholder="Enter text"></textarea></div>
-                        <button type="submit" name="submit" class="btn btn-primary">Send</button>
+						<button type="submit" name="submit" class="btn btn-primary">Send</button>
+						<?php 
+						if (isset($_POST['submit'])) {
+							$_SESSION['topic_title'] = $_POST['topic_title'];
+						}
+						
+						?>
                       </form>
                      </div>
 				<!--<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
