@@ -4,6 +4,7 @@ session_start();
 $page_title = 'Register';
 include ('header.php');
 
+
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -35,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Check for a password and match against the confirmed password:
 	if (!empty($_POST['pass1'])) {
 		if ($_POST['pass1'] != $_POST['pass2']) {
-			$errors[] = 'Your password did not match the confirmed password.';
+			$errors[] = 'Your passwords aren&#39;t the same!';
 		} else {
 			$p = mysqli_real_escape_string($dbc, trim($_POST['pass1']));
 		}
@@ -123,12 +124,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 	} else { // Report the errors.
 	
-		echo '<h1>Error!</h1>
-		<p class="error">The following error(s) occurred:<br />';
-		foreach ($errors as $msg) { // Print each error.
-			echo " - $msg<br />\n";
+		//echo '<h1>Error!</h1>
+		//<p class="error">The following error(s) occurred:<br />';
+		//foreach ($errors as $msg) { // Print each error.
+		//	echo " - $msg<br />\n";
+		//}
+		// echo '</p><p>Please try again.</p><p><br /></p>';
+
+		foreach ($errors as $msg) {
+			$msg;
 		}
-		echo '</p><p>Please try again.</p><p><br /></p>';
+
+	
 		
 	} // End of if (empty($errors)) IF.
 	
@@ -179,36 +186,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								echo '<h1 class="mb30">You&#39;re already registered!</h1>';
 							} else { ?>
 
-							<div class="row form-group">
+							<h3><?php echo '<div style="color:red;">' . $msg . '</div>';?></h3>
+							<div class="row col-md-13" style="width:300px; margin:auto;" >
 							<form action="register.php" method="post">
-								<div style="width:300px;" class="centered">
+
+
+								<div>
 									<label>First Name</label>
-									<input name="first_name" type="text" class="form-control" placeholder="First Name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" />
+									<input name="first_name" type="text" class="form-control" placeholder="First Name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" required />
 								</div>
 								<br>
-								<div style="width:300px;" class="centered">
+								<div>
 									<label>Last Name</label>
-									<input name="last_name" type="text" class="form-control" placeholder="Last Name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" />
+									<input name="last_name" type="text" class="form-control" placeholder="Last Name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" required />
 								</div>
 								<br>
-								<div style="width:300px;" class="centered">
+								<div>
 									<label>Email Address</label>
-									<input name="email" type="text" class="form-control" placeholder="Email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" />
+									<input name="email" type="email" class="form-control" placeholder="Email" size="20" maxlength="60" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" required />
 								</div>
 								<br>
-								<div style="width:300px;" class="centered">
+								<div>
 									<label>Password</label>
-									<input name="pass1" type="password" class="form-control" placeholder="Password" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" />
+									<input name="pass1" type="password" class="form-control" placeholder="Password" size="10" maxlength="20" value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>" required />
 								</div>
 								<br>
-								<div style="width:300px;" class="centered">
+								<div>
 									<label>Confirm Password</label>
-									<input name="pass2" type="password" class="form-control" placeholder="Password" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" />
+									<input name="pass2" type="password" class="form-control" placeholder="Password" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" required />
 								</div>
 							</div>	
 
 							<div class="row">
 								<div class="centered">
+									<br>
 									<input type="submit" name="submit" value="Register" class="btn btn-lg btn-primary centered">
 								</div>
 						</form>
