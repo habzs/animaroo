@@ -137,14 +137,14 @@ include('header.php');
 
 	<div>
 		
-						<img class="mySlides w3-animate-fading" src="images/flash1.jpg" style="width:100%">
-						<img class="mySlides w3-animate-fading" src="images/flash2.jpg" style="width:100%">
-						<img class="mySlides w3-animate-fading" src="images/flash3.jpg" style="width:100%">
-						<img class="mySlides w3-animate-fading" src="images/flash4.jpg" style="width:100%">
-						<img class="mySlides w3-animate-fading" src="images/flash5.jpg" style="width:100%">
-						<img class="mySlides w3-animate-fading" src="images/flash6.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/1.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/2.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/3.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/4.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/5.jpeg" style="width:100%">
+						<!--<img class="mySlides w3-animate-fading" src="images/flash6.jpg" style="width:100%">
 						<img class="mySlides w3-animate-fading" src="images/flash7.jpg" style="width:100%">
-						<img class="mySlides w3-animate-fading" src="images/flash8.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/flash8.jpg" style="width:100%">-->
 					  </div>
 					  
 					
