@@ -3,10 +3,10 @@ session_start();
 include ('header.php');
 ?>
 
-<link rel="stylesheet" href="css/hero-video.css">
-
-	<header id="fh5co-header" class="fh5co-cover heropanel--video" role="banner" data-stellar-background-ratio="0.5" data-vide-bg="mp4: videos/cat_walking.mp4,  data-vide-options="
-	>
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="z-index:-20;position:fixed;">
+	<video autoplay muted loop id="myVideo" style="z-index: -1;" controls="true">
+  		<source src="videos/cat_walking.mp4" type="video/mp4">
+	
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -23,6 +23,7 @@ include ('header.php');
 				</div>
 			</div>
 		</div>
+	</video>
 	</header>
 
 	<div id="fh5co-project">
