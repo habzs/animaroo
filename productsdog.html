@@ -43,6 +43,9 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<!-- Products style -->
+	<link rel="stylesheet" href="css/products.css" >
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -110,6 +113,21 @@
 	</header>
 
 	<!-- Test -->
+	<div id="fh5co-services">
+	<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-8 col-md-offset-2 text-left animate-box" data-animate-effect="fadeInUp">
+					<div class="fh5co-heading">
+						
+						<span>Special needs</span>
+						<h2><a name="test">Our products, condensed.</a></h2>
+						<br>
+						<p>
+							Bringing their needs to you.
+						</p>
+					</div>
+				</div>
+			</div>
     <div class="page_wrapper_2 clearfix">
 			<div class="container" id="columns"><div class="breadcrumb">
 <div class="breadcrumb_inset">
@@ -118,15 +136,15 @@
 						<span class="navigation_page">Dog</span>
 				</div>
 	</div>
-					<div class="row">
-					<!-- Left -->
+<div class="row">
+<!-- Left -->
 
 <!-- Center -->
 <div class="col-xs-12 col-sm-3 column" id="left_column">
 
 <!-- Block categories module -->
 <section class="column_box block" id="categories_block_left">
-<h1><span><b>Categories</b></span><i class="column_icon_toggle icon-plus-sign"></i></h1>
+<h1 class="h1everything"><span><b>Categories</b></span><i class="column_icon_toggle icon-plus-sign"></i></h1>
 <ul class="toggle_content tree store_list dhtml">
 
 <li class="category_18">
@@ -188,13 +206,13 @@ $('div#categories_block_left ul.dhtml').hide();
                 </div>
         </section>
 				</div>
-							<div class="center_column col-xs-12 col-sm-9 clearfix" id="center_column">
+<div class="center_column col-xs-12 col-sm-9 clearfix" id="center_column">
 <!-- Breadcrumb -->
 
 <!-- /Breadcrumb -->
 
 
-<h1>
+<h1 class="h1everything">
 <span>
 Dog
 </span>
@@ -291,7 +309,7 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 <!-- Doesn't work. -->   	
 <form class="nbrItemPage productsSortForm" id="productsSortForm" action="https://www.beary.com.sg/18-dog">
 <label for="selectPrductSort">Sort by</label>
-<div class="selector" id="uniform-selectPrductSort" style="width: 205px;"><select class="selectProductSort" id="selectPrductSort">
+<div class="selector" id="uniform-selectPrductSort" style="width: 205px;"><span style="width: 203px; -ms-user-select: none;"></span><select class="selectProductSort" id="selectPrductSort">
 <option selected="selected" value="position:asc">--</option>
 <option value="price:asc">Price: Lowest first</option>
 <option value="price:desc">Price: Highest first</option>
@@ -309,13 +327,13 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 <!-- nbr product/page -->
 <form class="nbrItemPage nbr_page" action="https://www.beary.com.sg/18-dog" method="get">
 
-												</select></div>
+</select></div>
 
 
 </form>
 <!-- /nbr product/page -->
 
-</div>
+
 
 <!-- Products list -->
 
@@ -599,7 +617,7 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </li>
 
 
-<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-9 omega  first_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-9 omega first_item_of _tablet_line ">
 <div class="inner_content clearfix">
 <a title="Daily Delight Juicy Chicken " class="product_img_link" href="#">
 <img alt="Daily Delight Juicy Chicken " src="https://www.beary.com.sg/2263-home_default/daily-delight-juicy-chicken-.jpg">
@@ -634,39 +652,7 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </li>
 
 
-<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-10 alpha  last_item_of_tablet_line ">
-<div class="inner_content clearfix">
-<a title="Daily Delight Chicken And Veggy " class="product_img_link" href="#">
-<img alt="Daily Delight Chicken And Veggy Canned Food" src="https://www.beary.com.sg/2264-home_default/daily-delight-chicken-and-veggy-canned-food.jpg">
-</a>
-<div class="center_block">
-<div class="product_flags clearfix">
 
-<span class="availability title_shop">Available
-</span>				                  
-</div>
-<div class="clear"></div>
-<h5>
-<a title="Daily Delight Chicken And Veggy " class="product_link" href="#">Daily Delight Chicken And Veggy</a></h5>
-<p class="product_desc"></p>
-<p class="product_desc mob"></p>
-<p class="product_desc mob2"></p>  
-</div>																				 
-<div class="right_block">
-<span class="price">SG$9.70</span>  
-
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
-<div class="checker" id="uniform-comparator_item_2436"><span><input class="comparator" id="comparator_item_2436" type="checkbox" value="comparator_item_2436" autocomplete="off"></span></div> 
-<label for="comparator_item_2436">Select to compare</label></p>
-<div class="clear noneclass"></div>
-		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#">
-<span>Add to cart</span>
-</a>
-
-<a title="View" class="btn btn-default button" href="#">View</a>          
-</div>
-</div>
-</li>
 
 <script>
 (function($) {
@@ -721,7 +707,7 @@ var max_item = "You cannot add more than 3 product(s) to the product comparison"
 
 //]]>
 </script>
-<form class="form_compare hidden-xs" onsubmit="true" action="https://www.beary.com.sg/index.php?controller=products-comparison" method="post">
+<form class="form_compare hidden-xs" onsubmit="true" action="#" method="post">
 <p>
 <input class="button btn btn-default" id="bt_compare_bottom" type="submit" value="Compare">
 <input name="compare_product_list" class="compare_product_list" type="hidden" value="">
@@ -749,6 +735,9 @@ var max_item = "You cannot add more than 3 product(s) to the product comparison"
 </div>
 
 <!-- Right -->
+</div>
+</div>
+</div>
 </div>
 		<!-- End of test -->
 

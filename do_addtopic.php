@@ -11,7 +11,7 @@
    
    //connect to server and select database
   $dbc = @mysqli_connect ('localhost:8889', 'root', 'root', 'animaroo') OR die ('Could not connect to MySQL:' . mysqli_connect_error());
-  //mysqli_select_db("animaroo",$conn) or die(mysqli_connect_error());
+  //mysqli_select_db($dbc"animaroo") or die(mysqli_connect_error());
   
   //create and issue the first query
   $add_topic = "insert into forum_topics values ('', '$_POST[topic_title]',
@@ -19,9 +19,10 @@
   mysqli_query($dbc, $add_topic) or die(mysqli_connect_error());
   
   //get the id of the last query 
-   mysqli_insert_id($dbc);
+  $topic_id = mysqli_insert_id($dbc);
+  //$topic_id = mysqli_insert_id();
   //create and issue the second query
-  $add_post = "insert into forum_posts values ('', 'topic_id',
+  $add_post = "insert into forum_posts values ('', '$topic_id',
       '$_POST[post_text]', now(), '$_POST[topic_owner]')";
   mysqli_query($dbc, $add_post) or die(mysqli_connect_error());
   
@@ -142,7 +143,8 @@
 			</div>
 			<div class="row col-md-13">  
                 <div class="text-center"> 
-                <?php print $msg; ?>
+				<?php print $msg; ?>
+				<a href="showtopic.php" class="btn btn-primary">Go to Forum Page</a>
             </div>
 				<!--<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="fh5co-post">
