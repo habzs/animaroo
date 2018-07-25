@@ -27,7 +27,7 @@ if((isset($_POST['name']) && !empty($_POST['name']))
 	if( mail($to, $subject, $message, $headers)){
 		// echo "E-Mail Sent successfully, we will get back to you soon.";
 		
-		$query = "INSERT INTO `contact` (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
+		$query = "INSERT INTO `contact` (name, email, subject, message, date_time) VALUES ('$name', '$email', '$subject', '$message', NOW())";
 		$result = mysqli_query($connection, $query);
 	}
 }

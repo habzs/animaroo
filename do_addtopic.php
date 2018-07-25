@@ -21,7 +21,7 @@
   //get the id of the last query 
    mysqli_insert_id($dbc);
   //create and issue the second query
-  $add_post = "insert into forum_posts values ('', '',
+  $add_post = "insert into forum_posts values ('', 'topic_id',
       '$_POST[post_text]', now(), '$_POST[topic_owner]')";
   mysqli_query($dbc, $add_post) or die(mysqli_connect_error());
   

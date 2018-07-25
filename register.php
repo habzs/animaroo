@@ -11,7 +11,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	require ('mysqli_connect.php'); // Connect to the db.
 		
 	$errors = array(); // Initialize an error array.
-	
+
+// Checks for duplicate email
+	$email = $_POST['email'];
+	$emailcheck="select email from users where (email='$email');";
+	$res=mysqli_query($dbc,$emailcheck);
+	if (mysqli_num_rows($res) > 0) {
+	// output data of each row
+	$row = mysqli_fetch_assoc($res);
+	if($email==$_POST['email'])
+	{
+		$errors[] = "Email already exists!";
+	}
+}
+//	
+
 	// Check for a first name:
 	if (empty($_POST['first_name'])) {
 		$errors[] = 'You forgot to enter your first name.';
