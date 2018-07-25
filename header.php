@@ -82,20 +82,15 @@
 
 				<div class="col-xs-10 text-right menu-1" style="float:right">
 					<ul>
-						<li class="has-dropdown">
-							<a href="index.html">Home</a>
-							<ul class="dropdown">
-								<li><a href="indexphp.php">IndexPHP</a></li>
-							</ul>
-						</li>
+						<li><a href="indexphp.php">Home</a></li>
 						<!-- <li class="active"><a href="index.html">Home</a></li> -->
 						<li class="has-dropdown">
-							<a href="services.html">Services</a>
+							<a href="services.php">Services</a>
 							<ul class="dropdown">
-								<li><a href="#">Bath</a></li>
-								<li><a href="#">Grooming</a></li>
-								<li><a href="#">Walk</a></li>
-								<li><a href="#">Rates</a></li>
+								<li><a href="services.php#test">Bath</a></li>
+								<li><a href="services.php#test">Grooming</a></li>
+								<li><a href="services.php#test">Walk</a></li>
+								<li><a href="services.php#rate">Rates</a></li>
 							</ul>
 						</li>
 						<li class="has-dropdown">
@@ -105,8 +100,8 @@
 									<li><a href="#">Feline</a></li>
 								</ul>
 							</li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="addtopic.html">Feedback</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="topiclist.php">Feedback</a></li>
 						<li><a href="contact_us.php">Contact</a></li>
 						<!-- <li><a href="#">Login</a></li> -->
 						<?php 

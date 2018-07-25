@@ -5,7 +5,7 @@
  //check for required fields from the form
    if ((!$_POST['topic_owner']) || (!$_POST['topic_title'])
        || (!$_POST['post_text'])) {
-       header("Location: addtopic.html");
+       header("Location: addtopic.php");
        exit;
    }
    
