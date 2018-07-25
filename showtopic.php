@@ -20,7 +20,7 @@
       Please <a href=\"topiclist.php\">try again</a>.</em></p>";
   } else {
       //get the topic title
-     $topic_title = stripslashes(mysql_result($verify_topic_res,0, 'topic_title'));
+     $topic_title = stripslashes(mysqli_result($verify_topic_res,0, 'topic_title'));
     
   
      //gather the posts
