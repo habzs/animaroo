@@ -3,7 +3,7 @@
    $dbc = @mysqli_connect ('localhost:8889', 'root', 'root', 'animaroo') OR die ('Could not connect to MySQL:' . mysqli_connect_error());
    
    //check to see if we're showing the form or adding the post
-   if ($_POST["op"] != "addpost") {
+   if ($_POST[""] != "addpost") {
       // showing the form; check for required item in query string
      if (!$_GET['post_id']) {
          header("Location: topiclist.php");
@@ -49,7 +49,7 @@
          </body>
          </html>";
      }
-  } else if ($_POST["op"] == "addpost") {
+  } else if ($_POST[""] == "addpost") {
      //check for required items from form
      if ((!$_POST['topic_id']) || (!$_POST['post_text']) ||
       (!$_POST['post_owner'])) {

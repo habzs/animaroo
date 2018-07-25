@@ -106,7 +106,7 @@
 								</ul>
 							</li>
 						<li><a href="about.html">About</a></li>
-						<li><a href="blog.html">Feedback</a></li>
+						<li><a href="addtopic.html">Feedback</a></li>
 						<li><a href="contact_us.php">Contact</a></li>
 						<!-- <li><a href="#">Login</a></li> -->
 						<?php 
