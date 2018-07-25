@@ -72,14 +72,14 @@
 				</div>
 
 				
-				<div class="col-xs-3-new" style="float: right; position: relative; left: 50px; ">
+<!-- 				<div class="col-xs-3-new" style="float: right; position: relative; left: 50px; ">
 					<input class="col-xs-2 form-control" style="width:150px; height:40px; font-size:15px" type="text" placeholder="Search" aria-label="Search" ></li>
 					
 						<button type="button" class="form-control-new"><img src="images/search_icon.png" style="width:18px; align-items:center" /></button>
 					
-				</div>
+				</div> -->
 
-				<div class="col-xs-10-new text-right menu-1" style="float:right">
+				<div class="col-xs-10 text-right menu-1" style="float:right">
 					<ul>
 						<li class="has-dropdown">
 							<a href="index.html">Home</a>
@@ -106,13 +106,13 @@
 							</li>
 						<li><a href="about.html">About</a></li>
 						<li><a href="blog.html">Feedback</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="contact_us.php">Contact</a></li>
 						<!-- <li><a href="#">Login</a></li> -->
 						<?php 
 						if ( isset( $_SESSION["email"] ) ) {
 							echo '<li><a href="my_account.php ">My Account</a></li>';
 						} else {
-							#echo '<li><a href="login.php">Log In</a></li>';
+							echo '<li><a href="login.php">Log In</a></li>';
 						}
 						?>
 					</ul>

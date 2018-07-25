@@ -54,7 +54,7 @@ if (isset($_POST['username']))
             $_SESSION["first_name"] = $row[1];
             $_SESSION["last_name"] = $row[2];
            
-           $db = mysqli_connect("localhost:3308","root","root","animaroo"); 
+           $db = mysqli_connect("localhost:8889","root","root","animaroo"); 
 $sql = "SELECT * FROM users WHERE email = $username";
 $sth = $db->query($sql);
         }
@@ -127,46 +127,41 @@ function logout() {
 
 					<?php if(empty($_SESSION["email"])) { ?>
 
-					<form name="loginForm" method="post" action="">
-						<table border="0" width="500" align="center" class="demo-table">
+					<div class="row col-md-13" style="width:300px; margin:auto;" >
+						<form name="loginForm" method="post" action="">
 
-							<?php if(!empty($success_message)) { ?>	
-							<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
-							<?php } ?>
+								<?php if(!empty($success_message)) { ?>	
+								<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
+								<?php } ?>
 
-							<?php if(!empty($error_message)) { ?>	
-							<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
-							<?php } elseif (!empty($outputDisplay)) {?>
-							<div class="error-message"><?php if(isset($outputDisplay)) echo $outputDisplay; ?></div>
-							<?php } ?>
+								<?php if(!empty($error_message)) { ?>	
+								<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
+								<?php } elseif (!empty($outputDisplay)) {?>
+								<div class="error-message"><?php if(isset($outputDisplay)) echo $outputDisplay; ?></div>
+								<?php } ?>
 
 
-							<div class="row form-group">
-								<div style="width:300px;" class="centered">
-									<!-- <label>Username</label> -->
-									<input name="username" type="text" class="form-control" placeholder="Email">
-								</div>
-								<br>
-								<div style="width:300px;" class="centered">
-									<!-- <label>Password</label> -->
-									<input type="password" name="pass"  class="form-control" placeholder="Password">
-								</div>
-							</div>	
-							
-							<div class="row">
-								<div class="centered">
+								<div class="row form-group">
+									<div>
+										<!-- <label>Username</label> -->
+										<input name="username" type="text" class="form-control" placeholder="Email">
+									</div>
+									<br>
+									<div>
+										<!-- <label>Password</label> -->
+										<input type="password" name="pass"  class="form-control" placeholder="Password">
+									</div>
+								</div>	
+								
+								<div class="row">
 									<input type="submit" value="Login" class="btn btn-lg btn-primary centered">
+									<br><br>
+									<h6><a href="Password Change.php">Forgot Password?</a> or <a href="register.php">Register.</a></h6>
 								</div>
+								
+						</form>
+					</div>
 
-								<div class="centered">
-									<h6><a href="Password Change.php">Forgot Password?</h6></a>
-								</div>
-							</div>
-
-
-
-						</table>
-					</form>
 
 					<?php } else { ?>
 						<div align="center">
