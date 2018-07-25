@@ -33,8 +33,6 @@
           '%b %e %Y at %r') AS fmt_post_create_time, post_owner from
           forum_posts where topic_id = $_GET[topic_id]
           order by post_create_time asc";
-
-    echo "help";
   
      $get_posts_res = mysqli_query($dbc, $get_posts) or die(mysqli_connect_error());
   

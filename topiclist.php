@@ -27,7 +27,7 @@
   
          //get number of posts
          $get_num_posts = "select count(post_id) from forum_posts
-              where topic_id = $topic_id";
+              where topic_id = '$topic_id'";
          $get_num_posts_res = mysqli_query($dbc,$get_num_posts)
                 or die(mysqli_connect_error());
         $num_posts = mysqli_fetch_array($get_num_posts_res,MYSQLI_BOTH);
