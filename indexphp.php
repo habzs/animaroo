@@ -238,6 +238,109 @@ include ('header.php');
 		</div>
 	</div>
 
+	<div class="box">
+			<span class="box-title text" id="dynColor">Subscribe to our newsletter!</span>
+			<div>
+				<form class="form-contact" method="POST" action="contact_us_confirmed.php">
+					<div class="form-group">
+						<label style="color:#F73859;">E-Mail</label>
+						<input type="email" name="email" id="inputEmail" class="form-control" placeholder="johnappleseed@apple.com" required>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
+				</form>
+			</div>
+	</div>
+
+
+
+	<script>
+		var available;
+		var percentage_of_page;
+		var half_screen;
+		var height;
+	
+/* 		$(window).scroll(function(e) {
+			available = $(document).height();
+			percentage_of_page = 0.7;
+			half_screen = available * percentage_of_page;
+			height = $(window).scrollTop();
+			if (height > half_screen) {
+				$('#element').show();
+			} else {
+				$('#element').hide();
+			}
+		}); */
+	
+		function write_status() {
+			// Document minus Viewport
+			// https://stackoverflow.com/a/1304384/1287812
+			// available = $(document).height() - $(window).height(); 
+			available = $(document).height();
+			percentage_of_page = 0.7;
+			half_screen = available * percentage_of_page;
+			$('#scroll-val').html(height + '/' + available + ' - Show at: ' + half_screen);
+		}
+	
+		$(window).scroll(function(e) {
+			height = $(window).scrollTop();
+			write_status();
+			if (height > half_screen) {
+				$('.box').addClass('display-block');
+			} else {
+				$('.box').removeClass('display-block');
+			}
+		});
+
+
+		function write_status_color() {
+			// Document minus Viewport
+			// https://stackoverflow.com/a/1304384/1287812
+			// available = $(document).height() - $(window).height(); 
+			available_color = $(document).height();
+			percentage_of_page_color = 0.74;
+			half_screen_color = available_color * percentage_of_page_color;
+		}
+
+
+/*
+		$(window).scroll(function(e) {
+			height_color = $(window).scrollTop();
+			write_status_color();
+			if (height_color > half_screen_color) {
+				document.getElementById("dynColor").style.color = "#fff";
+			} else {
+				document.getElementById("dynColor").style.color = "black";
+			}
+		});	
+		
+*/
+	
+		$('#remove').click(function() {
+			$('.aux').last().remove();
+			write_status();
+			$(this).text('Remove div (' + $('.aux').length + ')');
+		});
+//
+window.onscroll = function() {scrollProgress()};
+
+function scrollProgress() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+
+  if ( scrolled < 96 && scrolled > 86 ) {
+    // FOR TESTING ONLY
+    // document.getElementById('scroll').textContent = scrolled;
+	document.getElementById("dynColor").style.color = "#fff";
+  } else {
+    document.getElementById("dynColor").style.color = "black";
+  }
+
+
+}
+
+	</script>
+
 <?php
 include ("footer.php");
 ?>
