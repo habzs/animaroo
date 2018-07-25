@@ -64,7 +64,7 @@ $q = "SELECT last_name, first_name, email, DATE_FORMAT(registration_date, '%M %d
 $r = @mysqli_query ($dbc, $q); // Run the query.
 ?>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/guineapig.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header7.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">

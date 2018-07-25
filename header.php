@@ -94,10 +94,11 @@
 							</ul>
 						</li>
 						<li class="has-dropdown">
-								<a href="products.html">Products</a>
+								<a href="productsdog.html">Products</a>
 								<ul class="dropdown">
-									<li><a href="#">Canine</a></li>
-									<li><a href="#">Feline</a></li>
+									<li><a href="productsdog.html">Dog</a></li>
+									<li><a href="productscat.html">Cat</a></li>
+									<li><a hred="productsother.html">Others</a></li>
 								</ul>
 							</li>
 						<li><a href="about.php">About</a></li>
