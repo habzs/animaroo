@@ -13,14 +13,19 @@
       topic_id = $_GET[topic_id]";
   $verify_topic_res = mysqli_query($dbc, $verify_topic)
       or die(mysqli_connect_error());
- 
+      
+
+    
   if (mysqli_num_rows($verify_topic_res) < 1) {
       //this topic does not exist
      $display_block = "<P><em>You have selected an invalid topic.
-      Please <a href=\"topiclist.php\">try again</a>.</em></p>";
+        Please <a href=\"topiclist.php\">try again</a>.</em></p>";
   } else {
       //get the topic title
-     $topic_title = stripslashes(mysqli_result($verify_topic_res,0, 'topic_title'));
+      while($topic_title = mysqli_fetch_array($verify_topic_res)){
+            
+      }
+     //$topic_title = mysqli_fetch_array($verify_topic_res, 'topic_title');
     
   
      //gather the posts
@@ -28,6 +33,8 @@
           '%b %e %Y at %r') AS fmt_post_create_time, post_owner from
           forum_posts where topic_id = $_GET[topic_id]
           order by post_create_time asc";
+
+    echo "help";
   
      $get_posts_res = mysqli_query($dbc, $get_posts) or die(mysqli_connect_error());
   
@@ -59,7 +66,7 @@
   
      //close up the table
      $display_block .= "</table>";
-  }
+    }
   ?>
   <html>
   <head>
