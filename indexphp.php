@@ -5,7 +5,7 @@ include ('header.php');
 
 <link rel="stylesheet" href="css/hero-video.css">
 
-	<header id="fh5co-header" class="fh5co-cover heropanel--video" role="banner" data-vide-bg="mp4: videos/cat_walking.mp4, data-vide-options=" style="background-image:url(images/walkingkat.gif); z-index:-1;" >
+	<header id="fh5co-header" class="fh5co-cover heropanel--video" role="banner" data-vide-bg="mp4: videos/cat_walking.mp4, data-vide-options=" style="background-image:url(images/walkingkat.gif);" >
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -15,7 +15,7 @@ include ('header.php');
 							<h1 class="mb30">Grooming without the hassle.</h1>
 							<p>
 								<a href="register.php" target="_blank" class="btn btn-primary">REGISTER</a> 
-									  <!--<em class="or">or</em> 
+								<em class="or">or</em> 
 								<a href="login.php">Log In</a>-->
 							</p>
 						</div>
