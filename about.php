@@ -139,10 +139,10 @@ include('header.php');
 		
 						<img class="mySlides w3-animate-fading" src="images/1.jpg" style="width:100%">
 						<img class="mySlides w3-animate-fading" src="images/2.jpg" style="width:100%">
-						<img class="mySlides w3-animate-fading" src="images/3.jpg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/3.jpeg" style="width:100%">
 						<img class="mySlides w3-animate-fading" src="images/4.jpg" style="width:100%">
-						<img class="mySlides w3-animate-fading" src="images/5.jpeg" style="width:100%">
-						<!--<img class="mySlides w3-animate-fading" src="images/flash6.jpg" style="width:100%">
+						<!--<img class="mySlides w3-animate-fading" src="images/5.jpeg" style="width:100%">
+						<img class="mySlides w3-animate-fading" src="images/flash6.jpg" style="width:100%">
 						<img class="mySlides w3-animate-fading" src="images/flash7.jpg" style="width:100%">
 						<img class="mySlides w3-animate-fading" src="images/flash8.jpg" style="width:100%">-->
 					  </div>
@@ -166,7 +166,7 @@ include('header.php');
 				myIndex++;
 				if (myIndex > x.length) {myIndex = 1}    
 				x[myIndex-1].style.display = "block";  
-				setTimeout(carousel, 9000);    
+				setTimeout(carousel, 8500);    
 			}
 			</script>
 			

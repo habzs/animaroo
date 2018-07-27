@@ -4,7 +4,7 @@ session_start();
 $page_title = 'Register';
 include ('header.php');
 
-
+$msg = "";
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 			// Print a message:
 			echo '
-			<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/cat2.jpg);" data-stellar-background-ratio="0.5">
+			<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header7.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -173,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								echo "<h1> $returnTxt </h1>";
 
 							} else {
-								echo '<h1 class="mb30">Hi! Please Log In. </h1>';
+								echo '<h1 class="mb30">Hi! Please Register. </h1>';
 							}
 							?>
 							
