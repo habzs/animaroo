@@ -83,7 +83,6 @@
 				<div class="col-xs-10 text-right menu-1" style="float:right">
 					<ul>
 						<li><a href="indexphp.php">Home</a></li>
-						<!-- <li class="active"><a href="index.html">Home</a></li> -->
 						<li class="has-dropdown">
 							<a href="services.php">Services</a>
 							<ul class="dropdown">
