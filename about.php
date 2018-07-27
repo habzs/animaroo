@@ -37,7 +37,7 @@ include('header.php');
 			<div class="row">
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
 					<div class="fh5co-staff">
-						<img src="images/person1.jpg" alt="Free HTML5 Templates by gettemplates.co">
+						<img src="images/owen.jpg" alt="Free HTML5 Templates by gettemplates.co">
 						<h3>Owen Lee Jun Hao</h3>
 						<strong class="role">Director</strong>
 						<p>The absolute pet lover, who ironically, doesn't have much time of his own to groom his pets.</p>

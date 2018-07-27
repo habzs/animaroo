@@ -59,6 +59,7 @@
     transition: right 500ms cubic-bezier(0.265, 0.365, 0.26, 0.865);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .box-title {
     font-weight: normal;

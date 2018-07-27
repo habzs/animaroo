@@ -27,6 +27,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
+
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
 	
 	<link rel="stylesheet" href="css/searchbar.css">
@@ -51,6 +52,10 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+	<!-- ajax 
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
+
 
 	<!-- hero video -->
 	
