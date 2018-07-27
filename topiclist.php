@@ -16,10 +16,10 @@
   } else {
      //create the display string
      $display_block = "
-     <table cellpadding=3 cellspacing=1 border=1>
+	 <table border=	1 class=table>
      <tr>
-     <th>TOPIC TITLE</th>
-     <th># of POSTS</th>
+     <th><center>TOPIC TITLE</center></th>
+     <th width=18%><center># of POSTS</center></th>
      </tr>";
   
       while ($topic_info = mysqli_fetch_array($get_topics_res)) {
@@ -80,8 +80,8 @@
 					<!--<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>-->
 				</div>
 			</div>
-			<div class="row col-md-13">
-                <div class="col-md-8 col-md-offset-2 table text-left table fh5c0-heading" style="align-self:center">
+			<div>
+                <div class="col-md-8 text-left table text-left fh5c0-heading" style="align-self:center; padding:20px">
                 <?php print $display_block; ?>
                 <br>
                 <p align="left" class"walk">Would you like to <a href ="addtopic.php">Add a Topic</a></center>

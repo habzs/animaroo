@@ -15,8 +15,8 @@ include ('header.php');
 							<h1 class="mb30">Grooming without the hassle.</h1>
 							<p>
 								<a href="register.php" target="_blank" class="btn btn-primary">REGISTER</a> 
-								<!--<em class="or">or</em> 
-								<a href="login.php">Log In</a>-->
+								<em class="or">or</em> 
+								<a href="login.php">Log In</a>
 							</p>
 						</div>
 					</div>
