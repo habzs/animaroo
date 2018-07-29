@@ -162,6 +162,7 @@ function logout() {
 					<?php } else { ?>
 						<div>
 						<h2><a href="logout.php? action=logout">Log Out.</a></h2> 
+						<h2><a href="edit_details.php">Edit Details.</a></h2>
 						
 				
 					<?php } ?>
