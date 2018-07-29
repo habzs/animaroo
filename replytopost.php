@@ -1,14 +1,16 @@
  <?php
+ session_start();
    //connect to server and select database; we'll need it soon
    $dbc = @mysqli_connect ('localhost:8889', 'root', 'root', 'animaroo') OR die ('Could not connect to MySQL:' . mysqli_connect_error());
    
+   
    //check to see if we're showing the form or adding the post
-   if ($_POST[""] != "addpost") {
+   if ($_POST['op'] != "addpost") {
       // showing the form; check for required item in query string
      if (!$_GET['post_id']) {
          header("Location: topiclist.php");
          exit;
-     }
+    }
   
        //still have to verify topic and post
      $verify = "select ft.topic_id, ft.topic_title from
@@ -49,7 +51,7 @@
          </body>
          </html>";
      }
-  } else if ($_POST[""] == "addpost") {
+  } else if ($_POST['op'] == "addpost") {
      //check for required items from form
      if ((!$_POST['topic_id']) || (!$_POST['post_text']) ||
       (!$_POST['post_owner'])) {

@@ -1,36 +1,8 @@
 <?php
 session_start();
 include ('header.php');
+?>
 
-  $topic_id ='topic_id';
-  $topic_title =$_POST['topic_title'];
- //check for required fields from the form
-   if ((!$_POST['topic_owner']) || (!$_POST['topic_title'])
-       || (!$_POST['post_text'])) {
-       header("Location: addtopic.php");
-       exit;
-   }
-   
-   //connect to server and select database
-  $dbc = @mysqli_connect ('localhost:8889', 'root', 'root', 'animaroo') OR die ('Could not connect to MySQL:' . mysqli_connect_error());
-  //mysqli_select_db($dbc"animaroo") or die(mysqli_connect_error());
-  
-  //create and issue the first query
-  $add_topic = "insert into forum_topics values ('', '$_POST[topic_title]',
-      now(), '$_POST[topic_owner]')";
-  mysqli_query($dbc, $add_topic) or die(mysqli_connect_error());
-  
-  //get the id of the last query 
-  $topic_id = mysqli_insert_id($dbc);
-  //$topic_id = mysqli_insert_id();
-  //create and issue the second query
-  $add_post = "insert into forum_posts values ('', '$topic_id',
-      '$_POST[post_text]', now(), '$_POST[topic_owner]')";
-  mysqli_query($dbc, $add_post) or die(mysqli_connect_error());
-  
-  //create nice message for user
-  $msg = "<P>The <strong>$topic_title</strong> topic has been created.</p>";
-  ?>
 
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header5.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -39,7 +11,7 @@ include ('header.php');
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">Your Feedback</h1>
+							<h1 class="mb30">Register your pet</h1>
 						</div>
 					</div>
 				</div>
@@ -54,15 +26,30 @@ include ('header.php');
 			<div class="row animate-box row-pb-md" data-animate-effect="fadeInUp">
 				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
 					<span>Thoughts &amp; Ideas</span>
-					<h2>New Topic Added</h2>
+					<h2>Add your pet</h2>
 					<!--<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>-->
 				</div>
 			</div>
-			<div class="row col-md-13">  
-                <div class="text-center"> 
-				<?php print $msg; ?>
-				<a href="topiclist.php" class="btn btn-primary">Go to Forum Page</a>
-            </div>
+			<div class="row col-md-13"  >
+                      <form class="" method="post" action="addpet.php" enctype="multipart/form-data">
+                        <div class="form-group">
+                          <label>Name of Pet</label>
+                          <input type="text" name="text" id="text" class="form-control" placeholder="Enter your pet's name"> </div>
+                        <div class="form-group">
+                          <label>Age</label>
+                          <input type="text" name="age" id="age" class="form-control" placeholder="Enter your pet's age"> </div>
+                        <div class="form-group">
+                          <label>Species</label>
+                          <input type="text" name="species" id="species" class="form-control" placeholder="Enter your pet's type"> </div>
+                        <div class="form-group">
+                          <label>Breed</label>
+                          <input type="text" name="breed" id="breed" class="form-control" placeholder="Enter your pet's type"> </div>
+                        <div class="form-group">
+                          <label>Photo</label>
+                          <input type="file" name="photo" id="photo" class="form-control" placeholder="Upload your pet's photo"> </div>
+						<button type="submit" name="submit" class="btn btn-primary">Send</button>
+                      </form>
+                     </div>
 				<!--<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 					<div class="fh5co-post">
 						<span class="fh5co-date">Sep. 12th</span>
@@ -131,3 +118,4 @@ include ('header.php');
 <?php
 include ("footer.php");
 ?>
+
