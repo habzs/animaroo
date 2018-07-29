@@ -3,7 +3,7 @@ session_start();
 $email = $_SESSION["email"];
 echo $email;
   // Create database connection
-  $db = mysqli_connect("localhost:8889", "root", "root", "image_upload");
+  $db = mysqli_connect("localhost:8889", "root", "root", "animaroo");
 
   // Initialize message variable
   $msg = "";
@@ -13,12 +13,13 @@ echo $email;
   	// Get image name
   	$image = $_FILES['image']['name'];
   	// Get text
-  	$image_text = mysqli_real_escape_string($db, $_POST['image_text']);
+  	// $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
 
   	// image file directory
   	$target = "images/users/".basename($image);
 
-  	$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+		$sql = "INSERT INTO users (image) VALUES ('$image') WHERE '$email'";
+		"UPDATE users SET image='$image' WHERE email='$email'";
   	// execute query
   	mysqli_query($db, $sql);
 
@@ -28,7 +29,7 @@ echo $email;
   		$msg = "Failed to upload image";
   	}
   }
-  $result = mysqli_query($db, "SELECT * FROM images");
+  $result = mysqli_query($db, "SELECT * FROM users");
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,7 +73,7 @@ echo $email;
     while ($row = mysqli_fetch_array($result)) {
       echo "<div id='img_div'>";
       	echo "<img src='images/users/".$row['image']."' >";
-      	echo "<p>".$row['image_text']."</p>";
+      	// echo "<p>".$row['image_text']."</p>";
       echo "</div>";
     }
   ?>

@@ -137,34 +137,30 @@ function logout() {
 
 					<form name="loginForm" method="post" action="">
 						<table border="0" width="500" align="center" class="demo-table">
-
-							<?php if(!empty($success_message)) { ?>	
-							<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
-							<?php } ?>
-
-							<?php if(!empty($error_message)) { ?>	
-							<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
-							<?php } elseif (!empty($outputDisplay)) {?>
-							<div class="error-message"><?php if(isset($outputDisplay)) echo $outputDisplay; ?></div>
-							<?php } ?>
-
-
 							<div class="row centered" style="margin-top:50px;">
 								<div><h1>You're not logged in!</h1></div>
 							</div>	
-						
-
-
-
 						</table>
 					</form>
 
 					<?php } else { ?>
+						<?php
+						$email = $_SESSION['email'];
+
+						include ('mysqli_connect.php');
+
+						$result = mysqli_query($dbc,"SELECT image FROM users WHERE email = '$email'") or die(msyql_error());
+						$row = mysqli_fetch_array($result);
+						$image = $row['image'];
+
+							echo "<img src='images/users/".$row['image']."' >";
+						?>
 						<div>
 						<h2><a href="logout.php? action=logout">Log Out.</a></h2> 
 						<h2><a href="edit_details.php">Edit Details.</a></h2>
+						<h2><a 
 						
-				
+			
 					<?php } ?>
 						</div>
 					</div>

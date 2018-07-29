@@ -60,10 +60,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	if (empty($errors)) { // If everything's OK.
 	
+	
+		// Upload picture
+		$image = $_FILES['image']['name'];
+		$target = "images/users/".basename($image);
+		$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
+
 		// Register the user in the database...
 		
 		// Make the query:
-		$q = "INSERT INTO users (first_name, last_name, email, pass, registration_date) VALUES ('$fn', '$ln', '$e', SHA1('$p'), NOW() )";		
+		$q = "INSERT INTO users (first_name, last_name, email, pass, registration_date, image) VALUES ('$fn', '$ln', '$e', SHA1('$p'), NOW(), '$image'  )";		
 		$r = @mysqli_query ($dbc, $q); // Run the query.
 		if ($r) { // If it ran OK.
 		
@@ -202,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 							<h3><?php echo '<div style="color:red;">' . $msg . '</div>';?></h3>
 							<div class="row col-md-13" style="width:300px; margin:auto;" >
-							<form action="register.php" method="post">
+							<form action="register.php" method="post" enctype="multipart/form-data">
 
 
 								<div>
@@ -229,6 +235,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 									<label>Confirm Password</label>
 									<input name="pass2" type="password" class="form-control" placeholder="Password" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" required />
 								</div>
+								<br>
+								<div>
+									<label>Picture</label>
+									<input type="hidden" name="size" value="1000000">
+									<input name="image" type="file" class="form-control"/>
+								</div>
+								
 							</div>	
 
 							<div class="row">

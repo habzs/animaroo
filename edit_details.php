@@ -59,6 +59,7 @@ $msg = "";
 				if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
 					
 					$email = $e;
+					$_SESSION["email"] = $email;
 					$first_name = $_POST['first_name'];
 					$last_name = $_POST['last_name'];
 					
@@ -101,7 +102,7 @@ $msg = "";
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<?php 
-							$returnTxt = "Welcome back, " . $_SESSION["first_name"] . ".";
+							$returnTxt = "Welcome back, " . $first_name . ".";
 
 							if ( isset( $_SESSION["email"] ) ) {
 

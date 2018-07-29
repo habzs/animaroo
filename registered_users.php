@@ -60,7 +60,7 @@ switch ($sort) {
 }
 	
 // Define the query:
-$q = "SELECT last_name, first_name, email, DATE_FORMAT(registration_date, '%M %d, %Y') AS dr, user_id FROM users ORDER BY $order_by LIMIT $start, $display";		
+$q = "SELECT last_name, first_name, email, DATE_FORMAT(registration_date, '%M %d, %Y') AS dr, user_id, image FROM users ORDER BY $order_by LIMIT $start, $display";		
 $r = @mysqli_query ($dbc, $q); // Run the query.
 ?>
 
@@ -106,6 +106,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							<td align="left"><b><a href="registered_users.php?sort=fn">First Name</a></b></td>
 							<td align="left"><b><a href="registered_users.php?sort=email">Email</a></b></td>
 							<td align="left"><b><a href="registered_users.php?sort=rd">Date Registered</a></b></td>
+							<td align="left"><b><a href="?">Image</a></b></td>
 						</tr>
 						';
 
@@ -120,6 +121,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 								<td align="left">' . $row['first_name'] . '</td>
 								<td align="left">' . $row['email'] . '</td>
 								<td align="left">' . $row['dr'] . '</td>
+								<td align="left" style="width: 35px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
 							</tr>
 							';
 						} // End of WHILE loop.
