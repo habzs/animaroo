@@ -2,6 +2,8 @@
 	session_start();
 	include('header.php');  
 
+	$topic_id = "topic_id";
+
    //connect to server and select database
    $dbc = @mysqli_connect ('localhost:8889', 'root', 'root', 'animaroo') OR die ('Could not connect to MySQL:' . mysqli_connect_error());
    

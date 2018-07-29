@@ -19,16 +19,18 @@ include ('header.php');
       
 
     
-  if (mysqli_num_rows($verify_topic_res) < 1) {
+  if (mysqli_num_rows($verify_topic_res) < 1 ) {
       //this topic does not exist
      $display_block = "<P><em>You have selected an invalid topic.
         Please <a href=\"topiclist.php\">try again</a>.</em></p>";
   } else {
       //get the topic title
-      while($topic_title = mysqli_fetch_array($verify_topic_res)){
-            
-      }
-     //$topic_title = mysqli_fetch_array($verify_topic_res, 'topic_title');
+		$topic_title = mysqli_fetch_array($verify_topic_res,MYSQLI_ASSOC);
+		$string= implode($topic_title);
+		// echo $string;
+		
+  };
+		//$topic_title = mysqli_fetch_array($verify_topic_res, 'topic_title');
     
   
      //gather the posts
@@ -41,12 +43,12 @@ include ('header.php');
   
      //create the display string
      $display_block = "
-     <P>Showing posts for the <strong>$topic_title</strong> topic:</p>
-  
-     <table width=100% cellpadding=3 cellspacing=1 border=1>
+	 <P>Showing posts for the <strong>$string</strong> topic:</p>
+
+     <table border=1 class=table>
      <tr>
-     <th>AUTHOR</th>
-     <th>POST</th>
+     <th><center>AUTHOR</center></th>
+     <th width=70%><center>POST</center></th>
      </tr>";
   
      while ($posts_info = mysqli_fetch_array($get_posts_res)) {
@@ -67,7 +69,7 @@ include ('header.php');
   
      //close up the table
      $display_block .= "</table>";
-    }
+    
   ?>
 
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header5.jpg);" data-stellar-background-ratio="0.5">
@@ -97,7 +99,7 @@ include ('header.php');
 				</div>
 			</div>
 			<div class="row col-md-13">
-                <div class="col-md-8 col-md-offset-2 table text-left table fh5c0-heading" style="align-self:center">
+                <div class="col-md-8 table text-left table fh5c0-heading" style="align-self:center">
                 <?php print $display_block; ?>
                 
             </div>    
