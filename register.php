@@ -4,6 +4,8 @@ session_start();
 $page_title = 'Register';
 include ('header.php');
 
+$email = $_SESSION['email'];
+
 $msg = "";
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
