@@ -6,7 +6,6 @@ $page_title = 'View the Current Users';
 include ('header.php');
 require ('mysqli_connect.php');
 
-$user = $_SESSION['email'];
 // Number of records to show per page:
 $display = 10;
 
@@ -60,7 +59,7 @@ switch ($sort) {
 }
 	
 // Define the query:
-$q = "SELECT petname, age, species, breed, dislikes, likes, image FROM pets ORDER BY $order_by LIMIT $start, $display";		
+$q = "SELECT petname, age, species, breed, image FROM pets ORDER BY $order_by LIMIT $start, $display";		
 $r = @mysqli_query ($dbc, $q); // Run the query.
 ?>
 
@@ -106,8 +105,6 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							<td align="left"><b><a href="registered_pets.php?sort=species">Species</a></b></td>
 							<td align="left"><b><a href="registered_pets.php?sort=breed">Breed</a></b></td>
 							<td align="left"><b><a href="?">Image</a></b></td>
-							<td align="left"><b><a href="?">Likes</a></b></td>
-							<td align="left"><b><a href="?">Dislikes</a></b></td>
 						</tr>
 						';
 
@@ -120,26 +117,10 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 								<td align="left">' . $row['age'] . '</td>
 								<td align="left">' . $row['species'] . '</td>
 								<td align="left">' . $row['breed'] . '</td>
-								<td align="left" style="width: 45px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
-								<td align="left"><a href="rating.php?id=' . $row['id'] . '">'. $row['likes'] . '</a></td>
+								<td align="left" style="width: 35px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
 							</tr>
 							';
 						} // End of WHILE loop.
-
-							// Check if user already likes post or not
-							function userLiked($post_id)
-							{
-							global $conn;
-							global $user_id;
-							$sql = "SELECT * FROM rating_info WHERE user_id=$user_id 
-									AND post_id=$post_id AND rating_action='like'";
-							$result = mysqli_query($conn, $sql);
-							if (mysqli_num_rows($result) > 0) {
-								return true;
-							}else{
-								return false;
-							}
-							}
 
 						echo '</table>';
 						mysqli_free_result ($r);
@@ -176,8 +157,6 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							
 
 						?>
-
-						
 					</div>
 				</div>
 			</div>
