@@ -17,7 +17,7 @@
 					<!--<div class="col-xs-3-new" style="float: right; position: relative; left: 50px; ">
 					<!--<input class="col-xs-2 form-control" style=" height:40px; font-size:15px" type="text" placeholder="Search" aria-label="Search" ></li>
 					<!-- Google CSE -->
-					<div class="row row-pd-md cse" style="border:0px solid; margin:left; width:80%; height:90px;"> 
+					<div class="row row-pd-md cse" style="border:0px solid; margin:left; width:90%; height:90px;"> 
 					<script>
 							(function() {
 							  var cx = '002315222081453687937:q-ghc-vhfbc';
@@ -31,8 +31,16 @@
 						  </script>
 						  <gcse:search></gcse:search>
 						<!-- Google CSE -->
+							<div class = "row row-pd-md" style="margin-left:15px">
+						<audio controls autoplay >
+			  				<source src="music/music.mp3" type="audio/mpeg" hidden="true" style="margin:left">
+			  
+						</audio>
+						</div>
 					
-				</div>
+						</div>
+
+				
 
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
