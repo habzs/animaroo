@@ -70,7 +70,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">About Us</h1>
+							<h1 class="mb30">Our Pets</h1>
 						</div>
 					</div>
 				</div>
@@ -91,10 +91,18 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 						Here's a list of pets who are under our care!<br>
 						Feel free to rate them! :)
 					</p>
+					<br>
+					<form action="search.php" method="POST">
+					<input class="col-xs-2 form-control" style="width:150px; height:40px; font-size:15px" type="text" placeholder="Search" name="search" >
+		
+
+					<button type="submit" name="submit-search" class="form-control-new"><img src="images/search.png" style="width:18px; align-items:center"/> </button>
+					
 				</div>
 			</div>
 			<div class="row">
 				<div class="animate-box" data-animate-effect="fadeIn">
+
 						<?php
 
 						// Table header:

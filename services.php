@@ -120,7 +120,7 @@ include('header.php');
 						</tr>
 					</table>
 					<br>
-					<h2 align="left" style="color:#F73859" class="walk"><font size="6"><b>Too busy from work?</b></font></h2>
+					<h2 align="left" style="color:#F73859" class="walk"><font size="6"><b>Too busy with work?</b></font></h2>
 					
 					<p align="left" style="color:white">Offering flexible walking time slots and walking routes close by to the area you live. Your dog(s) will be collected and returned home safely.</p>
 					

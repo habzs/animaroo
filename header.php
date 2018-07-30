@@ -109,7 +109,7 @@
 						<li><a href="about.php">About</a></li>
 						<li><a href="topiclist.php">Feedback</a></li>
 						<li><a href="contact_us.php">Contact</a></li>
-						<li><a href="registered_pets.php">Our Pets</a><li>
+						<li><a href="registered_pets.php">Pets</a><li>
 						<?php 
 						if ( isset( $_SESSION["email"] ) ) {
 							echo '<li><a href="my_account.php ">My Account</a></li>';
