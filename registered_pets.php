@@ -2,7 +2,6 @@
 session_start();
 include('header.php');
 
-$page_title = 'View the Current Users';
 include ('header.php');
 require ('mysqli_connect.php');
 
@@ -118,7 +117,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							<td align="left"><b><a href="?">Dislikes</a></b></td>
 						</tr>
 						';
-
+						
 						// Fetch and print all the records....
 						$bg = '#eeeeee'; 
 						while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
@@ -128,9 +127,9 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 								<td align="left">' . $row['age'] . '</td>
 								<td align="left">' . $row['species'] . '</td>
 								<td align="left">' . $row['breed'] . '</td>
-								<td align="left" style="width: 100px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
-								<td align="left"><a href="rating_pos.php?id=' . $row['id'] . '">'. $row['likes'] . '</a></td>
-								<td align="left"><a href="rating_neg.php?id=' . $row['id'] . '">'. $row['dislikes'] . '</a></td>
+								<td align="left" style="width: 100px;"><img style="width:80%;" src="images/pets/' . $row['image'] . '"></td>
+								<td align="left"><a href="rating_pos.php?id=' . $row['id'] . '"><i class="material-icons">thumb_up_alt</i>'. $row['likes'] . '</a></td>
+								<td align="left"><a href="rating_neg.php?id=' . $row['id'] . '"><i class="material-icons">thumb_down_alt</i>'. $row['dislikes'] . '</a></td>
 							</tr>
 							';
 						} // End of WHILE loop.
@@ -162,13 +161,13 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							
 							// If it's not the first page, make a Previous button:
 							if ($current_page != 1) {
-								echo '<a href="registered_users.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
+								echo '<a href="registered_pets.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
 							}
 							
 							// Make all the numbered pages:
 							for ($i = 1; $i <= $pages; $i++) {
 								if ($i != $current_page) {
-									echo '<a href="registered_users.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
+									echo '<a href="registered_pets.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
 								} else {
 									echo $i . ' ';
 								}
@@ -176,7 +175,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							
 							// If it's not the last page, make a Next button:
 							if ($current_page != $pages) {
-								echo '<a href="registered_users.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
+								echo '<a href="registered_pets.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
 							}
 							
 							echo '</p>'; // Close the paragraph.
