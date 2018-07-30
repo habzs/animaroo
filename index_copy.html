@@ -29,7 +29,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
 
-	<!--<link rel="stylesheet" href="css/popupemail.css">-->
+	<link rel="stylesheet" href="css/popupemail.css">
 
 	<link rel="stylesheet" href="css/searchbar.css">
 	
@@ -70,21 +70,9 @@
 				</div>
 			
 				<div class="col-xs-3-new" style="float: right; position: relative; left: 50px; ">
-					<input class="col-xs-2 form-control" style=" height:40px; font-size:15px" type="text" placeholder="Search" aria-label="Search" ></li>
-					<!-- Google CSE -->
-					<script>
-							(function() {
-							  var cx = '002315222081453687937:q-ghc-vhfbc';
-							  var gcse = document.createElement('script');
-							  gcse.type = 'text/javascript';
-							  gcse.async = true;
-							  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-							  var s = document.getElementsByTagName('script')[0];
-							  s.parentNode.insertBefore(gcse, s);
-							})();
-						  </script>
-						  <gcse:search></gcse:search>
-						<!-- Google CSE -->
+					<input class="col-xs-2 form-control" style="width:150px; height:40px; font-size:15px" type="text" placeholder="Search" aria-label="Search" ></li>
+					
+						<button type="button" class="form-control-new"><img src="images/search_icon.png" style="width:18px; align-items:center" /></button>
 					
 				</div>
 
@@ -210,20 +198,20 @@
 			<div class="row">
 					<div class="feature-center-steps animate-box" data-animate-effect="bounceIn">
 							<h2><span>Step 1</span></h2>
-							<h3 style="color: #F73859; font-weight: 600; font-size:30px">REGISTER</h3>
+							<h3 style="color: #F73859; font-weight: 600;">REGISTER</h3>
 							<p>We'll need to know more about you.<br>
 							So go ahead and register and we'll move onto the next step!</p>
 						</div>
 					<div class="clearfix visible-md-block"></div>
 					<div class="feature-center-steps animate-box" data-animate-effect="bounceIn">
 							<h2><span>Step 2</span></h2>
-							<h3 style="color: #F73859; font-weight: 600; font-size:30px">APPOINTMENT</h3>
+							<h3 style="color: #F73859; font-weight: 600;">APPOINTMENT</h3>
 							<p>Set a date with us, and we'll be there!</p>
 						</div>
 					<div class="clearfix visible-md-block"></div>
 					<div class="feature-center-steps animate-box" data-animate-effect="bounceIn">
 							<h2><span>Step 3</span></h2>
-							<h3 style="color: #F73859; font-weight: 600; font-size:30px">RELAX</h3>
+							<h3 style="color: #F73859; font-weight: 600;">RELAX</h3>
 							<p>Now that you've set a date with us, relax!<br>
 							We'll clear everything off your hands.</p>
 						</div>
@@ -412,6 +400,109 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
+
+	<div class="box">
+			<span class="box-title text" id="dynColor">Subscribe to our newsletter!</span>
+			<div>
+				<form class="form-contact" method="POST" action="contact_us_confirmed.php">
+					<div class="form-group">
+						<label style="color:#F73859;">E-Mail</label>
+						<input type="email" name="email" id="inputEmail" class="form-control" placeholder="johnappleseed@apple.com" required>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
+				</form>
+			</div>
+	</div>
+
+
+
+	<script>
+		var available;
+		var percentage_of_page;
+		var half_screen;
+		var height;
+	
+/* 		$(window).scroll(function(e) {
+			available = $(document).height();
+			percentage_of_page = 0.7;
+			half_screen = available * percentage_of_page;
+			height = $(window).scrollTop();
+			if (height > half_screen) {
+				$('#element').show();
+			} else {
+				$('#element').hide();
+			}
+		}); */
+	
+		function write_status() {
+			// Document minus Viewport
+			// https://stackoverflow.com/a/1304384/1287812
+			// available = $(document).height() - $(window).height(); 
+			available = $(document).height();
+			percentage_of_page = 0.7;
+			half_screen = available * percentage_of_page;
+			$('#scroll-val').html(height + '/' + available + ' - Show at: ' + half_screen);
+		}
+	
+		$(window).scroll(function(e) {
+			height = $(window).scrollTop();
+			write_status();
+			if (height > half_screen) {
+				$('.box').addClass('display-block');
+			} else {
+				$('.box').removeClass('display-block');
+			}
+		});
+
+
+		function write_status_color() {
+			// Document minus Viewport
+			// https://stackoverflow.com/a/1304384/1287812
+			// available = $(document).height() - $(window).height(); 
+			available_color = $(document).height();
+			percentage_of_page_color = 0.74;
+			half_screen_color = available_color * percentage_of_page_color;
+		}
+
+
+/*
+		$(window).scroll(function(e) {
+			height_color = $(window).scrollTop();
+			write_status_color();
+			if (height_color > half_screen_color) {
+				document.getElementById("dynColor").style.color = "#fff";
+			} else {
+				document.getElementById("dynColor").style.color = "black";
+			}
+		});	
+		
+*/
+	
+		$('#remove').click(function() {
+			$('.aux').last().remove();
+			write_status();
+			$(this).text('Remove div (' + $('.aux').length + ')');
+		});
+//
+window.onscroll = function() {scrollProgress()};
+
+function scrollProgress() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+
+  if ( scrolled < 96 && scrolled > 86 ) {
+    // FOR TESTING ONLY
+    // document.getElementById('scroll').textContent = scrolled;
+	document.getElementById("dynColor").style.color = "#fff";
+  } else {
+    document.getElementById("dynColor").style.color = "black";
+  }
+
+
+}
+
+	</script>
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -433,4 +524,3 @@
 
 	</body>
 </html>
-

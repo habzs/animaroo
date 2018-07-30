@@ -4,8 +4,8 @@ include('header.php');
 
 $page_title = 'View the Current Users';
 include ('header.php');
-
 require ('mysqli_connect.php');
+$email = $_SESSION['email'];
 
 // Number of records to show per page:
 $display = 10;
@@ -15,7 +15,7 @@ if (isset($_GET['p']) && is_numeric($_GET['p'])) { // Already been determined.
 	$pages = $_GET['p'];
 } else { // Need to determine.
  	// Count the number of records:
-	$q = "SELECT COUNT(user_id) FROM users";
+	$q = "SELECT COUNT(id) FROM pets";
 	$r = @mysqli_query ($dbc, $q);
 	$row = @mysqli_fetch_array ($r, MYSQLI_NUM);
 	$records = $row[0];
@@ -40,27 +40,27 @@ $sort = (isset($_GET['sort'])) ? $_GET['sort'] : 'rd';
 
 // Determine the sorting order:
 switch ($sort) {
-	case 'ln':
-		$order_by = 'last_name ASC';
+	case 'petname':
+		$order_by = 'petname ASC';
 		break;
-	case 'fn':
-		$order_by = 'first_name ASC';
+	case 'age':
+		$order_by = 'age ASC';
 		break;
-	case 'rd':
-		$order_by = 'registration_date ASC';
+	case 'species':
+		$order_by = 'species ASC';
 		break;
-	case 'email':
-		$order_by = 'email ASC';
+	case 'breed':
+		$order_by = 'breed ASC';
 		break;
 
 	default:
-		$order_by = 'registration_date ASC';
-		$sort = 'rd';
+		$order_by = 'petname ASC';
+		$sort = 'petname';
 		break;
 }
 	
 // Define the query:
-$q = "SELECT last_name, first_name, email, DATE_FORMAT(registration_date, '%M %d, %Y') AS dr, user_id, image FROM users ORDER BY $order_by LIMIT $start, $display";		
+$q = "SELECT petname, age, species, breed FROM pets WHERE owner_email='$email' ORDER BY $order_by LIMIT $start, $display";		
 $r = @mysqli_query ($dbc, $q); // Run the query.
 ?>
 
@@ -102,10 +102,10 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 						<tr>
 							<td align="left"><b>Edit</b></td>
 							<td align="left"><b>Delete</b></td>
-							<td align="left"><b><a href="registered_users.php?sort=ln">Last Name</a></b></td>
-							<td align="left"><b><a href="registered_users.php?sort=fn">First Name</a></b></td>
-							<td align="left"><b><a href="registered_users.php?sort=email">Email</a></b></td>
-							<td align="left"><b><a href="registered_users.php?sort=rd">Date Registered</a></b></td>
+							<td align="left"><b><a href="registered_pets.php?sort=petname">Pet Name</a></b></td>
+							<td align="left"><b><a href="registered_pets.php?sort=age">Age</a></b></td>
+							<td align="left"><b><a href="registered_pets.php?sort=species">Species</a></b></td>
+							<td align="left"><b><a href="registered_pets.php?sort=breed">Breed</a></b></td>
 							<td align="left"><b><a href="?">Image</a></b></td>
 						</tr>
 						';
@@ -117,10 +117,10 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 								echo '<tr bgcolor="' . $bg . '">
 								<td align="left"><a href="edit_user.php?id=' . $row['user_id'] . '">Edit</a></td>
 								<td align="left"><a href="delete_user.php?id=' . $row['user_id'] . '">Delete</a></td>
-								<td align="left">' . $row['last_name'] . '</td>
-								<td align="left">' . $row['first_name'] . '</td>
-								<td align="left">' . $row['email'] . '</td>
-								<td align="left">' . $row['dr'] . '</td>
+								<td align="left">' . $row['petname'] . '</td>
+								<td align="left">' . $row['age'] . '</td>
+								<td align="left">' . $row['species'] . '</td>
+								<td align="left">' . $row['breed'] . '</td>
 								<td align="left" style="width: 35px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
 							</tr>
 							';

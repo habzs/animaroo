@@ -5,7 +5,7 @@ include ('header.php');
 
 <link rel="stylesheet" href="css/hero-video.css">
 
-	<header id="fh5co-header newsletter" class="fh5co-cover heropanel--video" role="banner" data-vide-bg="mp4: videos/cat_walking.mp4, data-vide-options=" style="background-image:url(images/walkingkat.gif);" >
+	<header id="fh5co-header" class="fh5co-cover heropanel--video" role="banner" data-vide-bg="mp4: videos/cat_walking.mp4, data-vide-options=" style="background-image:url(images/walkingkat.gif);" >
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -15,8 +15,8 @@ include ('header.php');
 							<h1 class="mb30">Grooming without the hassle.</h1>
 							<p>
 								<a href="register.php" target="_blank" class="btn btn-primary">REGISTER</a> 
-								<em class="or">or</em> 
-								<a href="login.php">Log In</a>
+								<!--<em class="or">or</em> 
+								<a href="login.php">Log In</a>-->
 							</p>
 						</div>
 					</div>
@@ -238,82 +238,38 @@ include ('header.php');
 		</div>
 	</div>
 
-<script>
-	function chk()
-	{
-		var name = document.getElementById('name').value;
-		var dataString='name=' + name;
-		$.ajax({
-			type:"post",
-			url: "hi.php",
-			data:dataString,
-			cache:false,
-			success: function(html) {
-				$('#msg').html(html); 
-			}
-		});
-		return false;
-	}
-</script>
-
-
-
-<script>
-	function chk()
-	{
-		document.getElementById("newsbtn").disabled = true;
-		var name = document.getElementById('name').value;
-		var dataString='name=' + name;
-		$.ajax({
-			type:"post",
-			url: "subscribed.php",
-			data:dataString,
-			cache:false,
-			success: function(html) {
-				$('#newslettertitle').html(html); 
-			}
-		});
-		return false;
-	}
-
-		$(document).ready(function(){
-		var dataString='name=' + name;
-		$.ajax({ 
-			url: "newslettersub.php",
-			data:dataString,
-			success: function(html){
-				$('#newslettertitle').html(html); 
-			}});
-	});
-
-	function disablebtn()
-	{
-		document.getElementById("newsbtn").disabled = true;
-	}
-	
-</script>
-
 	<div class="box">
-			<span class="box-title text" id="dynColor"><div id="newslettertitle"></div></span>
+			<span class="box-title text" id="dynColor">Subscribe to our newsletter!</span>
 			<div>
-		
-				<form class="form-contact" method="POST">
-				<div class="form-group">
-					<label style="color:#F73859;">E-Mail</label>
-					<input type="name" name="name" id="name" class="form-control" placeholder="johnappleseed@apple.com" required>
-				</div>
-				<button class="btn btn-lg btn-primary btn-block" id="newsbtn" type="submit" onclick="return chk()">Submit</button>
+				<form class="form-contact" method="POST" action="contact_us_confirmed.php">
+					<div class="form-group">
+						<label style="color:#F73859;">E-Mail</label>
+						<input type="email" name="email" id="inputEmail" class="form-control" placeholder="johnappleseed@apple.com" required>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
 				</form>
-
 			</div>
 	</div>
+
+
 
 	<script>
 		var available;
 		var percentage_of_page;
 		var half_screen;
 		var height;
-
+	
+/* 		$(window).scroll(function(e) {
+			available = $(document).height();
+			percentage_of_page = 0.7;
+			half_screen = available * percentage_of_page;
+			height = $(window).scrollTop();
+			if (height > half_screen) {
+				$('#element').show();
+			} else {
+				$('#element').hide();
+			}
+		}); */
 	
 		function write_status() {
 			// Document minus Viewport
@@ -345,7 +301,25 @@ include ('header.php');
 			half_screen_color = available_color * percentage_of_page_color;
 		}
 
+
+/*
+		$(window).scroll(function(e) {
+			height_color = $(window).scrollTop();
+			write_status_color();
+			if (height_color > half_screen_color) {
+				document.getElementById("dynColor").style.color = "#fff";
+			} else {
+				document.getElementById("dynColor").style.color = "black";
+			}
+		});	
+		
+*/
 	
+		$('#remove').click(function() {
+			$('.aux').last().remove();
+			write_status();
+			$(this).text('Remove div (' + $('.aux').length + ')');
+		});
 //
 window.onscroll = function() {scrollProgress()};
 
@@ -354,7 +328,7 @@ function scrollProgress() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
 
-  if ( scrolled < 96 && scrolled > 85 ) {
+  if ( scrolled < 96 && scrolled > 86 ) {
     // FOR TESTING ONLY
     // document.getElementById('scroll').textContent = scrolled;
 	document.getElementById("dynColor").style.color = "#fff";

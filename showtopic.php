@@ -1,4 +1,7 @@
- <?php
+<?php
+session_start();
+include ('header.php');
+
    //check for required info from the query string
    if (!$_GET['topic_id']) {
       header("Location: topiclist.php");
@@ -16,16 +19,18 @@
       
 
     
-  if (mysqli_num_rows($verify_topic_res) < 1) {
+  if (mysqli_num_rows($verify_topic_res) < 1 ) {
       //this topic does not exist
      $display_block = "<P><em>You have selected an invalid topic.
         Please <a href=\"topiclist.php\">try again</a>.</em></p>";
   } else {
       //get the topic title
-      while($topic_title = mysqli_fetch_array($verify_topic_res)){
-            
-      }
-     //$topic_title = mysqli_fetch_array($verify_topic_res, 'topic_title');
+		$topic_title = mysqli_fetch_array($verify_topic_res,MYSQLI_ASSOC);
+		$string= implode($topic_title);
+		// echo $string;
+		
+  };
+		//$topic_title = mysqli_fetch_array($verify_topic_res, 'topic_title');
     
   
      //gather the posts
@@ -38,12 +43,12 @@
   
      //create the display string
      $display_block = "
-     <P>Showing posts for the <strong>$topic_title</strong> topic:</p>
-  
-     <table width=100% cellpadding=3 cellspacing=1 border=1>
+	 <P>Showing posts for the <strong>$string</strong> topic:</p>
+
+     <table border=1 class=table>
      <tr>
-     <th>AUTHOR</th>
-     <th>POST</th>
+     <th><center>AUTHOR</center></th>
+     <th width=70%><center>POST</center></th>
      </tr>";
   
      while ($posts_info = mysqli_fetch_array($get_posts_res)) {
@@ -56,7 +61,7 @@
          $display_block .= "
          <tr>
          <td width=35% valign=top>$post_owner<br>[$post_create_time]</td>
-         <td width=65% valign=top>$post_text<br><br>
+         <td width=45% valign=top>$post_text<br><br>
           <a href=\"replytopost.php?post_id=$post_id\"><strong>REPLY TO
           POST</strong></a></td>
          </tr>";
@@ -64,14 +69,108 @@
   
      //close up the table
      $display_block .= "</table>";
-    }
+    
   ?>
-  <html>
-  <head>
-  <title>Posts in Topic</title>
-  </head>
-  <body>
-  <h1>Posts in Topic</h1>
-  <?php print $display_block; ?>
-  </body>
-  </html>
+
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header5.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 text-left">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
+							<h1 class="mb30">Your Feedback</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	
+
+	<div id="fh5co-blog" class="fh5co-bg-section">
+		<div class="container">
+			<div class="row animate-box row-pb-md" data-animate-effect="fadeInUp">
+				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
+					<span>Thoughts &amp; Ideas</span>
+					<h2>Posts in Topic</h2>
+					<!--<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>-->
+				</div>
+			</div>
+			<div class="row col-md-13">
+                <div class="col-md-8 table text-left table fh5c0-heading" style="align-self:center">
+                <?php print $display_block; ?>
+                
+            </div>    
+            
+
+				<!--<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="fh5co-post">
+						<span class="fh5co-date">Sep. 12th</span>
+						<h3><a href="#">Web Design for the Future</a></h3>
+						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="fh5co-post">
+						<span class="fh5co-date">Sep. 23rd</span>
+						<h3><a href="#">Web Design for the Future</a></h3>
+						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
+					</div>
+				</div>
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="fh5co-post">
+						<span class="fh5co-date">Sep. 24th</span>
+						<h3><a href="#">Web Design for the Future</a></h3>
+						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
+					</div>
+				</div>
+
+				<div class="clearfix visible-md-block"></div>
+
+				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="fh5co-post">
+						<span class="fh5co-date">Sep. 12th</span>
+						<h3><a href="#">Web Design for the Future</a></h3>
+						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
+					</div>
+				</div>
+
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="fh5co-post">
+						<span class="fh5co-date">Sep. 23rd</span>
+						<h3><a href="#">Web Design for the Future</a></h3>
+						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+					<div class="fh5co-post">
+						<span class="fh5co-date">Sep. 24th</span>
+						<h3><a href="#">Web Design for the Future</a></h3>
+						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
+					</div>
+				</div>
+				
+				<div class="clearfix visible-md-block"></div>-->
+
+
+			</div>
+		</div>
+	</div>
+
+
+<?php
+include ("footer.php");
+?>

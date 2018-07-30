@@ -27,7 +27,10 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
+
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	
 	<link rel="stylesheet" href="css/searchbar.css">
 	<!-- Animate.css -->
@@ -43,6 +46,7 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/add_style.css">
+	<link rel="stylesheet" href="css/popupemail.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -50,6 +54,10 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+	<!-- ajax 
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
+
 
 	<!-- hero video -->
 	
@@ -81,31 +89,26 @@
 
 				<div class="col-xs-10 text-right menu-1" style="float:right">
 					<ul>
+						<li><a href="indexphp.php">Home</a></li>
 						<li class="has-dropdown">
-							<a href="index.html">Home</a>
+							<a href="services.php">Services</a>
 							<ul class="dropdown">
-								<li><a href="indexphp.php">IndexPHP</a></li>
-							</ul>
-						</li>
-						<!-- <li class="active"><a href="index.html">Home</a></li> -->
-						<li class="has-dropdown">
-							<a href="services.html">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Bath</a></li>
-								<li><a href="#">Grooming</a></li>
-								<li><a href="#">Walk</a></li>
-								<li><a href="#">Rates</a></li>
+								<li><a href="services.php#test">Bath</a></li>
+								<li><a href="services.php#test">Grooming</a></li>
+								<li><a href="services.php#test">Walk</a></li>
+								<li><a href="services.php#rate">Rates</a></li>
 							</ul>
 						</li>
 						<li class="has-dropdown">
-								<a href="products.html">Products</a>
+								<a href="productsdog.html">Products</a>
 								<ul class="dropdown">
-									<li><a href="#">Canine</a></li>
-									<li><a href="#">Feline</a></li>
+									<li><a href="productsdog.html">Dog</a></li>
+									<li><a href="productscat.html">Cat</a></li>
+									<li><a hred="productsother.html">Others</a></li>
 								</ul>
 							</li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="blog.html">Feedback</a></li>
+						<li><a href="about.php">About</a></li>
+						<li><a href="topiclist.php">Feedback</a></li>
 						<li><a href="contact_us.php">Contact</a></li>
 						<!-- <li><a href="#">Login</a></li> -->
 						<?php 

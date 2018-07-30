@@ -27,19 +27,19 @@ if((isset($_POST['name']) && !empty($_POST['name']))
 	if( mail($to, $subject, $message, $headers)){
 		// echo "E-Mail Sent successfully, we will get back to you soon.";
 		
-		$query = "INSERT INTO `contact` (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
+		$query = "INSERT INTO `contact` (name, email, subject, message, date_time) VALUES ('$name', '$email', '$subject', '$message', NOW())";
 		$result = mysqli_query($connection, $query);
 	}
 }
 ?>
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/shibainu.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header6.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">Your Feedback</h1>
+							<h1 class="mb30">Contact Us</h1>
 						</div>
 					</div>
 				</div>
@@ -72,22 +72,6 @@ if((isset($_POST['name']) && !empty($_POST['name']))
 
 
 
-			</div>
-		</div>
-	</div>
-
-
-
-	
-	<div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<span>Let's work together</span>
-					<h2>Try this template for free</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><button type="submit" class="btn btn-default">Get In Touch</button></p>
-				</div>
 			</div>
 		</div>
 	</div>

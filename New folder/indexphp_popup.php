@@ -3,9 +3,10 @@ session_start();
 include ('header.php');
 ?>
 
-<link rel="stylesheet" href="css/hero-video.css">
-
-	<header id="fh5co-header newsletter" class="fh5co-cover heropanel--video" role="banner" data-vide-bg="mp4: videos/cat_walking.mp4, data-vide-options=" style="background-image:url(images/walkingkat.gif);" >
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="z-index:-20;position:fixed;">
+	<video autoplay muted loop id="myVideo" style="z-index: -1;" controls="true">
+  		<source src="videos/cat_walking.mp4" type="video/mp4">
+	
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -14,8 +15,7 @@ include ('header.php');
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<h1 class="mb30">Grooming without the hassle.</h1>
 							<p>
-								<a href="register.php" target="_blank" class="btn btn-primary">REGISTER</a> 
-								<em class="or">or</em> 
+								<a href="register.php" target="_blank" class="btn btn-primary">Register</a>  <em class="or">or</em> 
 								<a href="login.php">Log In</a>
 							</p>
 						</div>
@@ -23,6 +23,7 @@ include ('header.php');
 				</div>
 			</div>
 		</div>
+	</video>
 	</header>
 
 	<div id="fh5co-project">
@@ -48,7 +49,7 @@ include ('header.php');
 	
 				<div class="row">
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="/images/index_dog_walking.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+						<a href="services.html"><img src="/images/dog_walking.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
 								<h3>Dog Walking</h3>
 								<p>Woof woof.</p>
@@ -56,7 +57,7 @@ include ('header.php');
 						</a>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="images/index_cat_grooming.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+						<a href="services.html"><img src="images/cat_grooming.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
 								<h3>Grooming</h3>
 								<p>A good looking kat is a happy kat.</p>
@@ -64,7 +65,7 @@ include ('header.php');
 						</a>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="images/index_dog_washing.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+						<a href="services.html"><img src="images/dog_washing.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
 								<h3>Bath</h3>
 								<p>We'll wash your pets. Arf.</p>
@@ -238,89 +239,42 @@ include ('header.php');
 		</div>
 	</div>
 
-<script>
-	function chk()
-	{
-		var name = document.getElementById('name').value;
-		var dataString='name=' + name;
-		$.ajax({
-			type:"post",
-			url: "hi.php",
-			data:dataString,
-			cache:false,
-			success: function(html) {
-				$('#msg').html(html); 
-			}
-		});
-		return false;
-	}
-</script>
-
-
-
-<script>
-	function chk()
-	{
-		document.getElementById("newsbtn").disabled = true;
-		var name = document.getElementById('name').value;
-		var dataString='name=' + name;
-		$.ajax({
-			type:"post",
-			url: "subscribed.php",
-			data:dataString,
-			cache:false,
-			success: function(html) {
-				$('#newslettertitle').html(html); 
-			}
-		});
-		return false;
-	}
-
-		$(document).ready(function(){
-		var dataString='name=' + name;
-		$.ajax({ 
-			url: "newslettersub.php",
-			data:dataString,
-			success: function(html){
-				$('#newslettertitle').html(html); 
-			}});
-	});
-
-	function disablebtn()
-	{
-		document.getElementById("newsbtn").disabled = true;
-	}
-	
-</script>
-
+	<!-- POP UP BOX -->
 	<div class="box">
-			<span class="box-title text" id="dynColor"><div id="newslettertitle"></div></span>
+			<span class="box-title text">Subscribe to our newsletter!</span>
 			<div>
-		
-				<form class="form-contact" method="POST">
-				<div class="form-group">
-					<label style="color:#F73859;">E-Mail</label>
-					<input type="name" name="name" id="name" class="form-control" placeholder="johnappleseed@apple.com" required>
-				</div>
-				<button class="btn btn-lg btn-primary btn-block" id="newsbtn" type="submit" onclick="return chk()">Submit</button>
-				</form>
-
+				test
+				<a href="#"><img width="326" height="150" src="http://dummyimage.com/326x150/23a343/edfcf7&text=Detect+scroll"></a>
+				<h3><a href="#">Lorem ipsum</a></h3>
+				<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
 			</div>
 	</div>
+
 
 	<script>
 		var available;
 		var percentage_of_page;
 		var half_screen;
 		var height;
-
+	
+		$(window).scroll(function(e) {
+			available = $(document).height();
+			percentage_of_page = 0.5;
+			half_screen = available * percentage_of_page;
+			height = $(window).scrollTop();
+			if (height > half_screen) {
+				$('#element').show();
+			} else {
+				$('#element').hide();
+			}
+		});
 	
 		function write_status() {
 			// Document minus Viewport
 			// https://stackoverflow.com/a/1304384/1287812
 			// available = $(document).height() - $(window).height(); 
 			available = $(document).height();
-			percentage_of_page = 0.7;
+			percentage_of_page = 0.5;
 			half_screen = available * percentage_of_page;
 			$('#scroll-val').html(height + '/' + available + ' - Show at: ' + half_screen);
 		}
@@ -334,38 +288,14 @@ include ('header.php');
 				$('.box').removeClass('display-block');
 			}
 		});
-
-
-		function write_status_color() {
-			// Document minus Viewport
-			// https://stackoverflow.com/a/1304384/1287812
-			// available = $(document).height() - $(window).height(); 
-			available_color = $(document).height();
-			percentage_of_page_color = 0.74;
-			half_screen_color = available_color * percentage_of_page_color;
-		}
-
 	
-//
-window.onscroll = function() {scrollProgress()};
-
-function scrollProgress() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-
-  if ( scrolled < 96 && scrolled > 85 ) {
-    // FOR TESTING ONLY
-    // document.getElementById('scroll').textContent = scrolled;
-	document.getElementById("dynColor").style.color = "#fff";
-  } else {
-    document.getElementById("dynColor").style.color = "black";
-  }
-
-
-}
-
+		$('#remove').click(function() {
+			$('.aux').last().remove();
+			write_status();
+			$(this).text('Remove div (' + $('.aux').length + ')');
+		});
 	</script>
+	
 
 <?php
 include ("footer.php");

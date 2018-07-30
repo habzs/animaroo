@@ -4,14 +4,30 @@ session_start();
 $page_title = 'Register';
 include ('header.php');
 
+$email = $_SESSION['email'];
 
+$msg = "";
 // Check for form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	require ('mysqli_connect.php'); // Connect to the db.
 		
 	$errors = array(); // Initialize an error array.
-	
+
+// Checks for duplicate email
+	$email = $_POST['email'];
+	$emailcheck="select email from users where (email='$email');";
+	$res=mysqli_query($dbc,$emailcheck);
+	if (mysqli_num_rows($res) > 0) {
+	// output data of each row
+	$row = mysqli_fetch_assoc($res);
+	if($email==$_POST['email'])
+	{
+		$errors[] = "Email already exists!";
+	}
+}
+//	
+
 	// Check for a first name:
 	if (empty($_POST['first_name'])) {
 		$errors[] = 'You forgot to enter your first name.';
@@ -46,16 +62,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	if (empty($errors)) { // If everything's OK.
 	
+	
+		// Upload picture
+		$image = $_FILES['image']['name'];
+		$target = "images/users/".basename($image);
+		$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
+
 		// Register the user in the database...
 		
 		// Make the query:
-		$q = "INSERT INTO users (first_name, last_name, email, pass, registration_date) VALUES ('$fn', '$ln', '$e', SHA1('$p'), NOW() )";		
+		$q = "INSERT INTO users (first_name, last_name, email, pass, registration_date, image) VALUES ('$fn', '$ln', '$e', SHA1('$p'), NOW(), '$image'  )";		
 		$r = @mysqli_query ($dbc, $q); // Run the query.
 		if ($r) { // If it ran OK.
 		
 			// Print a message:
 			echo '
-			<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/cat2.jpg);" data-stellar-background-ratio="0.5">
+			<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header7.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -144,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } // End of the main Submit conditional.
 ?>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/cat2.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header7.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -159,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								echo "<h1> $returnTxt </h1>";
 
 							} else {
-								echo '<h1 class="mb30">Hi! Please Log In. </h1>';
+								echo '<h1 class="mb30">Hi! Please Register. </h1>';
 							}
 							?>
 							
@@ -188,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 							<h3><?php echo '<div style="color:red;">' . $msg . '</div>';?></h3>
 							<div class="row col-md-13" style="width:300px; margin:auto;" >
-							<form action="register.php" method="post">
+							<form action="register.php" method="post" enctype="multipart/form-data">
 
 
 								<div>
@@ -215,6 +237,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 									<label>Confirm Password</label>
 									<input name="pass2" type="password" class="form-control" placeholder="Password" size="10" maxlength="20" value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>" required />
 								</div>
+								<br>
+								<div>
+									<label>Picture</label>
+									<input type="hidden" name="size" value="1000000">
+									<input name="image" type="file" class="form-control"/>
+								</div>
+								
 							</div>	
 
 							<div class="row">
@@ -229,19 +258,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				</div>
 			</div>
 			
-		</div>
-	</div>
-
-	<div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<span>Let's work together</span>
-					<h2>Try this template for free</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><button type="submit" class="btn btn-default">Get In Touch</button></p>
-				</div>
-			</div>
 		</div>
 	</div>
 

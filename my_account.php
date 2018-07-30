@@ -2,88 +2,9 @@
 session_start();
 include ('header.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-include('config.php');
-
-if (isset($_POST['username']))
-{
-	$username = $_POST['username'];
-} else {
-	$username = '';
-}
-
-if (isset($_POST['pass']))
-{
-	$pass = $_POST['pass'];
-} else {
-	$pass = '';
-}
-
-
-if (isset($_POST['username']))
-{
-    $encryptedpass = sha1($pass);
-
-	$sql_statement  = "SELECT email,first_name,last_name ";
-    $sql_statement .= "FROM users ";
-    $sql_statement .= "WHERE email = '".$username."' ";
-    $sql_statement .= "AND pass = '".$encryptedpass."' ";
-
-
-    $result = mysqli_query($con, $sql_statement);
-    $row = mysqli_fetch_row($result);
-
-
-    $outputDisplay = "";
-    $myrowcount = 0;
-
-    if (!$row) {
-
-        $outputDisplay = "Wrong Username/Password";
-    } else {
-
-    	$numresults = mysqli_num_rows($result);
-
-    	if ($numresults == 0)
-    	{
-	    	$outputDisplay .= "Invalid Login <br /> ";
-    		$outputDisplay .= "Please Go BACK and try again";
-    	} else {
-
-            $_SESSION["email"] = $row[0];
-            $_SESSION["first_name"] = $row[1];
-            $_SESSION["last_name"] = $row[2];
-           
-           $db = mysqli_connect("localhost:8889","root","root","animaroo"); 
-$sql = "SELECT * FROM users WHERE email = $username";
-$sth = $db->query($sql);
-        }
-      //  
-    }
-} else {
-	
-
-}
-
-}
-
-
-// LOG OUT SYSTEM
-
-if ( isset( $_GET["action"] ) and $_GET["action"] == "logout" ) {
-	logout();
-} else {
-	//
-}
-
-
-function logout() {
-	unset( $_SESSION["email"] );
-	session_write_close();
-  }
 ?>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/cat2.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header7.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -137,33 +58,30 @@ function logout() {
 
 					<form name="loginForm" method="post" action="">
 						<table border="0" width="500" align="center" class="demo-table">
-
-							<?php if(!empty($success_message)) { ?>	
-							<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
-							<?php } ?>
-
-							<?php if(!empty($error_message)) { ?>	
-							<div class="error-message"><?php if(isset($error_message)) echo $error_message; ?></div>
-							<?php } elseif (!empty($outputDisplay)) {?>
-							<div class="error-message"><?php if(isset($outputDisplay)) echo $outputDisplay; ?></div>
-							<?php } ?>
-
-
 							<div class="row centered" style="margin-top:50px;">
 								<div><h1>You're not logged in!</h1></div>
 							</div>	
-						
-
-
-
 						</table>
 					</form>
 
 					<?php } else { ?>
+						<?php
+						$email = $_SESSION['email'];
+
+						include ('mysqli_connect.php');
+
+						$result = mysqli_query($dbc,"SELECT image FROM users WHERE email = '$email'") or die(msyql_error());
+						$row = mysqli_fetch_array($result);
+						$image = $row['image'];
+
+							echo "<img style='width:15%;' src='images/users/".$row['image']."' >";
+						?>
 						<div>
 						<h2><a href="logout.php? action=logout">Log Out.</a></h2> 
+						<h2><a href="edit_details.php">Edit Details.</a></h2>
+						<h2><a 
 						
-				
+			
 					<?php } ?>
 						</div>
 					</div>
