@@ -32,10 +32,10 @@
 						  <gcse:search></gcse:search>
 						<!-- Google CSE -->
 							<div class = "row row-pd-md" style="margin-left:15px">
-<!-- 						<audio controls autoplay >
+						<audio controls autoplay >
 			  				<source src="music/music.mp3" type="audio/mpeg" hidden="true" style="margin:left">
 			  
-						</audio> -->
+						</audio>
 						</div>
 					
 						</div>
