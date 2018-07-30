@@ -102,10 +102,10 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 						<tr>
 							<td align="left"><b>Edit</b></td>
 							<td align="left"><b>Delete</b></td>
-							<td align="left"><b><a href="registered_pets.php?sort=petname">Pet Name</a></b></td>
-							<td align="left"><b><a href="registered_pets.php?sort=age">Age</a></b></td>
-							<td align="left"><b><a href="registered_pets.php?sort=species">Species</a></b></td>
-							<td align="left"><b><a href="registered_pets.php?sort=breed">Breed</a></b></td>
+							<td align="left"><b><a href="my_pets.php?sort=petname">Pet Name</a></b></td>
+							<td align="left"><b><a href="my_pets.php?sort=age">Age</a></b></td>
+							<td align="left"><b><a href="my_pets.php?sort=species">Species</a></b></td>
+							<td align="left"><b><a href="my_pets.php?sort=breed">Breed</a></b></td>
 							<td align="left"><b><a href="?">Image</a></b></td>
 						</tr>
 						';

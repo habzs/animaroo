@@ -99,8 +99,6 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 						// Table header:
 						echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
 						<tr>
-							<td align="left"><b>Edit</b></td>
-							<td align="left"><b>Delete</b></td>
 							<td align="left"><b><a href="registered_pets.php?sort=petname">Pet Name</a></b></td>
 							<td align="left"><b><a href="registered_pets.php?sort=age">Age</a></b></td>
 							<td align="left"><b><a href="registered_pets.php?sort=species">Species</a></b></td>
@@ -114,8 +112,6 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 						while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 							$bg = ($bg=='#eeeeee' ? '#ffffff' : '#eeeeee');
 								echo '<tr bgcolor="' . $bg . '">
-								<td align="left"><a href="edit_user.php?id=' . $row['user_id'] . '">Edit</a></td>
-								<td align="left"><a href="delete_user.php?id=' . $row['user_id'] . '">Delete</a></td>
 								<td align="left">' . $row['petname'] . '</td>
 								<td align="left">' . $row['age'] . '</td>
 								<td align="left">' . $row['species'] . '</td>
