@@ -1,5 +1,8 @@
 <?php
 session_start();
+include ('header.php');
+
+
 if(isset($_POST['topic_id'])){$topic_id=$_POST['topic_id'];}
 
     //echo $_POST["topic_id"];

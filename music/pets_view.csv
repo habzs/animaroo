@@ -1,0 +1,5 @@
+"id","petname","age","species","breed","image","owner_email","likes","dislikes"
+6,"Zack",9,"Dog","Corgi",NULL,"owenlee22@gmail.com",1,2
+7,"Tan",16,"No","Yes",NULL,"email@example.com",2,1
+8,"Sok",27,"Rabbit","White",NULL,"owenlee22@gmail.com",2,1
+9,"Jie",6,"Dog","Cat","owen.jpg","owenlee22@gmail.com",3,5

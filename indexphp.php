@@ -131,14 +131,14 @@ include ('header.php');
 					<div class="testimonial">
 						<blockquote>
 							<p>&ldquo;Animaroo has an awesome team who has a great level of professionalism, and genuinely cares for my Kunckles!&rdquo;</p>
-							<p class="author"> <img src="images/person1.jpg" alt="Henry Koh"> <cite>&mdash; Henry Koh</cite></p>
+							<p class="author"> <img src="images/home/1.jpg" alt="Henry Koh"> <cite>&mdash; Henry Koh</cite></p>
 						</blockquote>
 					</div>
 
 					<div class="testimonial fh5co-selected">
 						<blockquote>
 							<p>&ldquo;I have never met any grooming companies as professional as Animaroo. Life has definitely been easier without all the hassle!&rdquo;</p>
-							<p class="author"><img src="images/person2.jpg" alt="Alissa Lee"> <cite>&mdash; Alissa Lee</cite></p>
+							<p class="author"><img src="images/home/2.jpg" alt="Alissa Lee"> <cite>&mdash; Alissa Lee</cite></p>
 						</blockquote>
 					</div>
 				</div>
@@ -147,14 +147,14 @@ include ('header.php');
 					<div class="testimonial fh5co-selected">
 						<blockquote>
 							<p>&ldquo;Great service, even better ethics.&rdquo;</p>
-							<p class="author"><img src="images/person3.jpg" alt="David Tan"> <cite>&mdash; David Tan</cite></p>
+							<p class="author"><img src="images/home/3.jpg" alt="David Tan"> <cite>&mdash; David Tan</cite></p>
 						</blockquote>
 					</div>
 
 					<div class="testimonial">
 						<blockquote>
 							<p>&ldquo;Fluffly has been happier ever since Animaroo has been caring for her!&rdquo;</p>
-							<p class="author"><img src="images/person1.jpg" alt="John Lim"> <cite>&mdash; John Lim</cite></p>
+							<p class="author"><img src="images/home/4.jpg" alt="John Lim"> <cite>&mdash; John Lim</cite></p>
 						</blockquote>
 					</div>
 
@@ -232,7 +232,7 @@ include ('header.php');
 					<p>Head on to our services pages to learn more!
 					<br>
 					We're excited to meet you and your pet!</p>
-					<p><a href="/services.html"><button type="submit" class="btn btn-primary">Lets Go!</button></a></p>
+					<p><a href="/services.php"><button type="submit" class="btn btn-primary">Lets Go!</button></a></p>
 				</div>
 			</div>
 		</div>
