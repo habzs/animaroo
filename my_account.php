@@ -79,7 +79,7 @@ include ('header.php');
 						<div>
 						<h2><a href="logout.php? action=logout">Log Out.</a></h2> 
 						<h2><a href="edit_details.php">Edit Details.</a></h2>
-						<h2><a 
+						<h2><a href="my_pets.php">Manage Pets.</a></h2>
 						
 			
 					<?php } ?>
