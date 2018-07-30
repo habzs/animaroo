@@ -14,6 +14,7 @@
    <div class="post">
       <?php echo $post['text']; ?>
       <div class="post-info">
+			
 	    <!-- if user likes post, style button differently -->
       	<i <?php if (userLiked($post['id'])): ?>
       		  class="fa fa-thumbs-up like-btn"
