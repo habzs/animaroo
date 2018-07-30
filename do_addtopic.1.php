@@ -3,15 +3,13 @@ session_start();
 include ('header.php');
 
   $topic_id ='topic_id';
-  $topic_title = $_POST['topic_title'];
+  $topic_title =$_POST['topic_title'];
  //check for required fields from the form
-   if ((!$_POST['topic_title'])
+   if ((!$_POST['topic_owner']) || (!$_POST['topic_title'])
        || (!$_POST['post_text'])) {
        header("Location: addtopic.php");
        exit;
    }
-
-   $topic_owner = $_SESSION['email'];
    
    //connect to server and select database
   $dbc = @mysqli_connect ('localhost:8889', 'root', 'root', 'animaroo') OR die ('Could not connect to MySQL:' . mysqli_connect_error());
@@ -19,7 +17,7 @@ include ('header.php');
   
   //create and issue the first query
   $add_topic = "insert into forum_topics values ('', '$_POST[topic_title]',
-      now(), '$topic_owner')";
+      now(), '$_POST[topic_owner]')";
   mysqli_query($dbc, $add_topic) or die(mysqli_connect_error());
   
   //get the id of the last query 
@@ -27,7 +25,7 @@ include ('header.php');
   //$topic_id = mysqli_insert_id();
   //create and issue the second query
   $add_post = "insert into forum_posts values ('', '$topic_id',
-      '$_POST[post_text]', now(), '$topic_owner')";
+      '$_POST[post_text]', now(), '$_POST[topic_owner]')";
   mysqli_query($dbc, $add_post) or die(mysqli_connect_error());
   
   //create nice message for user

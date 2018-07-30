@@ -354,7 +354,7 @@ function scrollProgress() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
 
-  if ( scrolled < 96 && scrolled > 85 ) {
+  if ( scrolled < 94 && scrolled > 84 ) {
     // FOR TESTING ONLY
     // document.getElementById('scroll').textContent = scrolled;
 	document.getElementById("dynColor").style.color = "#fff";
