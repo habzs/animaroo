@@ -164,7 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					<!--<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>-->
 				</div>
 			</div>
-			<div class="row col-md-13" style="width:300px; margin:auto;" >
+			<div class="row col-md-13 animate-box" style="width:300px; margin:auto;" >
 			<?php 
 			if ( isset( $_SESSION["email"] ) ) { ?>
 				<form class="" method="post" action="registerpet.php" enctype="multipart/form-data">
@@ -184,7 +184,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				<label>Photo</label>
 				<input type="hidden" name="size" value="1000000">
 				<input name="image" type="file" class="form-control"/></div>
-				<button type="submit" name="submit" class="btn btn-primary">Send</button>
+				<div class="row">
+					<div class="centered">
+						<input type="submit" name="submit" class="btn btn-primary centered">
+					</div>
+				</div>
 			</form>
 			<?php } else { ?>
 				<h1 class="mb30">You&#39;re not logged in.</h1>

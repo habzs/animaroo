@@ -59,7 +59,7 @@ switch ($sort) {
 }
 	
 // Define the query:
-$q = "SELECT petname, age, species, breed FROM pets ORDER BY $order_by LIMIT $start, $display";		
+$q = "SELECT petname, age, species, breed, image FROM pets ORDER BY $order_by LIMIT $start, $display";		
 $r = @mysqli_query ($dbc, $q); // Run the query.
 ?>
 
@@ -84,11 +84,12 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 		<div class="container">
 			<div class="row animate-box row-pb-md">
 				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
-					<span>Behind the scenes</span>
-					<h2>Admin Corner</h2>
+					<span>Pets with us</span>
+					<h2>Pets that we are caring for!</h2>
 					<br>
 					<p>
-						Welcome to your restricted corner, admin. ;P.
+						Here's a list of pets who are under our care!<br>
+						Feel free to rate them! :)
 					</p>
 				</div>
 			</div>

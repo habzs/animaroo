@@ -1,6 +1,6 @@
- <?php
-
-    if(isset($_POST['topic_id'])){$topic_id=$_POST['topic_id'];}
+<?php
+session_start();
+if(isset($_POST['topic_id'])){$topic_id=$_POST['topic_id'];}
 
     //echo $_POST["topic_id"];
     //$topic_title = $_POST['topic_title'];
@@ -9,6 +9,8 @@
        or die(mysqli_connect_error());
    mysqli_select_db($dbc,"animaroo") or die(mysql_connect_error());
    
+	$post_owner = $_SESSION['email'];
+
    //check to see if we're showing the form or adding the post
    if (isset($_POST["op"]) != "addpost") {
       // showing the form; check for required item in query string
@@ -55,8 +57,6 @@
         $display_block = "
          <form method=post action=\"$_SERVER[PHP_SELF]\">
   
-         <p><strong>Your E-Mail Address:</strong><br>
-         <input type=\"email\" name=\"post_owner\" class=\"form-control\" size=40 maxlength=150>
   
          <P><strong>Post Text:</strong><br>
          <textarea name=\"post_text\" class=\"form-control\" rows=8 cols=40 wrap=virtual></textarea>
@@ -70,15 +70,14 @@
      }
   } else if (isset($_POST["op"]) == "addpost") {
      //check for required items from form
-     if ((!$_POST['topic_id']) || (!$_POST['post_text']) ||
-      (!$_POST['post_owner'])) {
+     if ((!$_POST['topic_id']) || (!$_POST['post_text'])) {
          header("Location: topiclist.php");
          exit;
      }
   
      //add the post
      $add_post = "insert into forum_posts values ('', '$_POST[topic_id]',
-      '$_POST[post_text]', now(), '$_POST[post_owner]')";
+      '$_POST[post_text]', now(), '$post_owner')";
      mysqli_query($dbc, $add_post) or die(mysqli_connect_error());
  
      //redirect user to topic
@@ -168,13 +167,6 @@
 					<div id="fh5co-logo"><a href="index.html">animaroo<span>.</span></a></div>
 				</div>
 
-				
-<!-- 				<div class="col-xs-3-new" style="float: right; position: relative; left: 50px; ">
-					<input class="col-xs-2 form-control" style="width:150px; height:40px; font-size:15px" type="text" placeholder="Search" aria-label="Search" ></li>
-					
-						<button type="button" class="form-control-new"><img src="images/search_icon.png" style="width:18px; align-items:center" /></button>
-					
-				</div> -->
 
 				<div class="col-xs-10 text-right menu-1" style="float:right">
 					<ul>
@@ -199,7 +191,6 @@
 						<li><a href="about.php">About</a></li>
 						<li><a href="topiclist.php">Feedback</a></li>
 						<li><a href="contact_us.php">Contact</a></li>
-						<!-- <li><a href="#">Login</a></li> -->
 						<?php 
 						if ( isset( $_SESSION["email"] ) ) {
 							echo '<li><a href="my_account.php ">My Account</a></li>';
@@ -236,16 +227,17 @@
 			<div class="row animate-box row-pb-md" data-animate-effect="fadeInUp">
 				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
 					<span>Thoughts &amp; Ideas</span>
-					<h2>Posts Your Reply in <strong><?php echo $topic_title; ?></strong> </h2>
-					<!--<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>-->
+					<h2>Post your reply in <strong><?php echo $topic_title; ?></strong> </h2>
+
 				</div>
 			</div>
 			<div class="row col-md-13">
                 <div class="form-group">
                 <?php print $display_block; ?>
                 
-			</div> 
-			
+            </div>    
+
+
 			</div>
 		</div>
 	</div>

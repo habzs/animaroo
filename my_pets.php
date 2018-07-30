@@ -164,7 +164,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 					</div>
 				</div>
 				<br><br>
-					<h2><div style="text-align:center;"><a class="btn btn-lg btn-primary centered" href="registerpet.php">Add Pet</a></div></h2>
+					<h2><div style="text-align:center;"><a class="btn btn-lg btn-primary centered animate-box" href="registerpet.php">Add Pet</a></div></h2>
 			</div>
 		</div>
 	</div>
