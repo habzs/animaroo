@@ -1,103 +1,7 @@
-<!DOCTYPE HTML>
-<!--
-	Concept by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>animaroo. &mdash; we groom.</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" />
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
-
-	<link rel"stylesheet" href="css/add_style.css">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Products style -->
-	<link rel="stylesheet" href="css/products.css" >
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">animaroo<span>.</span></a></div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li><a href="indexphp.php">Home</a></li>
-						<li class="has-dropdown">
-							<a href="services.php">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Bath</a></li>
-								<li><a href="#">Grooming</a></li>
-								<li><a href="#">Walk</a></li>
-								<li><a href="#">Rates</a></li>
-							</ul>
-						</li>
-
-						<li class="has-dropdown">
-								<a href="productsdog.html">Products</a>
-								<ul class="dropdown">
-									<li><a href="productsdog.html">Dog</a></li>
-									<li><a href="productscat.html">Cat</a></li>
-									<li><a href="productsothers.html">Others</a></li>
-								</ul>
-							</li>
-						<li><a href="about.php">About</a></li>
-						<li><a href="topiclist.php">Feedback</a></li>
-						<li><a href="contact_us.php">Contact</a></li>
-						<li><a href="#">Login</a></li>
-
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
-
+<?php
+session_start();
+include ('header.php');
+?>
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header3.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -132,7 +36,7 @@
     <div class="page_wrapper_2 clearfix">
 			<div class="container" id="columns"><div class="breadcrumb">
 <div class="breadcrumb_inset">
-				<a title="Return to Home" class="breadcrumb-home" href="index.html"><i class="icon-home"></i></a>
+				<a title="Return to Home" class="breadcrumb-home" href="indexphp.php"><i class="icon-home"></i></a>
 				<span class="navigation-pipe">&gt;</span> 
 						<span class="navigation_page">Dog</span>
 				</div>
@@ -146,16 +50,16 @@
 <!-- Block categories module -->
 <section class="column_box block" id="categories_block_left">
 <h1 class="h1everything"><span><b>Categories</b></span><i class="column_icon_toggle icon-plus-sign"></i></h1>
-<ul class="toggle_content tree store_list dhtml">
 
-<li class="category_18">
-<i class="grower icon-minus-sign"></i><a title="" class="selected" href="#"><i class="icon-caret-right"></i>Dog</a>
+
+<ul class="category_18" style="list-style-type:none">
+<a title="" class="selected" href="#" style="margin:left">Dog</a>
 
 <li class="category_19">
-<i class="grower icon-plus-sign"></i><a title="" href="productscat.html"><i class="icon-caret-right"></i>Cat</a>
+<i class="grower icon-plus-sign"></i><a title="" href="productscat.php"><i class="icon-caret-right"></i>Cat</a>
 
 <li class="category_20">
-<i class="grower icon-plus-sign"></i><a title="" href="productsothers.html"><i class="icon-caret-right"></i>Others</a>
+<i class="grower icon-plus-sign"></i><a title="" href="productsothers.php"><i class="icon-caret-right"></i>Others</a>
 <ul style="display: none;">	
 
 </ul>
@@ -167,15 +71,16 @@ $('div#categories_block_left ul.dhtml').hide();
 // ]]>
 </script>
 </section>
+<br><br>
 <!-- /Block categories module -->
 
 <!-- Block manufacturers module -->
-<section class="block blockmanufacturer column_box" id="manufacturers_block_left">
+<!--<section class="block blockmanufacturer column_box" id="manufacturers_block_left">
 	<h4 class="title_block"><span>Manufacturers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
 	<div class="block_content toggle_content">
 		<form action="/index.php" method="get">		
 		</div>
-	</section>
+	</section>-->
 <!-- /Block manufacturers module -->
 
 <!-- MODULE Block best sellers -->
@@ -183,20 +88,22 @@ $('div#categories_block_left ul.dhtml').hide();
 	 <section class="block products_block column_box" id="blockbestsellers">
             <h4><span>Best sellers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
             <div class="block_content toggle_content">
-                <ul>
+                <ul style="list-style-type:none">
                                 <li class="clearfix shop_box">
                                 <a title="Oxbow Western Timothy Hay" class="products_block_img" href="#"><img alt="Oxbow Western Timothy Hay" src="https://www.beary.com.sg/2778-medium_default/oxbow-western-timothy-hay.jpg"></a>
                     <div>
-                                    <h5><a title="Oxbow Western Timothy Hay" class="product_link" href="#">Oxbow Western Timothy Hay</a></h5>
+                                    <h5><a title="Oxbow Western Timothy Hay" class="product_link" href="#">Oxbow Western  Hay</a></h5>
                                 
-                    </div>
+					</div>
+					<br>
                             </li>
                                         <li class="clearfix shop_box">
                                 <a title="Oxbow Adult Rabbit" class="products_block_img" href="#"><img alt="Oxbow Adult Rabbit" src="https://www.beary.com.sg/3273-medium_default/oxbow-bunny-basics-t.jpg"></a>
                     <div>
                                     <h5><a title="Oxbow Adult Rabbit" class="product_link" href="#">Oxbow Adult Rabbit</a></h5>
                                 
-                    </div>
+					</div>
+					<br>
                             </li>
                                         <li class="clearfix shop_box">
                                 <a title="APD Timothy Gold Hay" class="products_block_img" href="#"><img alt="APD Timothy Gold Hay" src="https://www.beary.com.sg/2518-medium_default/apd-timothy-gold-hay.jpg"></a>
@@ -206,7 +113,7 @@ $('div#categories_block_left ul.dhtml').hide();
                     </div>
                             </li>
                                                                                                                                             </ul>
-            <a title="All best sellers" class="btn btn-default button_large" href="#">All best sellers</a>
+            <!--<a title="All best sellers" class="btn btn-default button_large" href="#">All best sellers</a>-->
                 </div>
         </section>
 				</div>
@@ -217,9 +124,9 @@ $('div#categories_block_left ul.dhtml').hide();
 
 
 <h1 class="h1everything">
-<span>
+<!--<span>
 Dog
-</span>
+</span>-->
 </h1>
 <div class="row_category clearfix">
 <!-- Category image -->
@@ -227,63 +134,63 @@ Dog
 </div>
 <!-- Subcategories -->
 <div class="titled_box" id="subcategories">
-<h2>Subcategories</h2>
-<ul class="row">
-<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
+<!--<h2>Subcategories</h2>-->
+
+<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2" style="list-style-type:none">
 <a title="Dry Food" href="#">
 		<img alt="" src="#">
 
 </a>
-<a title="Dry Food" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Dry Food</a>
+<!--<a title="Dry Food" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Dry Food</a>
 </li>
-<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
+<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2" style="list-style-type:none   ">
 <a title="Canned Food" href="#">
 		<img alt="" src="#">
 
 </a>
 <a title="Canned Food" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Canned Food</a>
 </li>
-<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2   product_list_3 ">
+<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2   product_list_3 " style="list-style-type:none">
 <a title="Treats" href="#">
 		<img alt="" src="#">
 
 </a>
 <a title="Treats" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Treats</a>
 </li>
-<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2  product_list_4  product_list_4">
+<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2  product_list_4  product_list_4" style="list-style-type:none">
 <a title="Health" href="#">
 		<img alt="" src="#">
 
 </a>
 <a title="Health" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Health</a>
 </li>
-<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2 product_list_5   ">
+<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2 product_list_5   "style="list-style-type:none">
 <a title="Grooming" href="#">
 		<img alt="" src="#">
 
 </a>
 <a title="Grooming" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Grooming</a>
 </li>
-<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2   product_list_3 ">
+<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2   product_list_3 "style="list-style-type:none">
 <a title="Accessories" href="#">
 		<img alt="" src="#">
 
 </a>
 <a title="Accessories" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Accessories</a>
 </li>
-<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
+<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    " style="list-style-type:none">
 <a title="Toys" href="#">
 		<img alt="" src="#">
 
 </a>
-<a title="Toys" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Toys</a>
-</li>
+<a title="Toys" class="lnk_more_sub" href="#"><i class="icon-caret-right " style="list-style-type:none"></i> Toys</a>
+</li>-->
 </ul>
 </div>
 
 
 
-<div class="sortPagiBar shop_box_row shop_box_row clearfix">
+<div class="sortPagiBar shop_box_row shop_box_row clearfix" style="list-style-type:none">
 
 
 
@@ -311,7 +218,7 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 <ul class="product_view clearfix hidden-xs">
 </ul>
 <!-- Doesn't work. -->   	
-<form class="nbrItemPage productsSortForm" id="productsSortForm" action="https://www.beary.com.sg/18-dog">
+<!--<form class="nbrItemPage productsSortForm" id="productsSortForm" action="https://www.beary.com.sg/18-dog">
 <label for="selectPrductSort">Sort by</label>
 <div class="selector" id="uniform-selectPrductSort" style="width: 205px;"><span style="width: 203px; -ms-user-select: none;"></span><select class="selectProductSort" id="selectPrductSort">
 <option selected="selected" value="position:asc">--</option>
@@ -324,7 +231,7 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 <option value="reference:desc">Reference: Highest first</option>
 </select></div>
 
-</form>
+</form>-->
 <!-- /Sort products -->
 
 
@@ -342,9 +249,9 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 <!-- Products list -->
 
 
-<ul class="grid row" id="product_list">
+<ul class="grid row" id="product_list" style="list-style-type:none">
 
-
+<div>
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-1 alpha  first_item_of_tablet_line ">
 <div class="inner_content clearfix">
 <a title="Wellness Complete Health WhiteFish and Sweet Potato" class="product_img_link" href="#">
@@ -362,11 +269,12 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 <p class="product_desc"></p>
 </div>																				 
 <div class="right_block">
-<span class="price">SG$34.40</span>  
+<span class="price">SG$34.40</span>
+<br><br>
 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_196"><span><input class="comparator" id="comparator_item_196" type="checkbox" value="comparator_item_196" autocomplete="off"></span></div> 
-<label for="comparator_item_196">Select to compare</label></p>
+<label for="comparator_item_196">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_196">
 <span>Add to cart</span>
@@ -391,15 +299,17 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>
 <div class="clear"></div>
 <h5>
-<a title="Wellness WellBites Lamb and Salmon" class="product_link" href="#">Wellness WellBites Lamb and Salmon</a></h5>
+<a title="Wellness WellBites Lamb and Salmon" class="product_link" href="#">Wellness Complete WellBites Lamb and Salmon</a></h5>
+
 <p class="product_desc"></p>  
 </div>																				 
 <div class="right_block">
 <span class="price">SG$18.70</span>  
+<br><br>
 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_221"><span><input class="comparator" id="comparator_item_221" type="checkbox" value="comparator_item_221" autocomplete="off"></span></div> 
-<label for="comparator_item_221">Select to compare</label></p>
+<label for="comparator_item_221">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_221">
 <span>Add to cart</span>
@@ -409,6 +319,8 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>
 </div>
 </li>
+
+
 
 
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-3 omega  first_item_of_tablet_line ">
@@ -431,10 +343,11 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>																				 
 <div class="right_block">
 <span class="price">SG$4.20</span>  
+<br><br>
 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_2233"><span><input class="comparator" id="comparator_item_2233" type="checkbox" value="comparator_item_2233" autocomplete="off"></span></div> 
-<label for="comparator_item_2233">Select to compare</label></p>
+<label for="comparator_item_2233">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_2233">
 <span>Add to cart</span>
@@ -444,6 +357,9 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>
 </div>
 </li>
+</div>
+
+
 
 
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-4 alpha  last_item_of_tablet_line ">
@@ -466,10 +382,11 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>																				 
 <div class="right_block">
 <span class="price">SG$4.20</span>  
+<br><br>
 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_2240"><span><input class="comparator" id="comparator_item_2240" type="checkbox" value="comparator_item_2240" autocomplete="off"></span></div> 
-<label for="comparator_item_2240">Select to compare</label></p>
+<label for="comparator_item_2240">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_2240">
 <span>Add to cart</span>
@@ -479,7 +396,7 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>
 </div>
 </li>
-
+<br>
 
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-5  first_item_of_tablet_line ">
 <div class="inner_content clearfix">
@@ -502,9 +419,11 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 <div class="right_block">
 <span class="price">SG$27.90</span>  
 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<br><br>
+
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_2281"><span><input class="comparator" id="comparator_item_2281" type="checkbox" value="comparator_item_2281" autocomplete="off"></span></div> 
-<label for="comparator_item_2281">Select to compare</label></p>
+<label for="comparator_item_2281">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#">
 <span>Add to cart</span>
@@ -537,9 +456,11 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 <div class="right_block">
 <span class="price">SG$24.60</span>  
 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<br><br>
+
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_2312"><span><input class="comparator" id="comparator_item_2312" type="checkbox" value="comparator_item_2312" autocomplete="off"></span></div> 
-<label for="comparator_item_2312">Select to compare</label></p>
+<label for="comparator_item_2312">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#">
 <span>Add to cart</span>
@@ -571,10 +492,10 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>																				 
 <div class="right_block">
 <span class="price">SG$15.75</span>  
-
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_2314"><span><input class="comparator" id="comparator_item_2314" type="checkbox" value="comparator_item_2314" autocomplete="off"></span></div> 
-<label for="comparator_item_2314">Select to compare</label></p>
+<label for="comparator_item_2314">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#">
 <span>Add to cart</span>
@@ -606,10 +527,10 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>																				 
 <div class="right_block">
 <span class="price">SG$22.00</span>  
-
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_2316"><span><input class="comparator" id="comparator_item_2316" type="checkbox" value="comparator_item_2316" autocomplete="off"></span></div> 
-<label for="comparator_item_2316">Select to compare</label></p>
+<label for="comparator_item_2316">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#">
 <span>Add to cart</span>
@@ -641,10 +562,10 @@ $('#productsSortForm .selectProductSort, .nb_item').uniform();
 </div>																				 
 <div class="right_block">
 <span class="price">SG$9.70</span>  
-
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_2330"><span><input class="comparator" id="comparator_item_2330" type="checkbox" value="comparator_item_2330" autocomplete="off"></span></div> 
-<label for="comparator_item_2330">Select to compare</label></p>
+<label for="comparator_item_2330">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 		<a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#">
 <span>Add to cart</span>
@@ -709,12 +630,12 @@ var max_item = "You cannot add more than 3 product(s) to the product comparison"
 
 //]]>
 </script>
-<form class="form_compare hidden-xs" onsubmit="true" action="#" method="post">
+<!--<form class="form_compare hidden-xs" onsubmit="true" action="#" method="post">
 <p>
 <input class="button btn btn-default" id="bt_compare_bottom" type="submit" value="Compare">
 <input name="compare_product_list" class="compare_product_list" type="hidden" value="">
 </p>
-</form>
+</form>-->
 
 
 
@@ -743,91 +664,7 @@ var max_item = "You cannot add more than 3 product(s) to the product comparison"
 </div>
 		<!-- End of test -->
 
-	
-	<div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<span>Let's work together</span>
-					<h2>Try this template for free</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><button type="submit" class="btn btn-default">Get In Touch</button></p>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget">
-					<h3>animaroo<span style="color:#F73859;">.</span></h3>
-					<p>Groom with convenience.</p>
-				</div>
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
-					<ul class="fh5co-footer-links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="services.html">Services</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
-					<ul class="fh5co-footer-links">
-							<li><a href="products.html">Shop</a></li>
-							<li><a href="about.html">About Us</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
-					<ul class="fh5co-footer-links">
-							<li><a href="blog.html">Testimonials</a></li>
-							<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-							<small class="block">&copy; 2018 Animaroo Pte Ltd </small>
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
-
-	</body>
-</html>
-
+<?php
+include ("footer.php");
+?>

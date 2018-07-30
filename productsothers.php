@@ -1,102 +1,7 @@
-<!DOCTYPE HTML>
-<!--
-	Concept by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>animaroo. &mdash; we groom.</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" />
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
-
-	<link rel"stylesheet" href="css/add_style.css">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Products style -->
-    <link rel="stylesheet" href="css/products.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">animaroo<span>.</span></a></div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li><a href="indexphp.php">Home</a></li>
-						<li class="has-dropdown">
-							<a href="services.php">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Bath</a></li>
-								<li><a href="#">Grooming</a></li>
-								<li><a href="#">Walk</a></li>
-								<li><a href="#">Rates</a></li>
-							</ul>
-                        </li>
-                        
-                        <li class="has-dropdown">
-								<a href="productsdog.html">Products</a>
-								<ul class="dropdown">
-									<li><a href="productsdog.html">Dog</a></li>
-                                    <li><a href="productscat.html">Cat</a></li>
-                                    <li><a href="productsothers.html">Others</a></li>
-								</ul>
-							</li>
-						<li><a href="about.php">About</a></li>
-						<li><a href="topiclist.php">Feedback</a></li>
-						<li><a href="contact_us.php">Contact</a></li>
-						<li><a href="#">Login</a></li>
-
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
+<?php
+session_start();
+include ('header.php');
+?>
 
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header3.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -149,13 +54,13 @@
     <ul class="toggle_content tree store_list dhtml">
             
     <li class="category_18">
-    <i class="grower icon-minus-sign"></i><a title="" href="productsdog.html"><i class="icon-caret-right"></i>Dog</a>
+    <i class="grower icon-minus-sign"></i><a title="" href="productsdog.php"><i class="icon-caret-right"></i>Dog</a>
         
     <li class="category_19">
-    <i class="grower icon-plus-sign"></i><a title="" href="productscat.html"><i class="icon-caret-right"></i>Cat</a>
+    <i class="grower icon-plus-sign"></i><a title="" href="productscat.php"><i class="icon-caret-right"></i>Cat</a>
 
     <li class="category_20">
-    <i class="grower icon-plus-sign"></i><a title="" class="selected" href="productsothers.html"><i class="icon-caret-right"></i>Others</a>
+    <i class="grower icon-plus-sign"></i><a title="" class="productsothers.php" href="productsothers.php"><i class="icon-caret-right"></i>Others</a>
     <ul style="display: none;">
         
     </ul>

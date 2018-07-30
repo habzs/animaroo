@@ -16,7 +16,7 @@ include ('header.php');
 							<p>
 								<a href="register.php" target="_blank" class="btn btn-primary">REGISTER</a> 
 								<em class="or">or</em> 
-								<a href="login.php">Log In</a>
+								<a href="login.php" style="color:white">Log In</a>
 							</p>
 						</div>
 					</div>

@@ -11,7 +11,7 @@
 <body>
   <div class="posts-wrapper">
    <?php foreach ($posts as $post): ?>
-   	<div class="post">
+   <div class="post">
       <?php echo $post['text']; ?>
       <div class="post-info">
 	    <!-- if user likes post, style button differently -->

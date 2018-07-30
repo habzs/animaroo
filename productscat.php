@@ -1,102 +1,7 @@
-<!DOCTYPE HTML>
-<!--
-	Concept by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>animaroo. &mdash; we groom.</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" />
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
-
-	<link rel"stylesheet" href="css/add_style.css">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Products style -->
-    <link rel="stylesheet" href="css/products.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">animaroo<span>.</span></a></div>
-				</div>
-				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li><a href="indexphp.php">Home</a></li>
-						<li class="has-dropdown">
-							<a href="services.php">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Bath</a></li>
-								<li><a href="#">Grooming</a></li>
-								<li><a href="#">Walk</a></li>
-								<li><a href="#">Rates</a></li>
-							</ul>
-                        </li>
-                        
-                        <li class="has-dropdown">
-								<a href="productsdog.html">Products</a>
-								<ul class="dropdown">
-									<li><a href="productsdog.html">Dog</a></li>
-                                    <li><a href="productscat.html">Cat</a></li>
-                                    <li><a href="productsothers.html">Others</a></li>
-								</ul>
-							</li>
-						<li><a href="about.php">About</a></li>
-						<li><a href="topiclist.php">Feedback</a></li>
-						<li><a href="contact_us.php">Contact</a></li>
-						<li><a href="#">Login</a></li>
-
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
+<?php
+session_start();
+include ('header.php');
+?>
 
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header3.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -146,19 +51,20 @@
  <!-- Block categories module -->
 <section class="column_box block" id="categories_block_left">
         <h1 class="h1everything"><span><b>Categories</b></span><i class="column_icon_toggle icon-plus-sign"></i></h1>
-        <ul class="toggle_content tree store_list dhtml">
+        <ul style="list-style-type:none">
         
         <li class="category_18">
-        <i class="grower icon-minus-sign"></i><a title="" href="productsdog.html"><i class="icon-caret-right"></i>Dog</a>
+        <i class="grower icon-minus-sign"></i><a title="" href="productsdog.php"><i class="icon-caret-right"></i>Dog</a>
         
         <li class="category_19">
-        <i class="grower icon-plus-sign"></i><a title="" class="selected" href="productscat.html"><i class="icon-caret-right"></i>Cat</a>
+        <i class="grower icon-plus-sign"></i><a title="" class="productscats.php" href="productscat.php"><i class="icon-caret-right"></i>Cat</a>
         
         <li class="category_20">
-        <i class="grower icon-plus-sign"></i><a title="" href="productsothers.html"><i class="icon-caret-right"></i>Others</a>
+        <i class="grower icon-plus-sign"></i><a title="" href="productsothers.php"><i class="icon-caret-right"></i>Others</a>
         <ul style="display: none;">
         
         </ul>
+        <br><br>
         
         <script type="text/javascript">
         // <![CDATA[
@@ -170,7 +76,7 @@
       
         <!-- Block manufacturers module -->
         <section class="block blockmanufacturer column_box" id="manufacturers_block_left">
-            <h4 class="title_block"><span>Manufacturers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+            <!--<h4 class="title_block"><span>Manufacturers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>-->
             <div class="block_content toggle_content">
                         <form action="/index.php" method="get">
                     
@@ -183,7 +89,7 @@
         <section class="block products_block column_box" id="blockbestsellers">
             <h4><span>Best sellers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
             <div class="block_content toggle_content">
-                <ul>
+                <ul style="list-style-type:none">
                                 <li class="clearfix shop_box">
                                 <a title="Oxbow Western Timothy Hay" class="products_block_img" href="#"><img alt="Oxbow Western Timothy Hay" src="https://www.beary.com.sg/2778-medium_default/oxbow-western-timothy-hay.jpg"></a>
                     <div>
@@ -191,6 +97,7 @@
                                 
                     </div>
                             </li>
+                            <br>
                                         <li class="clearfix shop_box">
                                 <a title="Oxbow Adult Rabbit" class="products_block_img" href="#"><img alt="Oxbow Adult Rabbit" src="https://www.beary.com.sg/3273-medium_default/oxbow-bunny-basics-t.jpg"></a>
                     <div>
@@ -198,6 +105,7 @@
                                 
                     </div>
                             </li>
+                            <br>
                                         <li class="clearfix shop_box">
                                 <a title="APD Timothy Gold Hay" class="products_block_img" href="#"><img alt="APD Timothy Gold Hay" src="https://www.beary.com.sg/2518-medium_default/apd-timothy-gold-hay.jpg"></a>
                     <div>
@@ -206,7 +114,7 @@
                     </div>
                             </li>
                                                                                                                                             </ul>
-            <a title="All best sellers" class="btn btn-default button_large" href="#">All best sellers</a>
+            <!--<a title="All best sellers" class="btn btn-default button_large" href="#">All best sellers</a>-->
                 </div>
         </section>
                             </div><div class="center_column col-xs-12 col-sm-9 clearfix" id="center_column">
@@ -217,19 +125,19 @@
         
 <!-- /Breadcrumb -->
 <h1 class="h1everything">
-<span>
+<!--<span>
 Cat<strong class="category-product-count">
 </strong>
-</span>
+</span>-->
 </h1>
 <div class="row_category clearfix">
                             <!-- Category image -->
                     
                                                         </div>
                         <!-- Subcategories -->
-                <div class="titled_box" id="subcategories">
-                    <h2>Subcategories</h2>
-                    <ul class="row">
+                <!--<div class="titled_box" id="subcategories">
+                    <!--<h2>Subcategories</h2>-->
+                    <!--<ul class="row">
                                     <li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
                             <a title="Dry Food" href="#">
                                                             <img alt="" src="#">
@@ -287,7 +195,7 @@ Cat<strong class="category-product-count">
                       <a title="Toys" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Toys</a>
                         </li>
                                 </ul>
-                </div>
+                </div>-->
         
         
                 
@@ -318,7 +226,7 @@ Cat<strong class="category-product-count">
         </script>     
         <ul class="product_view clearfix hidden-xs">
         </ul>
-<form class="nbrItemPage productsSortForm" id="productsSortForm" action="https://www.beary.com.sg/19-cat">
+<!--<form class="nbrItemPage productsSortForm" id="productsSortForm" action="https://www.beary.com.sg/19-cat">
 <label for="selectPrductSort">Sort by</label>
 <div class="selector" id="uniform-selectPrductSort" style="width: 205px;"><span style="width: 203px; -ms-user-select: none;"></span><select class="selectProductSort" id="selectPrductSort">
 <option selected="selected" value="position:asc">--</option>
@@ -331,7 +239,7 @@ Cat<strong class="category-product-count">
 <option value="reference:desc">Reference: Highest first</option>
 </select></div>
         
-        </form>
+        </form>-->
         <!-- /Sort products -->
         
                     
@@ -345,7 +253,7 @@ Cat<strong class="category-product-count">
                     
 <!-- Products list -->                                                        
                     
-<ul class="grid row" id="product_list">
+<ul class="grid row" id="product_list" style="list-style-type:none">
             
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-1 alpha  first_item_of_tablet_line ">            
     <div class="inner_content clearfix">
@@ -359,15 +267,16 @@ Cat<strong class="category-product-count">
                     </div>
                     <div class="clear"></div>
                     <h5>
-                                        <a title="Addiction Cat Salmon Bleu – Grain Free" class="product_link" href="#">Addiction Cat Salmon Bleu – Grain Free</a></h5>
+                                        <a title="Addiction Cat Salmon Bleu – Grain Free" class="product_link" href="#">Addiction Cat Salmon Bleu</a></h5>
                 
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$38.50</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_89"><span><input class="comparator" id="comparator_item_89" type="checkbox" value="comparator_item_89" autocomplete="off"></span></div> 
-                        <label for="comparator_item_89">Select to compare</label></p>
+                        <label for="comparator_item_89">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>
                                                                                                 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_89">
                                     <span>Add to cart</span>
@@ -396,10 +305,11 @@ Cat<strong class="category-product-count">
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$9.00</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_2854"><span><input class="comparator" id="comparator_item_2854" type="checkbox" value="comparator_item_2854" autocomplete="off"></span></div> 
-                        <label for="comparator_item_2854">Select to compare</label></p>
+                        <label for="comparator_item_2854">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>
                                                                                                 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_2854">
                                     <span>Add to cart</span>
@@ -429,10 +339,11 @@ Cat<strong class="category-product-count">
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$5.50</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_3061"><span><input class="comparator" id="comparator_item_3061" type="checkbox" value="comparator_item_3061" autocomplete="off"></span></div> 
-                        <label for="comparator_item_3061">Select to compare</label></p>
+                        <label for="comparator_item_3061">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>
                                                                                                 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3061">
                                     <span>Add to cart</span>
@@ -462,10 +373,11 @@ Cat<strong class="category-product-count">
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$5.50</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_3062"><span><input class="comparator" id="comparator_item_3062" type="checkbox" value="comparator_item_3062" autocomplete="off"></span></div> 
-                        <label for="comparator_item_3062">Select to compare</label></p>
+                        <label for="comparator_item_3062">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>
                                                                                                 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#">
                                     <span>Add to cart</span>
@@ -495,10 +407,11 @@ Cat<strong class="category-product-count">
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$5.50</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_3064"><span><input class="comparator" id="comparator_item_3064" type="checkbox" value="comparator_item_3064" autocomplete="off"></span></div> 
-                        <label for="comparator_item_3064">Select to compare</label></p>
+                        <label for="comparator_item_3064">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>
                                                                                                 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3064">
                                     <span>Add to cart</span>
@@ -523,15 +436,16 @@ Cat<strong class="category-product-count">
                     </div>
                     <div class="clear"></div>
                     <h5>
-                                        <a title="Ciao Churu White Meat Tuna and Scallop" class="product_link" href="#">Ciao Churu White Meat Tuna and Scallop</a></h5>
+                                        <a title="Ciao Churu White Meat Tuna and Scallop" class="product_link" href="#">Ciao Churu White Meat Tuna</a></h5>
 
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$5.50</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_3065"><span><input class="comparator" id="comparator_item_3065" type="checkbox" value="comparator_item_3065" autocomplete="off"></span></div> 
-                        <label for="comparator_item_3065">Select to compare</label></p>
+                        <label for="comparator_item_3065">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>
                                                                                                 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3065">
                                     <span>Add to cart</span>
@@ -556,15 +470,16 @@ Cat<strong class="category-product-count">
                     </div>
                     <div class="clear"></div>
                     <h5>
-                                        <a title="Ciao Chu Ru White Meat Tuna Scallop Flavor" class="product_link" href="#">Ciao Chu Ru White Meat Tuna Scallop Flavor</a></h5>
+                                        <a title="Ciao Chu Ru White Meat Tuna Scallop Flavor" class="product_link" href="#">Ciao Chu Ru Tuna Scallop Flavor</a></h5>
                
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$11.80</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_3071"><span><input class="comparator" id="comparator_item_3071" type="checkbox" value="comparator_item_3071" autocomplete="off"></span></div> 
-                        <label for="comparator_item_3071">Select to compare</label></p>
+                        <label for="comparator_item_3071">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>
                                                                                                 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3071">
                                     <span>Add to cart</span>
@@ -594,10 +509,11 @@ Cat<strong class="category-product-count">
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$18.70</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_3141"><span><input class="comparator" id="comparator_item_3141" type="checkbox" value="comparator_item_3141" autocomplete="off"></span></div> 
-                        <label for="comparator_item_3141">Select to compare</label></p>
+                        <label for="comparator_item_3141">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>
                                                                                                 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3141">
                                     <span>Add to cart</span>
@@ -627,10 +543,11 @@ Cat<strong class="category-product-count">
                 </div>																				 
                 <div class="right_block">
                                                                 <span class="price">SG$12.80</span>  
+                                                                <br><br>
                          
-                                   <p class="compare checkbox choices-thin clearfix hidden-xs">		
+                                   <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
                         <div class="checker" id="uniform-comparator_item_3150"><span><input class="comparator" id="comparator_item_3150" type="checkbox" value="comparator_item_3150" autocomplete="off"></span></div> 
-                        <label for="comparator_item_3150">Select to compare</label></p>
+                        <label for="comparator_item_3150">Select to compare</label></p>-->
                                 <div class="clear noneclass"></div>                                                                                                <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3150">
                                 <span>Add to cart</span>
     </a>                                                    
@@ -693,26 +610,26 @@ Cat<strong class="category-product-count">
         
         //]]>
         </script>
-            <form class="form_compare hidden-xs" onsubmit="true" action="#" method="post">
+            <!--<form class="form_compare hidden-xs" onsubmit="true" action="#" method="post">
                 <p>
                 <input class="button btn btn-default" id="bt_compare_bottom" type="submit" value="Compare">
                 <input name="compare_product_list" class="compare_product_list" type="hidden" value="">
                 </p>
-            </form>
+            </form>-->
         
         
                     
    <!-- Pagination -->
           
-            <div class="pagination" id="pagination_bottom">
-                      <ul class="pagination">
-                            <li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
-                                                                            <li class="current pag-top"><span class="button">1</span></li>
-                                                        <li class="pag-top"><a class="button" href="/19-cat?p=2">2</a></li>
-                                                                                    <li class="pagination_next" id="pagination_next_bottom"><a class="button" href="/19-cat?p=2">Next</a></li>
-                        </ul>
-                
-            </div>
+   <div class="pagination" id="pagination_bottom">
+<ul class="pagination">
+<li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
+<li class="current pag-top"><span class="button">1</span></li>
+<li class="pag-top"><span class="button"><a href="/18-dog?p=2">2</a></span></li>
+<li class="pagination_next" id="pagination_next_bottom"><span class="button"><a href="/18-dog?p=2">Next</a></span></li>
+</ul>
+
+</div>
             <!-- /Pagination -->
         
                     </div>
@@ -725,20 +642,6 @@ Cat<strong class="category-product-count">
         </div>
         </div>
 		<!-- End of test -->
-
-	
-	<div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<span>Let's work together</span>
-					<h2>Try this template for free</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><button type="submit" class="btn btn-default">Get In Touch</button></p>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">

@@ -4,12 +4,36 @@
 	Twitter: http://twitter.com/gettemplateco
 	URL: http://gettemplates.co
 -->
+
+	<link rel="stylesheet" href="css/add_style.css">
+
 <footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-4 fh5co-widget">
 					<h3>animaroo<span style="color:#F73859;">.</span></h3>
 					<p>Groom with convenience.</p>
+
+					<!--<div class="col-xs-3-new" style="float: right; position: relative; left: 50px; ">
+					<!--<input class="col-xs-2 form-control" style=" height:40px; font-size:15px" type="text" placeholder="Search" aria-label="Search" ></li>
+					<!-- Google CSE -->
+					<div class="row row-pd-md cse" style="border:0px solid; margin:left; width:80%; height:90px;"> 
+					<script>
+							(function() {
+							  var cx = '002315222081453687937:q-ghc-vhfbc';
+							  var gcse = document.createElement('script');
+							  gcse.type = 'text/javascript';
+							  gcse.async = true;
+							  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+							  var s = document.getElementsByTagName('script')[0];
+							  s.parentNode.insertBefore(gcse, s);
+							})();
+						  </script>
+						  <gcse:search></gcse:search>
+						<!-- Google CSE -->
+					
+				</div>
+
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">

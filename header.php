@@ -30,7 +30,6 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
 
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	
 	<link rel="stylesheet" href="css/searchbar.css">
 	<!-- Animate.css -->
@@ -76,7 +75,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">animaroo<span>.</span></a></div>
+					<div id="fh5co-logo"><a href="indexphp.php">animaroo<span>.</span></a></div>
 				</div>
 
 				
@@ -100,11 +99,11 @@
 							</ul>
 						</li>
 						<li class="has-dropdown">
-								<a href="productsdog.html">Products</a>
+								<a href="productsdog.php">Products</a>
 								<ul class="dropdown">
-									<li><a href="productsdog.html">Dog</a></li>
-									<li><a href="productscat.html">Cat</a></li>
-									<li><a hred="productsother.html">Others</a></li>
+									<li><a href="productsdog.php">Dog</a></li>
+									<li><a href="productscat.php">Cat</a></li>
+									<li><a hred="productsother.php">Others</a></li>
 								</ul>
 							</li>
 						<li><a href="about.php">About</a></li>
@@ -118,6 +117,7 @@
 							echo '<li><a href="login.php">Log In</a></li>';
 						}
 						?>
+						<li><a href="registered_pets.php">Our Pets</a><li>
 					</ul>
 				</div>
 			</div>

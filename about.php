@@ -3,6 +3,8 @@ session_start();
 include('header.php');
 ?>
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header4.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
