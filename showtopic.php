@@ -102,7 +102,7 @@ if ( isset( $_SESSION["email"] ) ) { ?>
 			<div class="row col-md-13">
                 <div class="col-md-8 table text-left table fh5c0-heading" style="align-self:center">
                 <?php print $display_block; ?>
-                
+                <p><a href="/topiclist.php"><button type="submit" class="btn btn-primary" style="margin-left:515px">Back to Forum!</button></a></p>
             </div>    
             
 
@@ -123,6 +123,7 @@ if ( isset( $_SESSION["email"] ) ) { ?>
 			</div>
 		</div>
 	</div>
+
 
 <?php }
 ?>

@@ -21,7 +21,6 @@ include('header.php');
 	 <table border=	1 class=table>
      <tr>
      <th><center>TOPIC TITLE</center></th>
-     <th width=18%><center># of POSTS</center></th>
      </tr>";
   
       while ($topic_info = mysqli_fetch_array($get_topics_res)) {
@@ -47,7 +46,6 @@ include('header.php');
          <td><a href=\"showtopic.php?topic_id=$topic_id\">
          <strong>$topic_title</strong></a><br>
          Created on $topic_create_time by $topic_owner</td>
-         <td align=center>$num_posts</td>
          </tr>";
      }
   
@@ -102,7 +100,8 @@ if ( isset( $_SESSION["email"] ) ) { ?>
 			<div class="row animate-box row-pb-md" data-animate-effect="fadeInUp">
 				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
 					<span>Thoughts &amp; Ideas</span>
-					<h2>It appears that you're not logged in!</h2>
+                    <h2>It appears that you're not logged in!</h2>
+                    <br>
 					<p>Please log in to participate in the forums!</p>
 				</div>
 			</div>

@@ -45,23 +45,23 @@
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="indexphp.php">Home</a></li>
-						<li><a href="services.html">Services</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="services.php">Services</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="products.html">Shop</a></li>
-						<li><a href="about.html">About Us</a></li>
+						<li><a href="productsdog.php">Shop</a></li>
+						<li><a href="about.php">About Us</a></li>
 						
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-							<li><a href="blog.html">Testimonials</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="topiclist.php">Forum</a></li>
+							<li><a href="contact_us.php">Contact</a></li>
 					</ul>
 				</div>
 			</div>

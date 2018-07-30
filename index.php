@@ -48,7 +48,7 @@ include ('header.php');
 	
 				<div class="row">
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="/images/index_dog_walking.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+						<a href="services.php"><img src="/images/index_dog_walking.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
 								<h3>Dog Walking</h3>
 								<p>Woof woof.</p>
@@ -56,7 +56,7 @@ include ('header.php');
 						</a>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="images/index_cat_grooming.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+						<a href="services.php"><img src="images/index_cat_grooming.jpg" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
 								<h3>Grooming</h3>
 								<p>A good looking kat is a happy kat.</p>
@@ -64,7 +64,7 @@ include ('header.php');
 						</a>
 					</div>
 					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="services.html"><img src="images/index_dog_washing.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
+						<a href="services.php"><img src="images/index_dog_washing.png" alt="Free HTML5 Website Template by gettemplates.co" class="img-responsive">
 							<div class="fh5co-copy">
 								<h3>Bath</h3>
 								<p>We'll wash your pets. Arf.</p>

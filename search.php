@@ -81,7 +81,9 @@ tr:nth-child(even){background-color: #f2f2f2}
                                 echo "There are no results matching your search!";
                             }
                         }
-                    ?>
+					?>
+					<p><a href="/registered_pets.php"><button type="submit" class="btn btn-primary" style="margin-left:515px">Back to Pets!</button></a></p>
+
 					</div>
 				</div>
 			</div>

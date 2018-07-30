@@ -128,7 +128,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 								<td align="left">' . $row['age'] . '</td>
 								<td align="left">' . $row['species'] . '</td>
 								<td align="left">' . $row['breed'] . '</td>
-								<td align="left" style="width: 45px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
+								<td align="left" style="width: 100px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
 								<td align="left"><a href="rating_pos.php?id=' . $row['id'] . '">'. $row['likes'] . '</a></td>
 								<td align="left"><a href="rating_neg.php?id=' . $row['id'] . '">'. $row['dislikes'] . '</a></td>
 							</tr>
