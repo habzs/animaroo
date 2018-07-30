@@ -155,6 +155,11 @@ include('header.php');
 		</div>
 	</div>
 
+	<?php
+include ("footer.php");
+?>
+
+
 	<script>
 			var myIndex = 0;
 			carousel();
@@ -173,8 +178,5 @@ include('header.php');
 			</script>
 			
 
-<?php
-include ("footer.php");
-?>
 
 

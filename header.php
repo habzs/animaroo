@@ -103,7 +103,7 @@
 								<ul class="dropdown">
 									<li><a href="productsdog.php">Dog</a></li>
 									<li><a href="productscat.php">Cat</a></li>
-									<li><a hred="productsother.php">Others</a></li>
+									<li><a href="productsothers.php">Others</a></li>
 								</ul>
 							</li>
 						<li><a href="about.php">About</a></li>
