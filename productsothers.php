@@ -51,16 +51,16 @@ include ('header.php');
  <!-- Block categories module -->
 <section class="column_box block" id="categories_block_left">
     <h1 class="h1everything"><span><b>Categories</b></span><i class="column_icon_toggle icon-plus-sign"></i></h1>
-    <ul class="toggle_content tree store_list dhtml">
+    <ul class="toggle_content tree store_list dhtml" style="list-style-type:none">
             
     <li class="category_18">
-    <i class="grower icon-minus-sign"></i><a title="" href="productsdog.php"><i class="icon-caret-right"></i>Dog</a>
+    <a title="" href="productsdog.php"></i>Dog</a>
         
     <li class="category_19">
-    <i class="grower icon-plus-sign"></i><a title="" href="productscat.php"><i class="icon-caret-right"></i>Cat</a>
+    <a title="" href="productscat.php"><i class="icon-caret-right"></i>Cat</a>
 
     <li class="category_20">
-    <i class="grower icon-plus-sign"></i><a title="" class="productsothers.php" href="productsothers.php"><i class="icon-caret-right"></i>Others</a>
+    <a title="" class="productsothers.php" href="productsothers.php"><i class="icon-caret-right"></i>Others</a>
     <ul style="display: none;">
         
     </ul>
@@ -75,34 +75,38 @@ include ('header.php');
       
         <!-- Block manufacturers module -->
         <section class="block blockmanufacturer column_box" id="manufacturers_block_left">
-            <h4 class="title_block"><span>Manufacturers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+            <!--<h4 class="title_block"><span>Manufacturers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>-->
             <div class="block_content toggle_content">
                         <form action="/index.php" method="get">
                     
                      
                 </div>
-        </section>
+		</section>
+		
+		<br><br>
         <!-- /Block manufacturers module -->
         
         <!-- MODULE Block best sellers -->
         <section class="block products_block column_box" id="blockbestsellers">
             <h4><span>Best sellers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
             <div class="block_content toggle_content">
-                <ul>
+                <ul style="list-style-type:none">
                                 <li class="clearfix shop_box">
                                 <a title="Oxbow Western Timothy Hay" class="products_block_img" href="#"><img alt="Oxbow Western Timothy Hay" src="https://www.beary.com.sg/2778-medium_default/oxbow-western-timothy-hay.jpg"></a>
                     <div>
-                                    <h5><a title="Oxbow Western Timothy Hay" class="product_link" href="#">Oxbow Western Timothy Hay</a></h5>
+                                    <h5><a title="Oxbow Western Timothy Hay" class="product_link" href="#">Oxbow Western Hay</a></h5>
                                 
                     </div>
-                            </li>
+							</li>
+							<br>
                                         <li class="clearfix shop_box">
                                 <a title="Oxbow Adult Rabbit" class="products_block_img" href="#"><img alt="Oxbow Adult Rabbit" src="https://www.beary.com.sg/3273-medium_default/oxbow-bunny-basics-t.jpg"></a>
                     <div>
                                     <h5><a title="Oxbow Adult Rabbit" class="product_link" href="#">Oxbow Adult Rabbit</a></h5>
                                 
                     </div>
-                            </li>
+							</li>
+							<br>
                                         <li class="clearfix shop_box">
                                 <a title="APD Timothy Gold Hay" class="products_block_img" href="#"><img alt="APD Timothy Gold Hay" src="https://www.beary.com.sg/2518-medium_default/apd-timothy-gold-hay.jpg"></a>
                     <div>
@@ -111,7 +115,7 @@ include ('header.php');
                     </div>
                             </li>
                                                                                                                                             </ul>
-            <a title="All best sellers" class="btn btn-default button_large" href="#">All best sellers</a>
+            <!--<a title="All best sellers" class="btn btn-default button_large" href="#">All best sellers</a>-->
                 </div>
         </section>
                             </div><div class="center_column col-xs-12 col-sm-9 clearfix" id="center_column">
@@ -122,10 +126,10 @@ include ('header.php');
         
 <!-- /Breadcrumb -->
 <h1 class="h1everything">
-<span>
+<!--<span>
 Others<strong class="category-product-count">
 </strong>
-</span>
+</span>-->
 </h1>
 <div class="row_category clearfix">
                             <!-- Category image -->
@@ -133,9 +137,9 @@ Others<strong class="category-product-count">
                                                         </div>
 <!-- Subcategories --> 
 <div class="titled_box" id="subcategories">
-<h2>Subcategories</h2>
+<!--<h2>Subcategories</h2>-->
 <ul class="row">
-<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
+<!--<li class="categories_box col-xs-4 col-sm-3 col-md-3 col-lg-2    ">
 <a title="Hay" href="#">
 <img alt="" src="#">
                                                     
@@ -199,7 +203,7 @@ Others<strong class="category-product-count">
                                                     
 </a>
 <a title="Toys" class="lnk_more_sub" href="#"><i class="icon-caret-right "></i> Toys</a>
-</li>
+</li>-->
 </ul>
 </div>
         
@@ -232,7 +236,7 @@ Others<strong class="category-product-count">
         </script>     
         <ul class="product_view clearfix hidden-xs">
         </ul>
-<form class="nbrItemPage productsSortForm" id="productsSortForm" action="https://www.beary.com.sg/19-cat">
+<!--<form class="nbrItemPage productsSortForm" id="productsSortForm" action="https://www.beary.com.sg/19-cat">
 <label for="selectPrductSort">Sort by</label>
 <div class="selector" id="uniform-selectPrductSort" style="width: 205px;"><span style="width: 203px; -ms-user-select: none;"></span><select class="selectProductSort" id="selectPrductSort">
 <option selected="selected" value="position:asc">--</option>
@@ -259,7 +263,7 @@ Others<strong class="category-product-count">
                     
 <!-- Products list -->                                                        
                     
-<ul class="row grid" id="product_list">
+<ul class="row grid" id="product_list" style="list-style-type:none">
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-1 alpha  first_item_of_tablet_line ">
 <div class="inner_content clearfix">
 <a title="Protexin Pro-fibre for Rabbits" class="product_img_link" href="#">
@@ -280,10 +284,10 @@ Others<strong class="category-product-count">
 </div>																				 
 <div class="right_block">
 <span class="price">SG$48.00</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+<br><br>				 
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3026"><span><input class="comparator" id="comparator_item_3026" type="checkbox" value="comparator_item_3026" autocomplete="off"></span></div> 
-<label for="comparator_item_3026">Select to compare</label></p>
+<label for="comparator_item_3026">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3026">
 <span>Add to cart</span>
@@ -315,10 +319,10 @@ Others<strong class="category-product-count">
 </div>																				 
 <div class="right_block">
 <span class="price">SG$29.00</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+		<br><br>		 
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3027"><span><input class="comparator" id="comparator_item_3027" type="checkbox" value="comparator_item_3027" autocomplete="off"></span></div> 
-<label for="comparator_item_3027">Select to compare</label></p>
+<label for="comparator_item_3027">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3027">
 <span>Add to cart</span>
@@ -343,17 +347,17 @@ Others<strong class="category-product-count">
 </div>
 <div class="clear"></div>
 <h5>
-<a title="Oxbow Hay Blends - Orchard/Western Timothy" class="product_link" href="#">Oxbow Hay Blends - Orchard/Western Timothy</a></h5>
+<a title="Oxbow Hay Blends - Orchard/Western Timothy" class="product_link" href="#">Oxbow Hay Blends - Orchard Timothy</a></h5>
 <p class="product_desc"></p>
 <p class="product_desc mob"></p>
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
 <span class="price">SG$9.40</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+				 <br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3170"><span><input class="comparator" id="comparator_item_3170" type="checkbox" value="comparator_item_3170" autocomplete="off"></span></div> 
-<label for="comparator_item_3170">Select to compare</label></p>
+<label for="comparator_item_3170">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3170">
 <span>Add to cart</span>
@@ -385,10 +389,10 @@ Others<strong class="category-product-count">
 </div>																				 
 <div class="right_block">
 <span class="price">SG$29.00</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+				 <br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3216"><span><input class="comparator" id="comparator_item_3216" type="checkbox" value="comparator_item_3216" autocomplete="off"></span></div> 
-<label for="comparator_item_3216">Select to compare</label></p>
+<label for="comparator_item_3216">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3216">
 <span>Add to cart</span>
@@ -413,17 +417,17 @@ Others<strong class="category-product-count">
 </div>
 <div class="clear"></div>
 <h5>
-<a title="Oxbow Organic Bounty Adult Rabbit Food" class="product_link" href="#">Oxbow Organic Bounty Adult Rabbit Food</a></h5>
+<a title="Oxbow Organic Bounty Adult Rabbit Food" class="product_link" href="#">Oxbow Organic Adult Rabbit Food</a></h5>
 <p class="product_desc"></p>
 <p class="product_desc mob"></p>
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
 <span class="price">SG$24.50</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+				 <br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3310"><span><input class="comparator" id="comparator_item_3310" type="checkbox" value="comparator_item_3310" autocomplete="off"></span></div> 
-<label for="comparator_item_3310">Select to compare</label></p>
+<label for="comparator_item_3310">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3310">
 <span>Add to cart</span>
@@ -455,10 +459,10 @@ Others<strong class="category-product-count">
 </div>																				 
 <div class="right_block">
 <span class="price">SG$4.80</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+				 <br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3312"><span><input class="comparator" id="comparator_item_3312" type="checkbox" value="comparator_item_3312" autocomplete="off"></span></div> 
-<label for="comparator_item_3312">Select to compare</label></p>
+<label for="comparator_item_3312">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3312">
 <span>Add to cart</span>
@@ -489,10 +493,10 @@ Others<strong class="category-product-count">
 </div>																				 
 <div class="right_block">
 <span class="price">SG$9.10</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+				 <br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3313"><span><input class="comparator" id="comparator_item_3313" type="checkbox" value="comparator_item_3313" autocomplete="off"></span></div> 
-<label for="comparator_item_3313">Select to compare</label></p>
+<label for="comparator_item_3313">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <span class="exclusive btn btn-default disabled">Add to cart</span>
 <a title="View" class="btn btn-default button" href="#">View</a>          
@@ -514,17 +518,17 @@ Others<strong class="category-product-count">
 </div>
 <div class="clear"></div>
 <h5>
-<a title="Small Pet Select Perfect Blend - 2nd cut timothy hay" class="product_link" href="#">Small Pet Select Perfect Blend - 2nd cut timothy hay</a></h5>
+<a title="Small Pet Select Perfect Blend - 2nd cut timothy hay" class="product_link" href="#">Small Pet Select Perfect Blend</a></h5>
 <p class="product_desc"></p>
 <p class="product_desc mob"></p>
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
 <span class="price">SG$38.00</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+				 <br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3315"><span><input class="comparator" id="comparator_item_3315" type="checkbox" value="comparator_item_3315" autocomplete="off"></span></div> 
-<label for="comparator_item_3315">Select to compare</label></p>
+<label for="comparator_item_3315">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3315">
 <span>Add to cart</span>
@@ -549,17 +553,17 @@ Others<strong class="category-product-count">
 </div>
 <div class="clear"></div>
 <h5>
-<a title="Beary Cat/ Rabbit Cute Cardboard House - Pink" class="product_link" href="#">Beary Cat/ Rabbit Cute Cardboard House - Pink</a></h5>
+<a title="Beary Cat/ Rabbit Cute Cardboard House - Pink" class="product_link" href="#">Rabbit Cute Cardboard House - Pink</a></h5>
 <p class="product_desc"></p>
 <p class="product_desc mob"></p>
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
 <span class="price">SG$22.90</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
+				 <br><br>
+<!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
 <div class="checker" id="uniform-comparator_item_3317"><span><input class="comparator" id="comparator_item_3317" type="checkbox" value="comparator_item_3317" autocomplete="off"></span></div> 
-<label for="comparator_item_3317">Select to compare</label></p>
+<label for="comparator_item_3317">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
 <a title="Add to cart" class="ajax_add_to_cart_button btn btn-default exclusive btn_add_cart" href="#" rel="ajax_id_product_3317">
 <span>Add to cart</span>
@@ -622,26 +626,26 @@ $(function() {
         
         //]]>
         </script>
-            <form class="form_compare hidden-xs" onsubmit="true" action="#" method="post">
+            <!--<form class="form_compare hidden-xs" onsubmit="true" action="#" method="post">
                 <p>
                 <input class="button btn btn-default" id="bt_compare_bottom" type="submit" value="Compare">
                 <input name="compare_product_list" class="compare_product_list" type="hidden" value="">
                 </p>
-            </form>
+            </form>-->
         
         
                     
    <!-- Pagination -->
           
-            <div class="pagination" id="pagination_bottom">
-                      <ul class="pagination">
-                            <li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
-                                                                            <li class="current pag-top"><span class="button">1</span></li>
-                                                        <li class="pag-top"><a class="button" href="/19-cat?p=2">2</a></li>
-                                                                                    <li class="pagination_next" id="pagination_next_bottom"><a class="button" href="/19-cat?p=2">Next</a></li>
-                        </ul>
-                
-            </div>
+   <div class="pagination" id="pagination_bottom">
+<ul class="pagination">
+<li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
+<li class="current pag-top"><span class="button">1</span></li>
+<li class="pag-top"><span class="button"><a href="/18-dog?p=2">2</a></span></li>
+<li class="pagination_next" id="pagination_next_bottom"><span class="button"><a href="/18-dog?p=2">Next</a></span></li>
+</ul>
+
+</div>
             <!-- /Pagination -->
         
                     </div>

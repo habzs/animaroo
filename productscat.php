@@ -93,7 +93,7 @@ include ('header.php');
                                 <li class="clearfix shop_box">
                                 <a title="Oxbow Western Timothy Hay" class="products_block_img" href="#"><img alt="Oxbow Western Timothy Hay" src="https://www.beary.com.sg/2778-medium_default/oxbow-western-timothy-hay.jpg"></a>
                     <div>
-                                    <h5><a title="Oxbow Western Timothy Hay" class="product_link" href="#">Oxbow Western Timothy Hay</a></h5>
+                                    <h5><a title="Oxbow Western Timothy Hay" class="product_link" href="#">Oxbow Western Hay</a></h5>
                                 
                     </div>
                             </li>
