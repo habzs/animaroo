@@ -17,6 +17,10 @@ $result = mysqli_query($dbc,"SELECT last_name FROM users WHERE email = '$email'"
 $row = mysqli_fetch_array($result);
 $last_name = $row['last_name'];
 
+$result = mysqli_query($dbc,"SELECT image FROM users WHERE email = '$email'") or die(msyql_error());
+$row = mysqli_fetch_array($result);
+$images = $row['image'];
+
 
 $msg = "";
 
@@ -48,13 +52,22 @@ $msg = "";
 		
 		if (empty($errors)) { // If everything's OK.
 		
+
+
+
 			//  Test for unique email address:
 			$q = "SELECT user_id FROM users WHERE email='$e'";
 			$r = @mysqli_query($dbc, $q);
 			if (mysqli_num_rows($r) == 0) {
 	
+
+				// Upload picture
+				$image = $_FILES['image']['name'];
+				$target = "images/users/".basename($image);
+				$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
+				
 				// Make the query:
-				$q = "UPDATE users SET first_name='$fn', last_name='$ln', email='$e' WHERE email='$email'";
+				$q = "UPDATE users SET first_name='$fn', last_name='$ln', email='$e', image='$image' WHERE email='$email'";
 				$r = @mysqli_query ($dbc, $q);
 				if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
 					
@@ -135,7 +148,7 @@ $msg = "";
 							if ( isset( $_SESSION["email"] ) ) { ?>
 							<h3><?php echo '<div style="color:red;">' . $msg . '</div>';?></h3>
 							<div class="row col-md-13" style="width:300px; margin:auto;" >
-							<form action="edit_details.php" method="post">
+							<form action="edit_details.php" method="post" enctype="multipart/form-data">
 
 
 								<div>
@@ -153,6 +166,11 @@ $msg = "";
 									<input name="email" type="email" class="form-control" placeholder="Email" size="20" maxlength="60" value="<?php echo $email; ?>" required />
 								</div>
 								<br>
+								<div>
+									<label>Picture</label>
+									<input type="hidden" name="size" value="1000000">
+									<input name="image" type="file" class="form-control"/>
+								</div>
 							</div>	
 
 							<div class="row">

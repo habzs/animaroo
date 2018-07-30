@@ -43,16 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	if (empty($errors)) { // If everything's OK.
 	
-	
-/* 		// Upload picture
+		// Upload picture
 		$image = $_FILES['image']['name'];
-		$target = "images/users/".basename($image);
+		$target = "images/pets/".basename($image);
 		$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
- */
+
 		// Register the user in the database...
 		
 		// Make the query:
-		$q = "INSERT INTO pets (petname, age, species, breed, owner_email) VALUES ('$pn', '$age', '$sp', '$br', '$email')";		
+		$q = "INSERT INTO pets (petname, age, species, breed, image ,owner_email) VALUES ('$pn', '$age', '$sp', '$br', '$image', '$email')";		
 		$r = @mysqli_query ($dbc, $q); // Run the query.
 		if ($r) { // If it ran OK.
 		
@@ -66,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 						<div class="display-t">
 							<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 								
-								<h1 class="mb30">Welcome! You are registered!</h1>
+								<h1 class="mb30">Your pet has been registered!</h1>
 
 							</div>
 						</div>
@@ -81,12 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<div class="container">
 				<div class="row">
 					<div class="animate-box">
-						<h3>You can now Log In!</h3>
+						<h3>Great!</h3>
 							<p>
-								Once you are logged in, you can update your profile under "My Account".
+								You can continue to add more pets my heading back to "My Account".
 							</p>
 
-							<h2><a href="login.php">Log In.</a></h2> 
+							<h2><a href="my_account.php">My Account.</a></h2> 
 	
 					</div>
 				</div>
@@ -125,15 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		include ('footer.php'); 
 		exit();
 		
-	} else { // Report the errors.
-	
-		//echo '<h1>Error!</h1>
-		//<p class="error">The following error(s) occurred:<br />';
-		//foreach ($errors as $msg) { // Print each error.
-		//	echo " - $msg<br />\n";
-		//}
-		// echo '</p><p>Please try again.</p><p><br /></p>';
-
+	} else { 
 		foreach ($errors as $msg) {
 			$msg;
 		}
@@ -173,25 +164,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					<!--<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>-->
 				</div>
 			</div>
-			<div class="row col-md-13"  >
-                      <form class="" method="post" action="registerpet.php" enctype="multipart/form-data">
-                        <div class="form-group">
-                          <label>Name of Pet</label>
-                          <input type="text" name="petname" id="text" class="form-control" placeholder="Enter your pet's name"> </div>
-                        <div class="form-group">
-                          <label>Age</label>
-                          <input type="text" name="age" id="age" class="form-control" placeholder="Enter your pet's age"> </div>
-                        <div class="form-group">
-                          <label>Species</label>
-                          <input type="text" name="species" id="species" class="form-control" placeholder="Enter your pet's type"> </div>
-                        <div class="form-group">
-                          <label>Breed</label>
-                          <input type="text" name="breed" id="breed" class="form-control" placeholder="Enter your pet's type"> </div>
-                        <div class="form-group">
-                          <label>Photo</label>
-                          <input type="file" name="photo" id="photo" class="form-control" placeholder="Upload your pet's photo"> </div>
-						<button type="submit" name="submit" class="btn btn-primary">Send</button>
-                      </form>
+			<div class="row col-md-13" style="width:300px; margin:auto;" >
+			<?php 
+			if ( isset( $_SESSION["email"] ) ) { ?>
+				<form class="" method="post" action="registerpet.php" enctype="multipart/form-data">
+				<div class="form-group">
+				<label>Name of Pet</label>
+				<input type="text" name="petname" id="text" class="form-control" placeholder="Enter your pet's name"> </div>
+				<div class="form-group">
+				<label>Age</label>
+				<input type="text" name="age" id="age" class="form-control" placeholder="Enter your pet's age"> </div>
+				<div class="form-group">
+				<label>Species</label>
+				<input type="text" name="species" id="species" class="form-control" placeholder="Enter your pet's type"> </div>
+				<div class="form-group">
+				<label>Breed</label>
+				<input type="text" name="breed" id="breed" class="form-control" placeholder="Enter your pet's breed"> </div>
+				<div class="form-group">
+				<label>Photo</label>
+				<input type="hidden" name="size" value="1000000">
+				<input name="image" type="file" class="form-control"/></div>
+				<button type="submit" name="submit" class="btn btn-primary">Send</button>
+			</form>
+			<?php } else { ?>
+				<h1 class="mb30">You&#39;re not logged in.</h1>
+			<?php } ?>
                      </div>
 
 			</div>

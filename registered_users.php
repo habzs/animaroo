@@ -4,8 +4,14 @@ include('header.php');
 
 $page_title = 'View the Current Users';
 include ('header.php');
-
 require ('mysqli_connect.php');
+
+$email = $_SESSION['email'];
+
+$result = mysqli_query($dbc,"SELECT admin FROM users WHERE email = '$email'") or die(msyql_error());
+$row = mysqli_fetch_array($result);
+$admin = $row['admin'];
+$_SESSION['admin'] = $admin;
 
 // Number of records to show per page:
 $display = 10;
@@ -79,7 +85,8 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 		</div>
 	</header>
 
-	
+<?php 
+if (isset($_SESSION["email"]) && $admin == 1) { ?>
 
 	<div id="fh5co-team">
 		<div class="container">
@@ -89,7 +96,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 					<h2>Admin Corner</h2>
 					<br>
 					<p>
-						Welcome to your restricted corner, admin. ;P.
+						Welcome to your restricted corner, admin.
 					</p>
 				</div>
 			</div>
@@ -166,6 +173,20 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 			</div>
 		</div>
 	</div>
+
+<?php } else { ?>
+	<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
+		<span>Behind the scenes</span>
+		<h2>Admin Corner</h2>
+		<br>
+		<p>
+			You must be in the wrong place, you're not an admin!
+		</p>
+	</div>
+<?php } ?>
+
+
+
 
 <?php
 include('footer.php')
