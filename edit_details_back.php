@@ -52,76 +52,44 @@ $msg = "";
 		
 		if (empty($errors)) { // If everything's OK.
 		
-			// Upload picture
-			$image = $_FILES['image']['name'];
-			$target = "images/users/".basename($image);
-			$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
 
-			if ($_FILES['image']['size'] == 0) { // check if image is empty
-			//  Test for unique email address:
-				$q = "SELECT user_id FROM users WHERE email='$e'";
-				$r = @mysqli_query($dbc, $q);
-				if (mysqli_num_rows($r) == 0) {
-		
-					// Make the query:
-					$q = "UPDATE users SET first_name='$fn', last_name='$ln', email='$e' WHERE email='$email'";
-					$r = @mysqli_query ($dbc, $q);
-					if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
-						
-						$email = $e;
-						$_SESSION["email"] = $email;
-						$first_name = $_POST['first_name'];
-						$last_name = $_POST['last_name'];
-						
-						// Print a message:
-						// echo '<p>The user has been edited.</p>';	
-						$msg = "Your details have been edited!";
-						
-					} else { // If it did not run OK.
-						echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
-						echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
-					}
-						
-				} else { // Already registered.
-					// echo '<p class="error">The email address has already been registered.</p>';
-					$msg = "The email address has already been registered.";
-				}
 
-			} else {
 
 			//  Test for unique email address:
-				$q = "SELECT user_id FROM users WHERE email='$e'";
-				$r = @mysqli_query($dbc, $q);
-				if (mysqli_num_rows($r) == 0) {
-						
-					// Make the query:
-					$q = "UPDATE users SET first_name='$fn', last_name='$ln', email='$e', image='$image' WHERE email='$email'";
-					$r = @mysqli_query ($dbc, $q);
-					if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
-										
-						$email = $e;
-						$_SESSION["email"] = $email;
-						$first_name = $_POST['first_name'];
-						$last_name = $_POST['last_name'];
-										
-						// Print a message:
-						// echo '<p>The user has been edited.</p>';	
-						$msg = "Your details have been edited!";
-										
-						} else { // If it did not run OK.
-							echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
-							echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
-						}
-									
-					} else { // Already registered.
-						// echo '<p class="error">The email address has already been registered.</p>';
-						$msg = "The email address has already been registered.";
-					}
+			$q = "SELECT user_id FROM users WHERE email='$e'";
+			$r = @mysqli_query($dbc, $q);
+			if (mysqli_num_rows($r) == 0) {
+	
+
+				// Upload picture
+				$image = $_FILES['image']['name'];
+				$target = "images/users/".basename($image);
+				$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
 				
+				// Make the query:
+				$q = "UPDATE users SET first_name='$fn', last_name='$ln', email='$e', image='$image' WHERE email='$email'";
+				$r = @mysqli_query ($dbc, $q);
+				if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
+					
+					$email = $e;
+					$_SESSION["email"] = $email;
+					$first_name = $_POST['first_name'];
+					$last_name = $_POST['last_name'];
+					
+	
+					// Print a message:
+					// echo '<p>The user has been edited.</p>';	
+					$msg = "Your details have been edited!";
+					
+				} else { // If it did not run OK.
+					echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
+					echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
+				}
+					
+			} else { // Already registered.
+				// echo '<p class="error">The email address has already been registered.</p>';
+				$msg = "The email address has already been registered.";
 			}
-
-
-
 			
 		} else { // Report the errors.
 	
@@ -209,9 +177,6 @@ $msg = "";
 								<div class="centered">
 									<br>
 									<input type="submit" name="submit" value="Save Changes" class="btn btn-lg btn-primary centered">
-									<br>
-									<br>
-									<a href="my_account.php" class="btn btn-lg btn-primary centered">Back</a>
 								</div>
 						</form>
 						</div>

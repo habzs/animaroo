@@ -153,6 +153,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 								<br><br>
 								<input type="submit" class="btn btn-lg btn-primary centered" name="submit" value="Save Changes" />
 								<?php echo '<input type="hidden" name="id" value=' . $id . ' />';?>
+								<br>
+								<br>
+								<a href="registered_users.php" class="btn btn-lg btn-primary centered">Back</a>
 							</div>
 							</form>
 							</div>

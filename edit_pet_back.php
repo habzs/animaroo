@@ -70,14 +70,7 @@ $msg = "";
 	}
 	
 	if (empty($errors)) { // If everything's OK.
-		
-		// Upload picture
-		$image = $_FILES['image']['name'];
-		$target = "images/pets/".basename($image);
-		$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
-
-		if ($_FILES['image']['size'] == 0) {
-	//
+	
 				// Make the query:
 				$q = "UPDATE pets SET petname='$pn', age='$age', species='$sp', breed='$br' WHERE id='$id'";
 				$r = @mysqli_query ($dbc, $q);
@@ -95,36 +88,10 @@ $msg = "";
 					$msg = "Your details have been edited!";
 					
 				} else { // If it did not run OK.
-					// echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
-					$msg = "You have not changed any details!";
+					echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
 					echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
 				}
-	//		
-			} else {
-					//
-				// Make the query:
-				$q = "UPDATE pets SET petname='$pn', age='$age', species='$sp', image='$image', breed='$br' WHERE id='$id'";
-				$r = @mysqli_query ($dbc, $q);
-				if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
 					
-					$id = $_POST['id'];
-					$petname = $_POST['petname'];
-					$age = $_POST['age'];
-					$species = $_POST['species'];
-					$breed = $_POST['breed'];
-					
-	
-					// Print a message:
-					// echo '<p>The user has been edited.</p>';	
-					$msg = "Your details have been edited!";
-					
-				} else { // If it did not run OK.
-					// echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
-					$msg = "You have not changed any details!";
-					//echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
-				}
-	//		
-			}
 			
 		} else { // Report the errors.
 	
@@ -135,7 +102,6 @@ $msg = "";
 			echo '</p><p>Please try again.</p>';
 		
 		} // End of if (empty($errors)) IF.
-		
 	
 	} // End of submit conditional.
 	
@@ -184,7 +150,7 @@ $msg = "";
 							if ( isset( $_SESSION["email"] ) ) { ?>
 							<h3><?php echo '<div style="color:red;">' . $msg . '</div>';?></h3>
 							<div class="row col-md-13" style="width:300px; margin:auto;" >
-							<form action="edit_pet.php" method="post" enctype="multipart/form-data">
+							<form action="edit_pet.php" method="post">
 								<div>
 									<label>Pet Name</label>
 									<input name="petname" type="text" class="form-control" placeholder="Pet Name" size="15" maxlength="20" value="<?php echo $petname; ?>" required />
@@ -204,12 +170,6 @@ $msg = "";
 									<label>Breed</label>
 									<input name="breed" type="text" class="form-control" placeholder="Breed" size="15" maxlength="40" value="<?php echo $breed; ?>" required />
 								</div>
-								<br>
-								<div>
-									<label>Picture</label>
-									<input type="hidden" name="size" value="1000000">
-									<input name="image" type="file" class="form-control"/>
-								</div>
 								<?php echo '<input type="hidden" name="id" value=' . $id . ' />';?>
 								<br>
 							</div>	
@@ -218,9 +178,6 @@ $msg = "";
 								<div class="centered">
 									<br>
 									<input type="submit" name="submit" value="Save Changes" class="btn btn-lg btn-primary centered">
-									<br>
-									<br>
-									<a href="my_pets.php" class="btn btn-lg btn-primary centered">Back</a>
 								</div>
 						</form>
 						</div>

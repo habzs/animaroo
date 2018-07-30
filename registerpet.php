@@ -48,10 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$target = "images/pets/".basename($image);
 		$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
 
+		$vote = 0;
+
 		// Register the user in the database...
 		
 		// Make the query:
-		$q = "INSERT INTO pets (petname, age, species, breed, image ,owner_email) VALUES ('$pn', '$age', '$sp', '$br', '$image', '$email')";		
+		$q = "INSERT INTO pets (petname, age, species, breed, image ,owner_email, likes, dislikes) VALUES ('$pn', '$age', '$sp', '$br', '$image', '$email', '$vote', '$vote')";		
 		$r = @mysqli_query ($dbc, $q); // Run the query.
 		if ($r) { // If it ran OK.
 		
@@ -82,10 +84,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					<div class="animate-box">
 						<h3>Great!</h3>
 							<p>
-								You can continue to add more pets my heading back to "My Account".
+								You can continue to add more pets by clicking "Add Pet".<br>
+								Alternatively, you could head back to "My Account".
 							</p>
 
-							<h2><a href="my_account.php">My Account.</a></h2> 
+							<h2><a href="my_account.php">My Account</a>, <a href="registerpet.php">Add Pet</a> or <a href="my_pets.php">View My Pets.</a></h2> 
 	
 					</div>
 				</div>
@@ -187,8 +190,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				<div class="row">
 					<div class="centered">
 						<input type="submit" name="submit" class="btn btn-primary centered">
+						<br>
+						<br>
+						<a href="my_account.php" class="btn btn-lg btn-primary centered">Back</a>
 					</div>
-				</div>
 			</form>
 			<?php } else { ?>
 				<h1 class="mb30">You&#39;re not logged in.</h1>
