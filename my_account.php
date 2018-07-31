@@ -74,9 +74,10 @@ include ('header.php');
 						$row = mysqli_fetch_array($result);
 						$image = $row['image'];
 
-							echo "<img style='width:15%;' src='images/users/".$row['image']."' >";
+							echo "<img style='width:15%;border-radius: 50%;' src='images/users/".$row['image']."' >";
 						?>
 						<div>
+						<br><br>
 						<h2><a href="logout.php? action=logout">Log Out.</a></h2> 
 						<h2><a href="edit_details.php">Edit Details.</a></h2>
 						<h2><a href="my_pets.php">Manage Pets.</a></h2>
