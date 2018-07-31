@@ -12,7 +12,7 @@ include ('header.php');
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<?php 
-							$returnTxt = "Welcome back, " . $_SESSION["first_name"] . ".";
+							$returnTxt = "Hello, " . $_SESSION["first_name"] . ".";
 
 							if ( isset( $_SESSION["email"] ) ) {
 

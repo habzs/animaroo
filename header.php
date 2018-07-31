@@ -60,6 +60,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://www.gordonmac.com/wp-content/themes/2016/vendor/vide/jquery.vide.min.js"></script>
 
+	 <link rel="icon" href="images/favicon-icon.png" type="image/gif" sizes="16x16">
+
 
 	</head>
 	<body>
