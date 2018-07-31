@@ -147,7 +147,7 @@ $msg = "";
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<?php 
-							$returnTxt = "Welcome back, " . $first_name . ".";
+							$returnTxt = "Edit your details, " . $first_name . ".";
 
 							if ( isset( $_SESSION["email"] ) ) {
 
