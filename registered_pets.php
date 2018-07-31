@@ -5,7 +5,12 @@ include('header.php');
 include ('header.php');
 require ('mysqli_connect.php');
 
-$user = $_SESSION['email'];
+if (isset($_SESSION['email'])) {
+	$user = $_SESSION['email'];
+} else {
+	$user = "NOT LOGGED IN";
+}
+
 // Number of records to show per page:
 $display = 10;
 

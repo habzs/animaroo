@@ -6,14 +6,23 @@ session_start();
 include ('header.php');
 include ('mysqli_connect.php');
 
-$emails = $_SESSION['email'];
-$id = $_GET['id'];
+if (isset($_SESSION['email'])) {
+	$email = $_SESSION['email'];
+} else {
+	$email = "NOT LOGGED IN";
+}
+
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+} else {
+	$id = "NOT LOGGED IN";
+}
+
 
 $result = mysqli_query($dbc,"SELECT likes FROM pets WHERE id='$id'") or die(msyql_error());
 $row = mysqli_fetch_array($result);
 $likes = $row['likes'];
 
-require ('mysqli_connect.php');
 
 // Check if the form has been submitted:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

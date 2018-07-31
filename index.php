@@ -38,7 +38,7 @@ include ('header.php');
 							<br><br>
 							At animaroo, you'll be able to care for their upkeeping without ever leaving the comfort of your house.
 							<br><br>
-							We offer standard grooming services, from brushing to styling, nail clipping to tooth brushing and health evaluations.
+							We offer standard grooming services in our mobile, from brushing to styling, nail clipping to tooth brushing and health evaluations in.
 							<br><br>
 							All manners of pets are greatly welcome – from large dog breeds to their smaller cousins, from rabbits to guinea pigs to cats.
 						</p>

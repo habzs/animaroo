@@ -4,7 +4,12 @@ session_start();
 $page_title = 'Register';
 include ('header.php');
 
-$email = $_SESSION['email'];
+if (isset($_SESSION['email'])) {
+	$email = $_SESSION['email'];
+} else {
+	$email = "NOT LOGGED IN";
+}
+
 
 $msg = "";
 // Check for form submission:
