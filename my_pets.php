@@ -60,7 +60,7 @@ switch ($sort) {
 }
 	
 // Define the query:
-$q = "SELECT petname, age, species, breed FROM pets WHERE owner_email='$email' ORDER BY $order_by LIMIT $start, $display";		
+$q = "SELECT petname, age, species, breed, id, image FROM pets WHERE owner_email='$email' ORDER BY $order_by LIMIT $start, $display";		
 $r = @mysqli_query ($dbc, $q); // Run the query.
 ?>
 
@@ -71,7 +71,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">About Us</h1>
+							<h1 class="mb30">Manage your furballs</h1>
 						</div>
 					</div>
 				</div>
@@ -86,10 +86,10 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 			<div class="row animate-box row-pb-md">
 				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
 					<span>Behind the scenes</span>
-					<h2>Admin Corner</h2>
+					<h2>Edit your pets!</h2>
 					<br>
 					<p>
-						Welcome to your restricted corner, admin. ;P.
+						View, delete or modify your pets!
 					</p>
 				</div>
 			</div>
@@ -102,10 +102,10 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 						<tr>
 							<td align="left"><b>Edit</b></td>
 							<td align="left"><b>Delete</b></td>
-							<td align="left"><b><a href="registered_pets.php?sort=petname">Pet Name</a></b></td>
-							<td align="left"><b><a href="registered_pets.php?sort=age">Age</a></b></td>
-							<td align="left"><b><a href="registered_pets.php?sort=species">Species</a></b></td>
-							<td align="left"><b><a href="registered_pets.php?sort=breed">Breed</a></b></td>
+							<td align="left"><b><a href="my_pets.php?sort=petname">Pet Name</a></b></td>
+							<td align="left"><b><a href="my_pets.php?sort=age">Age</a></b></td>
+							<td align="left"><b><a href="my_pets.php?sort=species">Species</a></b></td>
+							<td align="left"><b><a href="my_pets.php?sort=breed">Breed</a></b></td>
 							<td align="left"><b><a href="?">Image</a></b></td>
 						</tr>
 						';
@@ -115,13 +115,13 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 						while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 							$bg = ($bg=='#eeeeee' ? '#ffffff' : '#eeeeee');
 								echo '<tr bgcolor="' . $bg . '">
-								<td align="left"><a href="edit_user.php?id=' . $row['user_id'] . '">Edit</a></td>
-								<td align="left"><a href="delete_user.php?id=' . $row['user_id'] . '">Delete</a></td>
+								<td align="left"><a href="edit_pet.php?id=' . $row['id'] . '">Edit</a></td>
+								<td align="left"><a href="delete_pet.php?id=' . $row['id'] . '">Delete</a></td>
 								<td align="left">' . $row['petname'] . '</td>
 								<td align="left">' . $row['age'] . '</td>
 								<td align="left">' . $row['species'] . '</td>
 								<td align="left">' . $row['breed'] . '</td>
-								<td align="left" style="width: 35px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
+								<td align="left" style="width: 35px;"><img style="width:80%;" src="images/pets/' . $row['image'] . '"></td>
 							</tr>
 							';
 						} // End of WHILE loop.
@@ -163,6 +163,8 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 						?>
 					</div>
 				</div>
+				<br><br>
+					<h2><div style="text-align:center;"><a class="btn btn-lg btn-primary centered animate-box" href="registerpet.php">Add Pet</a></div></h2>
 			</div>
 		</div>
 	</div>

@@ -103,3 +103,9 @@ div.container4 p {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%) }
+
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}

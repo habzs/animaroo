@@ -10,9 +10,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>animaroo. &mdash; we groom.</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="gettemplates.co" />
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -26,11 +23,9 @@
 	<meta name="twitter:card" content="" />
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-
-
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	
 	<link rel="stylesheet" href="css/searchbar.css">
 	<!-- Animate.css -->
@@ -65,6 +60,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://www.gordonmac.com/wp-content/themes/2016/vendor/vide/jquery.vide.min.js"></script>
 
+	 <link rel="icon" href="images/favicon-icon.png" type="image/gif" sizes="16x16">
+
 
 	</head>
 	<body>
@@ -76,7 +73,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-2 text-left">
-					<div id="fh5co-logo"><a href="index.html">animaroo<span>.</span></a></div>
+					<div id="fh5co-logo"><a href="index.php">animaroo<span>.</span></a></div>
 				</div>
 
 				
@@ -89,7 +86,7 @@
 
 				<div class="col-xs-10 text-right menu-1" style="float:right">
 					<ul>
-						<li><a href="indexphp.php">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li class="has-dropdown">
 							<a href="services.php">Services</a>
 							<ul class="dropdown">
@@ -100,17 +97,17 @@
 							</ul>
 						</li>
 						<li class="has-dropdown">
-								<a href="productsdog.html">Products</a>
+								<a href="productsdog.php">Products</a>
 								<ul class="dropdown">
-									<li><a href="productsdog.html">Dog</a></li>
-									<li><a href="productscat.html">Cat</a></li>
-									<li><a hred="productsother.html">Others</a></li>
+									<li><a href="productsdog.php">Dog</a></li>
+									<li><a href="productscat.php">Cat</a></li>
+									<li><a href="productsothers.php">Others</a></li>
 								</ul>
 							</li>
 						<li><a href="about.php">About</a></li>
 						<li><a href="topiclist.php">Feedback</a></li>
 						<li><a href="contact_us.php">Contact</a></li>
-						<!-- <li><a href="#">Login</a></li> -->
+						<li><a href="registered_pets.php">Pets</a><li>
 						<?php 
 						if ( isset( $_SESSION["email"] ) ) {
 							echo '<li><a href="my_account.php ">My Account</a></li>';
@@ -118,6 +115,7 @@
 							echo '<li><a href="login.php">Log In</a></li>';
 						}
 						?>
+						
 					</ul>
 				</div>
 			</div>

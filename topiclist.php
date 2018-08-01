@@ -1,6 +1,6 @@
-   <?php
-	session_start();
-	include('header.php');  
+<?php
+session_start();
+include('header.php'); 
 
 	$topic_id = "topic_id";
 
@@ -21,7 +21,6 @@
 	 <table border=	1 class=table>
      <tr>
      <th><center>TOPIC TITLE</center></th>
-     <th width=18%><center># of POSTS</center></th>
      </tr>";
   
       while ($topic_info = mysqli_fetch_array($get_topics_res)) {
@@ -38,8 +37,8 @@
         $num_posts = mysqli_fetch_array($get_num_posts_res,MYSQLI_BOTH);
         $post_id = 'post_id';
         $num_posts = (count('post_id'));
-        // $num_posts = mysqli_fetch_array($get_num_posts_res);
-        // $num_posts = mysqli_fetch_array($get_num_posts_res, 'count(post_id');
+        //$num_posts = mysqli_fetch_array($get_num_posts_res);
+        //$num_posts = mysqli_fetch_array($get_num_posts_res, 'count(post_id');
   
          //add to display
          $display_block .= "
@@ -47,7 +46,6 @@
          <td><a href=\"showtopic.php?topic_id=$topic_id\">
          <strong>$topic_title</strong></a><br>
          Created on $topic_create_time by $topic_owner</td>
-         <td align=center>$num_posts</td>
          </tr>";
      }
   
@@ -72,13 +70,15 @@
 	</header>
 
 	
+<?php 
+if ( isset( $_SESSION["email"] ) ) { ?>
 
 	<div id="fh5co-blog" class="fh5co-bg-section">
 		<div class="container">
 			<div class="row animate-box row-pb-md" data-animate-effect="fadeInUp">
 				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
 					<span>Thoughts &amp; Ideas</span>
-					<h2>Topics in My Forum</h2>
+					<h2>Topics in animaroo.</h2>
 					<!--<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>-->
 				</div>
 			</div>
@@ -89,72 +89,28 @@
                 <p align="left" class"walk">Would you like to <a href ="addtopic.php">Add a Topic</a></center>
                 
             </div>    
-            
-
-				<!--<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 12th</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 23rd</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-				<div class="clearfix visible-sm-block"></div>
-
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 24th</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-
-				<div class="clearfix visible-md-block"></div>
-
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 12th</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-
-				<div class="clearfix visible-sm-block"></div>
-
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 23rd</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-
-				<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-					<div class="fh5co-post">
-						<span class="fh5co-date">Sep. 24th</span>
-						<h3><a href="#">Web Design for the Future</a></h3>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						<p class="author"><img src="images/person1.jpg" alt="Free HTML5 Bootstrap Template by gettemplates.co"> <cite> Mike Adam</cite></p>
-					</div>
-				</div>
-				
-				<div class="clearfix visible-md-block"></div>-->
-
-
 			</div>
 		</div>
 	</div>
+
+<?php } else { ?>
+	
+	<div id="fh5co-blog" class="fh5co-bg-section">
+		<div class="container">
+			<div class="row animate-box row-pb-md" data-animate-effect="fadeInUp">
+				<div class="col-md-8 col-md-offset-2 text-left fh5co-heading">
+					<span>Thoughts &amp; Ideas</span>
+                    <h2>It appears that you're not logged in!</h2>
+                    <br>
+					<p>Please log in to participate in the forums!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<?php }
+?>
+
 
 <?php
 include ("footer.php");

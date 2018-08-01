@@ -4,7 +4,7 @@ include ('header.php');
 
 ?>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header7.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header8.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -12,7 +12,7 @@ include ('header.php');
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<?php 
-							$returnTxt = "Welcome back, " . $_SESSION["first_name"] . ".";
+							$returnTxt = "Hello, " . $_SESSION["first_name"] . ".";
 
 							if ( isset( $_SESSION["email"] ) ) {
 
@@ -74,12 +74,13 @@ include ('header.php');
 						$row = mysqli_fetch_array($result);
 						$image = $row['image'];
 
-							echo "<img style='width:15%;' src='images/users/".$row['image']."' >";
+							echo "<img style='width:15%;border-radius: 50%;' src='images/users/".$row['image']."' >";
 						?>
 						<div>
+						<br><br>
 						<h2><a href="logout.php? action=logout">Log Out.</a></h2> 
 						<h2><a href="edit_details.php">Edit Details.</a></h2>
-						<h2><a 
+						<h2><a href="my_pets.php">Manage Pets.</a></h2>
 						
 			
 					<?php } ?>
@@ -89,19 +90,6 @@ include ('header.php');
 				</div>
 			</div>
 			
-		</div>
-	</div>
-
-	<div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<span>Let's work together</span>
-					<h2>Try this template for free</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><button type="submit" class="btn btn-default">Get In Touch</button></p>
-				</div>
-			</div>
 		</div>
 	</div>
 

@@ -9,6 +9,12 @@
     padding: 10px 5px 0px 5px;
     border: 1px solid black;
 }
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
 .post-info {
     margin: 10px auto 0px;
     padding:  5px;

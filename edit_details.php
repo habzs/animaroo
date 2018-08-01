@@ -17,6 +17,10 @@ $result = mysqli_query($dbc,"SELECT last_name FROM users WHERE email = '$email'"
 $row = mysqli_fetch_array($result);
 $last_name = $row['last_name'];
 
+$result = mysqli_query($dbc,"SELECT image FROM users WHERE email = '$email'") or die(msyql_error());
+$row = mysqli_fetch_array($result);
+$images = $row['image'];
+
 
 $msg = "";
 
@@ -48,35 +52,76 @@ $msg = "";
 		
 		if (empty($errors)) { // If everything's OK.
 		
+			// Upload picture
+			$image = $_FILES['image']['name'];
+			$target = "images/users/".basename($image);
+			$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
+
+			if ($_FILES['image']['size'] == 0) { // check if image is empty
 			//  Test for unique email address:
-			$q = "SELECT user_id FROM users WHERE email='$e'";
-			$r = @mysqli_query($dbc, $q);
-			if (mysqli_num_rows($r) == 0) {
-	
-				// Make the query:
-				$q = "UPDATE users SET first_name='$fn', last_name='$ln', email='$e' WHERE email='$email'";
-				$r = @mysqli_query ($dbc, $q);
-				if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
-					
-					$email = $e;
-					$_SESSION["email"] = $email;
-					$first_name = $_POST['first_name'];
-					$last_name = $_POST['last_name'];
-					
-	
-					// Print a message:
-					// echo '<p>The user has been edited.</p>';	
-					$msg = "Your details have been edited!";
-					
-				} else { // If it did not run OK.
-					echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
-					echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
+				$q = "SELECT user_id FROM users WHERE email='$e'";
+				$r = @mysqli_query($dbc, $q);
+				if (mysqli_num_rows($r) == 0) {
+		
+					// Make the query:
+					$q = "UPDATE users SET first_name='$fn', last_name='$ln', email='$e' WHERE email='$email'";
+					$r = @mysqli_query ($dbc, $q);
+					if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
+						
+						$email = $e;
+						$_SESSION["email"] = $email;
+						$first_name = $_POST['first_name'];
+						$last_name = $_POST['last_name'];
+						
+						// Print a message:
+						// echo '<p>The user has been edited.</p>';	
+						$msg = "Your details have been edited!";
+						
+					} else { // If it did not run OK.
+						echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
+						echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
+					}
+						
+				} else { // Already registered.
+					// echo '<p class="error">The email address has already been registered.</p>';
+					$msg = "The email address has already been registered.";
 				}
-					
-			} else { // Already registered.
-				// echo '<p class="error">The email address has already been registered.</p>';
-				$msg = "The email address has already been registered.";
+
+			} else {
+
+			//  Test for unique email address:
+				$q = "SELECT user_id FROM users WHERE email='$e'";
+				$r = @mysqli_query($dbc, $q);
+				if (mysqli_num_rows($r) == 0) {
+						
+					// Make the query:
+					$q = "UPDATE users SET first_name='$fn', last_name='$ln', email='$e', image='$image' WHERE email='$email'";
+					$r = @mysqli_query ($dbc, $q);
+					if (mysqli_affected_rows($dbc) == 1) { // If it ran OK.
+										
+						$email = $e;
+						$_SESSION["email"] = $email;
+						$first_name = $_POST['first_name'];
+						$last_name = $_POST['last_name'];
+										
+						// Print a message:
+						// echo '<p>The user has been edited.</p>';	
+						$msg = "Your details have been edited!";
+										
+						} else { // If it did not run OK.
+							echo '<p class="error">The user could not be edited due to a system error. We apologize for any inconvenience.</p>'; // Public message.
+							echo '<p>' . mysqli_error($dbc) . '<br />Query: ' . $q . '</p>'; // Debugging message.
+						}
+									
+					} else { // Already registered.
+						// echo '<p class="error">The email address has already been registered.</p>';
+						$msg = "The email address has already been registered.";
+					}
+				
 			}
+
+
+
 			
 		} else { // Report the errors.
 	
@@ -94,7 +139,7 @@ $msg = "";
 
 ?>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header7.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header8.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -102,7 +147,7 @@ $msg = "";
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
 							<?php 
-							$returnTxt = "Welcome back, " . $first_name . ".";
+							$returnTxt = "Edit your details.";
 
 							if ( isset( $_SESSION["email"] ) ) {
 
@@ -135,7 +180,7 @@ $msg = "";
 							if ( isset( $_SESSION["email"] ) ) { ?>
 							<h3><?php echo '<div style="color:red;">' . $msg . '</div>';?></h3>
 							<div class="row col-md-13" style="width:300px; margin:auto;" >
-							<form action="edit_details.php" method="post">
+							<form action="edit_details.php" method="post" enctype="multipart/form-data">
 
 
 								<div>
@@ -153,12 +198,20 @@ $msg = "";
 									<input name="email" type="email" class="form-control" placeholder="Email" size="20" maxlength="60" value="<?php echo $email; ?>" required />
 								</div>
 								<br>
+								<div>
+									<label>Picture</label>
+									<input type="hidden" name="size" value="1000000">
+									<input name="image" type="file" class="form-control"/>
+								</div>
 							</div>	
 
 							<div class="row">
 								<div class="centered">
 									<br>
 									<input type="submit" name="submit" value="Save Changes" class="btn btn-lg btn-primary centered">
+									<br>
+									<br>
+									<a href="my_account.php" class="btn btn-lg btn-primary centered">Back</a>
 								</div>
 						</form>
 						</div>
