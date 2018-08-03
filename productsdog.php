@@ -650,8 +650,7 @@ var max_item = "You cannot add more than 3 product(s) to the product comparison"
 <li class="pag-top"><span class="button" href="/18-dog?p=2">2</span></li>
 <li class="pagination_next" id="pagination_next_bottom"><span class="button" href="/18-dog?p=2">Next</span></li>
 =======
-<li class="pag-top"><span class="button"><a href="#">2</a></span></li>
-<li class="pagination_next" id="pagination_next_bottom"><span class="button"><a href="#">Next</a></span></li>
+
 >>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsdog.php
 </ul>
 

@@ -622,25 +622,13 @@ Cat<strong class="category-product-count">
    <!-- Pagination -->
           
 <<<<<<< HEAD:productscat.html
-            <div class="pagination" id="pagination_bottom">
-                      <ul class="pagination">
-                            <li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
-                                                                            <li class="current pag-top"><span class="button">1</span></li>
-                                                        <li class="pag-top"><span class="button" href="/19-cat?p=2">2</span></li>
-                                                                                    <li class="pagination_next" id="pagination_next_bottom"><span class="button" href="/19-cat?p=2">Next</span></li>
-                        </ul>
-                
-            </div>
-=======
-   <div class="pagination" id="pagination_bottom">
+<div class="pagination" id="pagination_bottom">
 <ul class="pagination">
 <li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
 <li class="current pag-top"><span class="button">1</span></li>
-<li class="pag-top"><span class="button"><a href="#">2</a></span></li>
-<li class="pagination_next" id="pagination_next_bottom"><span class="button"><a href="#">Next</a></span></li>
-</ul>
 
-</div>
+<li class="pag-top"><span class="button" href="/18-dog?p=2">2</span></li>
+<li class="pagination_next" id="pagination_next_bottom"><span class="button" href="/18-dog?p=2">Next</span></li>
 >>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productscat.php
             <!-- /Pagination -->
         
