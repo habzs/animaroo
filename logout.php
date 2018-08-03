@@ -172,40 +172,62 @@ function logout() {
 		</div>
 	</div>
 
-	<footer id="fh5co-footer" role="contentinfo">
+
+<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-4 fh5co-widget">
 					<h3>animaroo<span style="color:#F73859;">.</span></h3>
 					<p>Groom with convenience.</p>
+
+					<!--<div class="col-xs-3-new" style="float: right; position: relative; left: 50px; ">
+					<!--<input class="col-xs-2 form-control" style=" height:40px; font-size:15px" type="text" placeholder="Search" aria-label="Search" ></li>
+					<!-- Google CSE -->
+					<div class="row row-pd-md cse" style="border:0px solid; margin:left; width:90%; height:90px;"> 
+					<script>
+							(function() {
+							  var cx = '002315222081453687937:q-ghc-vhfbc';
+							  var gcse = document.createElement('script');
+							  gcse.type = 'text/javascript';
+							  gcse.async = true;
+							  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+							  var s = document.getElementsByTagName('script')[0];
+							  s.parentNode.insertBefore(gcse, s);
+							})();
+						  </script>
+						  <gcse:search></gcse:search>
+						<!-- Google CSE -->
+							<div class = "row row-pd-md" style="margin-left:15px">
+						<audio controls autoplay >
+			  				<source src="music/music.mp3" type="audio/mpeg" hidden="true" style="margin:left">
+			  
+						</audio>
+						</div>
+					
+						</div>
+
+				
+
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="services.php">Services</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Shop</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
+						<li><a href="productsdog.php">Shop</a></li>
+						<li><a href="about.php">About Us</a></li>
+						
 					</ul>
 				</div>
 
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 ">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
+							<li><a href="topiclist.php">Forum</a></li>
+							<li><a href="contact_us.php">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -213,9 +235,9 @@ function logout() {
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://gettemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://pixeden.com/" target="_blank">Pixeden</a> &amp; <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
+						<small class="block">&copy; 2018 Animaroo Pte Ltd.</small>
 					</p>
+
 					<p>
 						<ul class="fh5co-social-icons">
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -252,13 +274,13 @@ function logout() {
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-	<!-- Redirect -->
+	<!--- REDIRECT -->
 	<script language="javascript" type="text/javascript">
 	setTimeout(function () {
 	window.location.href = "index.php"; // points to indexphp.php for redirection
 	}, 2000); // redirects after 2 seconds
  	</script>
-
+	
 
 	</body>
 </html>

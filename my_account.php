@@ -14,7 +14,7 @@ include ('header.php');
 							<?php 
 							$returnTxt = "Hello, " . $_SESSION["first_name"] . ".";
 
-							if ( isset( $_SESSION["email"] ) ) {
+							if (isset($_SESSION["email"])) {
 
 								echo "<h1> $returnTxt </h1>";
 
@@ -65,14 +65,15 @@ include ('header.php');
 					</form>
 
 					<?php } else { ?>
-						<?php
+						<?php 
 						$email = $_SESSION['email'];
 
 						include ('mysqli_connect.php');
 
-						$result = mysqli_query($dbc,"SELECT image FROM users WHERE email = '$email'") or die(msyql_error());
+						$result = mysqli_query($dbc,"SELECT image, admin FROM users WHERE email = '$email'") or die(msyql_error());
 						$row = mysqli_fetch_array($result);
 						$image = $row['image'];
+						$admin = $row['admin'];
 
 							echo "<img style='width:15%;border-radius: 50%;' src='images/users/".$row['image']."' >";
 						?>
@@ -81,6 +82,15 @@ include ('header.php');
 						<h2><a href="logout.php? action=logout">Log Out.</a></h2> 
 						<h2><a href="edit_details.php">Edit Details.</a></h2>
 						<h2><a href="my_pets.php">Manage Pets.</a></h2>
+
+						<?php 
+						
+						
+						if (isset($_SESSION["email"]) && $admin == 1){
+							echo '<h2><a href="registered_users.php">Admin Corner.</a></h2>';
+						}
+						?>
+						
 						
 			
 					<?php } ?>

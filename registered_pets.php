@@ -117,9 +117,9 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							<td align="left"><b><a href="registered_pets.php?sort=age">Age</a></b></td>
 							<td align="left"><b><a href="registered_pets.php?sort=species">Species</a></b></td>
 							<td align="left"><b><a href="registered_pets.php?sort=breed">Breed</a></b></td>
-							<td align="left"><b><a href="?">Image</a></b></td>
-							<td align="left"><b><a href="?">Likes</a></b></td>
-							<td align="left"><b><a href="?">Dislikes</a></b></td>
+							<td align="left"><b>Image</b></td>
+							<td align="left"><b>Likes</b></td>
+							<td align="left"><b>Dislikes</b></td>
 						</tr>
 						';
 						

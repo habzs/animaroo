@@ -77,7 +77,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 				<div class="col-md-7 text-left">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeInUp">
-							<h1 class="mb30">About Us</h1>
+							<h1 class="mb30">Admin Corner</h1>
 						</div>
 					</div>
 				</div>
