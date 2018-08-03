@@ -442,7 +442,7 @@ Others<strong class="category-product-count">
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-6 omega last_item_of_tablet_line ">
 <div class="inner_content clearfix">
 <a title="Sanko Wild Guinea Pig Plus" class="product_img_link" href="#">
-<img alt="Sanko Wild Guinea Pig Plus" src="images/gpProduct1.jpg" width="250" height="250">
+<img alt="Sanko Wild Guinea Pig Plus" src="images/gpProduct1.jpg" width="253">
 </a>
 <div class="center_block">
 <div class="product_flags clearfix">
@@ -458,15 +458,10 @@ Others<strong class="category-product-count">
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
-<<<<<<< HEAD:productsothers.html
 <span class="price">SG$26.65</span>  
+<br><br>
 				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
-=======
-<span class="price">SG$4.80</span>  
-				 <br><br>
 <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
->>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
 <div class="checker" id="uniform-comparator_item_3312"><span><input class="comparator" id="comparator_item_3312" type="checkbox" value="comparator_item_3312" autocomplete="off"></span></div> 
 <label for="comparator_item_3312">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
@@ -478,12 +473,11 @@ Others<strong class="category-product-count">
 </div>
 </div>
 </li>
-		
-    
+
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-7 alpha  first_item_of_tablet_line ">
 <div class="inner_content clearfix">
 <a title="Carefresh Animal Bedding 10L" class="product_img_link" href="#">
-<img alt="Carefresh Animal Bedding 10L" src="images/gpProduct3.jpg">
+<img alt="Carefresh Animal Bedding 10L" src="images/gpProduct3.jpg" height="175">
 </a>
 <div class="center_block">
 <div class="product_flags clearfix">
@@ -498,15 +492,9 @@ Others<strong class="category-product-count">
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
-<<<<<<< HEAD:productsothers.html
-<span class="price">SG$6.99</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
-=======
 <span class="price">SG$9.10</span>  
 				 <br><br>
 <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
->>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
 <div class="checker" id="uniform-comparator_item_3313"><span><input class="comparator" id="comparator_item_3313" type="checkbox" value="comparator_item_3313" autocomplete="off"></span></div> 
 <label for="comparator_item_3313">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
@@ -515,12 +503,11 @@ Others<strong class="category-product-count">
 </div>
 </div>
 </li>
-		
-    
+
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-8 last_item_of_tablet_line ">
 <div class="inner_content clearfix">
 <a title="Small Pet Select Perfect Blend - 2nd cut timothy hay" class="product_img_link" href="#">
-<img alt="Small Pet Select Perfect Blend - 2nd cut timothy hay" src="https://www.beary.com.sg/3559-home_default/small-pet-select-perfect-blend-2nd-cut-timothy-hay.jpg">
+<img alt="Small Pet Select Perfect Blend - 2nd cut timothy hay" src="https://www.beary.com.sg/3559-home_default/small-pet-select-perfect-blend-2nd-cut-timothy-hay.jpg" width="185">
 </a>
 <div class="center_block">
 <div class="product_flags clearfix">
@@ -550,8 +537,7 @@ Others<strong class="category-product-count">
 </div>
 </div>
 </li>
-		
-    
+
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-9 omega first_item_of_tablet_line ">
 <div class="inner_content clearfix">
 <a title="Disinfectant for Small Pet Trigger Spray 500ml" class="product_img_link" href="#">
@@ -565,25 +551,15 @@ Others<strong class="category-product-count">
 </div>
 <div class="clear"></div>
 <h5>
-<<<<<<< HEAD:productsothers.html
-<a title="Disinfectant for Small Pet Trigger Spray 500ml" class="product_link" href="#">Disinfectant for Small Pet Trigger Spray 500ml</a></h5>
-=======
 <a title="Beary Cat/ Rabbit Cute Cardboard House - Pink" class="product_link" href="#">Rabbit Cute Cardboard House - Pink</a></h5>
->>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
 <p class="product_desc"></p>
 <p class="product_desc mob"></p>
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
-<<<<<<< HEAD:productsothers.html
-<span class="price">SG$3.50</span>  
-				 
-<p class="compare checkbox choices-thin clearfix hidden-xs">		
-=======
 <span class="price">SG$22.90</span>  
 				 <br><br>
 <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
->>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
 <div class="checker" id="uniform-comparator_item_3317"><span><input class="comparator" id="comparator_item_3317" type="checkbox" value="comparator_item_3317" autocomplete="off"></span></div> 
 <label for="comparator_item_3317">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
@@ -659,13 +635,13 @@ $(function() {
                     
    <!-- Pagination -->
           
-<<<<<<< HEAD:productsothers.html
+   <div class="pagination" id="pagination_bottom">
+<ul class="pagination">
+<li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
+<li class="current pag-top"><span class="button">1</span></li>
+
 <li class="pag-top"><span class="button" href="/18-dog?p=2">2</span></li>
 <li class="pagination_next" id="pagination_next_bottom"><span class="button" href="/18-dog?p=2">Next</span></li>
-=======
-<li class="pag-top"><span class="button" href="/18-dog?p=2">2</span></li>
-<li class="pagination_next" id="pagination_next_bottom"><span class="button" href="/18-dog?p=2">Next</span></li>
->>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
             <!-- /Pagination -->
         
                     </div>
