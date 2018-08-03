@@ -170,7 +170,7 @@ function logout() {
 					<?php
 						$fname = $_SESSION["first_name"];
 						$lname = $_SESSION["last_name"];
-						echo "$fname &nbsp $lname"; 
+						echo "$fname, $lname"; 
 						?></h2>
 					<?php } ?>
 
