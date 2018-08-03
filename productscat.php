@@ -284,10 +284,10 @@ Cat<strong class="category-product-count">
                                    <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
                 
             
-                <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-2  last_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-2  last_item_of_tablet_line ">
             <div class="inner_content clearfix">
                         <a title="Fussie Cat Crystal Litter" class="product_img_link" href="#">
                     <img alt="Fussie Cat Crystal Litter" src="https://www.beary.com.sg/2765-home_default/fussie-cat-crystal-litter.jpg">
@@ -318,10 +318,10 @@ Cat<strong class="category-product-count">
                                                         <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
                 
             
-                <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-3 omega  first_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-3 omega  first_item_of_tablet_line ">
             <div class="inner_content clearfix">
                         <a title="Ciao Churu Tuna (Maguro)" class="product_img_link" href="#">
                     <img alt="Ciao Churu Tuna (Maguro)" src="https://www.beary.com.sg/3096-home_default/ciao-churu-tuna-maguro.jpg">
@@ -352,10 +352,10 @@ Cat<strong class="category-product-count">
                                                         <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
                 
             
-                <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-4 alpha  last_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-4 alpha  last_item_of_tablet_line ">
             <div class="inner_content clearfix">
                         <a title="Ciao Churu Skipjack (Katsuo)" class="product_img_link" href="#">
                     <img alt="Ciao Churu Skipjack (Katsuo)" src="https://www.beary.com.sg/3097-home_default/ciao-churu-skipjack-katsuo.jpg">
@@ -386,10 +386,10 @@ Cat<strong class="category-product-count">
                                                         <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
                 
             
-                <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-5  first_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-5  first_item_of_tablet_line ">
             <div class="inner_content clearfix">
                         <a title="Ciao Churu Tuna with Collagen" class="product_img_link" href="#">
                     <img alt="Ciao Churu Tuna with Collagen" src="https://www.beary.com.sg/3099-home_default/ciao-churu-tuna-with-collagen.jpg">
@@ -420,10 +420,10 @@ Cat<strong class="category-product-count">
                                                         <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
                 
             
-                <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-6 omega  last_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-6 omega  last_item_of_tablet_line ">
             <div class="inner_content clearfix">
                         <a title="Ciao Churu White Meat Tuna and Scallop" class="product_img_link" href="#">
                     <img alt="Ciao Churu White Meat Tuna and Scallop" src="https://www.beary.com.sg/3100-home_default/ciao-churu-white-meat-tuna-and-scallop.jpg">
@@ -454,10 +454,10 @@ Cat<strong class="category-product-count">
                                                         <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
                 
             
-                <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-7 alpha  first_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-7 alpha  first_item_of_tablet_line ">
             <div class="inner_content clearfix">
                         <a title="Ciao Chu Ru White Meat Tuna Scallop Flavor" class="product_img_link" href="#">
                     <img alt="Ciao Chu Ru White Meat Tuna Scallop Flavor" src="https://www.beary.com.sg/3106-home_default/ciao-chu-ru-white-meat-tuna-scallop-flavor.jpg">
@@ -488,10 +488,10 @@ Cat<strong class="category-product-count">
                                                         <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
                 
             
-                <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-8  last_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-8  last_item_of_tablet_line ">
             <div class="inner_content clearfix">
                         <a title="Canada Cat Litter - Lavender" class="product_img_link" href="#">
                     <img alt="Canada Cat Litter - Unscented" src="https://www.beary.com.sg/3250-home_default/canada-cat-litter-unscented.jpg">
@@ -522,10 +522,10 @@ Cat<strong class="category-product-count">
                                                         <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
                 
             
-                <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-9 omega  first_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-9 omega  first_item_of_tablet_line ">
             <div class="inner_content clearfix">
                         <a title="Nurture Pro Tofu Cat Litter - Original" class="product_img_link" href="#">
                     <img alt="Nurture Pro Tofu Cat Litter - Original" src="https://www.beary.com.sg/3266-home_default/nurture-pro-tofu-cat-litter-original.jpg">
@@ -554,7 +554,7 @@ Cat<strong class="category-product-count">
      <a title="View" class="btn btn-default button" href="#">View</a>          
                 </div>
                 </div>
-            </li>
+</li>
             
      
             <script>
@@ -621,15 +621,15 @@ Cat<strong class="category-product-count">
                     
    <!-- Pagination -->
           
-   <div class="pagination" id="pagination_bottom">
+<<<<<<< HEAD:productscat.html
+<div class="pagination" id="pagination_bottom">
 <ul class="pagination">
 <li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
 <li class="current pag-top"><span class="button">1</span></li>
-<li class="pag-top"><span class="button"><a href="#">2</a></span></li>
-<li class="pagination_next" id="pagination_next_bottom"><span class="button"><a href="#">Next</a></span></li>
-</ul>
 
-</div>
+<li class="pag-top"><span class="button" href="/18-dog?p=2">2</span></li>
+<li class="pagination_next" id="pagination_next_bottom"><span class="button" href="/18-dog?p=2">Next</span></li>
+>>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productscat.php
             <!-- /Pagination -->
         
                     </div>

@@ -369,7 +369,7 @@ Others<strong class="category-product-count">
 </li>
 		
     
-<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-4 aplha  last_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-4 alpha  last_item_of_tablet_line ">
 <div class="inner_content clearfix">
 <a title="Wild Sanko Rabbit Hairball Relief" class="product_img_link" href="#">
 <img alt="Wild Sanko Rabbit Hairball Relief" src="https://www.beary.com.sg/3379-home_default/wild-sanko-rabbit-hairball-relief.jpg">
@@ -441,8 +441,8 @@ Others<strong class="category-product-count">
     
 <li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-6 omega last_item_of_tablet_line ">
 <div class="inner_content clearfix">
-<a title="Pet Link Hanging Wood Stick Chew" class="product_img_link" href="#">
-<img alt="Pet Link Hanging Wood Stick Chew" src="https://www.beary.com.sg/3553-home_default/pet-link-hanging-wood-stick-chew.jpg">
+<a title="Sanko Wild Guinea Pig Plus" class="product_img_link" href="#">
+<img alt="Sanko Wild Guinea Pig Plus" src="images/gpProduct1.jpg" width="250" height="250">
 </a>
 <div class="center_block">
 <div class="product_flags clearfix">
@@ -452,15 +452,21 @@ Others<strong class="category-product-count">
 </div>
 <div class="clear"></div>
 <h5>
-<a title="Pet Link Hanging Wood Stick Chew" class="product_link" href="#">Pet Link Hanging Wood Stick Chew</a></h5>
+<a title="Sanko Wild Guinea Pig Plus" class="product_link" href="#">Sanko Wild Guinea Pig Plus</a></h5>
 <p class="product_desc"></p>
 <p class="product_desc mob"></p>
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
+<<<<<<< HEAD:productsothers.html
+<span class="price">SG$26.65</span>  
+				 
+<p class="compare checkbox choices-thin clearfix hidden-xs">		
+=======
 <span class="price">SG$4.80</span>  
 				 <br><br>
 <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
+>>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
 <div class="checker" id="uniform-comparator_item_3312"><span><input class="comparator" id="comparator_item_3312" type="checkbox" value="comparator_item_3312" autocomplete="off"></span></div> 
 <label for="comparator_item_3312">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
@@ -474,10 +480,10 @@ Others<strong class="category-product-count">
 </li>
 		
     
-<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-7 aplha  first_item_of_tablet_line ">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-7 alpha  first_item_of_tablet_line ">
 <div class="inner_content clearfix">
-<a title="Rosewood Corn Rattle Roller" class="product_img_link" href="#">
-<img alt="Small 'N' Fluffy Corn 'n' Rattle Small Animal Chew" src="https://www.beary.com.sg/3554-home_default/small-n-fluffy-corn-n-rattle-small-animal-chew.jpg">
+<a title="Carefresh Animal Bedding 10L" class="product_img_link" href="#">
+<img alt="Carefresh Animal Bedding 10L" src="images/gpProduct3.jpg">
 </a>
 <div class="center_block">
 <div class="product_flags clearfix">
@@ -486,15 +492,21 @@ Others<strong class="category-product-count">
 </div>
 <div class="clear"></div>
 <h5>
-<a title="Rosewood Corn Rattle Roller" class="product_link" href="#">Rosewood Corn Rattle Roller</a></h5>
+<a title="Carefresh Animal Bedding 10L" class="product_link" href="#">Carefresh Animal Bedding 10L</a></h5>
 <p class="product_desc"></p>
 <p class="product_desc mob"></p>
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
+<<<<<<< HEAD:productsothers.html
+<span class="price">SG$6.99</span>  
+				 
+<p class="compare checkbox choices-thin clearfix hidden-xs">		
+=======
 <span class="price">SG$9.10</span>  
 				 <br><br>
 <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
+>>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
 <div class="checker" id="uniform-comparator_item_3313"><span><input class="comparator" id="comparator_item_3313" type="checkbox" value="comparator_item_3313" autocomplete="off"></span></div> 
 <label for="comparator_item_3313">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
@@ -540,10 +552,10 @@ Others<strong class="category-product-count">
 </li>
 		
     
-<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-9 omega first_item_of_tablet_line last_tablet_line">
+<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 col-lg-4 num-9 omega first_item_of_tablet_line ">
 <div class="inner_content clearfix">
-<a title="Beary Cat/ Rabbit Cute Cardboard House - Pink" class="product_img_link" href="#">
-<img alt="Beary Cat/ Rabbit Cute Cardboard House - Pink" src="https://www.beary.com.sg/3561-home_default/beary-cat-rabbit-cute-cardboard-house-pink.jpg">
+<a title="Disinfectant for Small Pet Trigger Spray 500ml" class="product_img_link" href="#">
+<img alt="Disinfectant for Small Pet Trigger Spray 500ml" src="images/gpProduct2.jpg">
 </a>
 <div class="center_block">
 <div class="product_flags clearfix">
@@ -553,15 +565,25 @@ Others<strong class="category-product-count">
 </div>
 <div class="clear"></div>
 <h5>
+<<<<<<< HEAD:productsothers.html
+<a title="Disinfectant for Small Pet Trigger Spray 500ml" class="product_link" href="#">Disinfectant for Small Pet Trigger Spray 500ml</a></h5>
+=======
 <a title="Beary Cat/ Rabbit Cute Cardboard House - Pink" class="product_link" href="#">Rabbit Cute Cardboard House - Pink</a></h5>
+>>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
 <p class="product_desc"></p>
 <p class="product_desc mob"></p>
 <p class="product_desc mob2"></p>  
 </div>																				 
 <div class="right_block">
+<<<<<<< HEAD:productsothers.html
+<span class="price">SG$3.50</span>  
+				 
+<p class="compare checkbox choices-thin clearfix hidden-xs">		
+=======
 <span class="price">SG$22.90</span>  
 				 <br><br>
 <!--<p class="compare checkbox choices-thin clearfix hidden-xs">		
+>>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
 <div class="checker" id="uniform-comparator_item_3317"><span><input class="comparator" id="comparator_item_3317" type="checkbox" value="comparator_item_3317" autocomplete="off"></span></div> 
 <label for="comparator_item_3317">Select to compare</label></p>-->
 <div class="clear noneclass"></div>
@@ -637,15 +659,13 @@ $(function() {
                     
    <!-- Pagination -->
           
-   <div class="pagination" id="pagination_bottom">
-<ul class="pagination">
-<li class="disabled" id="pagination_previous_bottom"><span class="button">Previous</span></li>
-<li class="current pag-top"><span class="button">1</span></li>
-<li class="pag-top"><span class="button"><a href="#">2</a></span></li>
-<li class="pagination_next" id="pagination_next_bottom"><span class="button"><a href="#">Next</a></span></li>
-</ul>
-
-</div>
+<<<<<<< HEAD:productsothers.html
+<li class="pag-top"><span class="button" href="/18-dog?p=2">2</span></li>
+<li class="pagination_next" id="pagination_next_bottom"><span class="button" href="/18-dog?p=2">Next</span></li>
+=======
+<li class="pag-top"><span class="button" href="/18-dog?p=2">2</span></li>
+<li class="pagination_next" id="pagination_next_bottom"><span class="button" href="/18-dog?p=2">Next</span></li>
+>>>>>>> 59e90847b6eb402981e6c5fc4cddb665cc218203:productsothers.php
             <!-- /Pagination -->
         
                     </div>
