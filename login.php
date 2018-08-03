@@ -165,7 +165,7 @@ function logout() {
 
 					<?php } else { ?>
 						<div align="center">
-						<h2>Welcome 
+						<h2>Welcome
 						
 					<?php
 						$fname = $_SESSION["first_name"];
@@ -173,6 +173,7 @@ function logout() {
 						echo "$fname, $lname"; 
 						?></h2>
 					<?php } ?>
+					
 
 					
 				

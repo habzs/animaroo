@@ -165,12 +165,12 @@ function logout() {
 
 					<?php } else { ?>
 						<div align="center">
-						<h2>Welcome 
+						<h2>Please hold while we redirect you
 						
 					<?php
 						$fname = $_SESSION["first_name"];
 						$lname = $_SESSION["last_name"];
-						echo "$fname, $lname"; 
+						echo "$fname &nbsp $lname"; 
 						?></h2>
 					<?php } ?>
 
