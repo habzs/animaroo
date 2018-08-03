@@ -128,7 +128,7 @@ function logout() {
 					<?php if(empty($_SESSION["email"])) { ?>
 
 					<div class="row col-md-13" style="width:300px; margin:auto;" >
-						<form name="loginForm" method="post" action="login_confirmed.php">
+						<form name="loginForm" method="post" action="">
 
 								<?php if(!empty($success_message)) { ?>	
 								<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
@@ -184,7 +184,11 @@ function logout() {
 			
 		</div>
 	</div>
-
+	<script language="javascript" type="text/javascript">
+	setTimeout(function () {
+	window.location.href = "my_account.php"; // points to indexphp.php for redirection
+	}, 2000); // redirects after 2 seconds
+ 	</script>
 <?php
 include ("footer.php");
 ?>
