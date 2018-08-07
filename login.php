@@ -128,7 +128,7 @@ function logout() {
 					<?php if(empty($_SESSION["email"])) { ?>
 
 					<div class="row col-md-13" style="width:300px; margin:auto;" >
-						<form name="loginForm" method="post" action="login_confirmed.php">
+						<form name="loginForm" method="post" action=>
 
 								<?php if(!empty($success_message)) { ?>	
 								<div class="success-message"><?php if(isset($success_message)) echo $success_message; ?></div>
@@ -170,12 +170,20 @@ function logout() {
 					<?php
 						$fname = $_SESSION["first_name"];
 						$lname = $_SESSION["last_name"];
-						echo "$fname, $lname"; 
+						echo "$fname, $lname";
+						echo "<br><br>";
+
+						echo"<p><a href=my_account.php>
+						<button type='submit' class='btn btn-primary'>Head on the My Account!</button>
+				</a></p>";
+
+					 
 						?></h2>
 					<?php } ?>
 					
+					<br>
 
-					
+				
 				
 						</div>
 					</div>
