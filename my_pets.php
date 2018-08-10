@@ -140,13 +140,13 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							
 							// If it's not the first page, make a Previous button:
 							if ($current_page != 1) {
-								echo '<a href="registered_users.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
+								echo '<a href="my_pets.php?s=' . ($start - $display) . '&p=' . $pages . '&sort=' . $sort . '">Previous</a> ';
 							}
 							
 							// Make all the numbered pages:
 							for ($i = 1; $i <= $pages; $i++) {
 								if ($i != $current_page) {
-									echo '<a href="registered_users.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
+									echo '<a href="my_pets.php?s=' . (($display * ($i - 1))) . '&p=' . $pages . '&sort=' . $sort . '">' . $i . '</a> ';
 								} else {
 									echo $i . ' ';
 								}
@@ -154,7 +154,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 							
 							// If it's not the last page, make a Next button:
 							if ($current_page != $pages) {
-								echo '<a href="registered_users.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
+								echo '<a href="my_pets.php?s=' . ($start + $display) . '&p=' . $pages . '&sort=' . $sort . '">Next</a>';
 							}
 							
 							echo '</p>'; // Close the paragraph.
