@@ -132,7 +132,7 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 								<td align="left">' . $row['age'] . '</td>
 								<td align="left">' . $row['species'] . '</td>
 								<td align="left">' . $row['breed'] . '</td>
-								<td align="left" style="width: 100px;"><img style="width:80%;" src="images/pets/' . $row['image'] . '"></td>
+								<td align="left" style="width: 100px;"><img style="width:80%;" src="data:image/png;base64,' . base64_encode($row['image']) . '"></td>
 								<td align="left"><a href="rating_pos.php?id=' . $row['id'] . '"><i class="material-icons">thumb_up_alt</i>'. $row['likes'] . '</a></td>
 								<td align="left"><a href="rating_neg.php?id=' . $row['id'] . '"><i class="material-icons">thumb_down_alt</i>'. $row['dislikes'] . '</a></td>
 							</tr>

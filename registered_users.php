@@ -128,7 +128,9 @@ if (isset($_SESSION["email"]) && $admin == 1) { ?>
 								<td align="left">' . $row['first_name'] . '</td>
 								<td align="left">' . $row['email'] . '</td>
 								<td align="left">' . $row['dr'] . '</td>
-								<td align="left" style="width: 35px;"><img style="width:80%;" src="images/users/' . $row['image'] . '"></td>
+								<td align="left" style="width: 35px;"><img style="width:80%;" src="data:image/png;base64,' . base64_encode($row['image']) . '"></td>
+
+
 							</tr>
 							';
 						} // End of WHILE loop.

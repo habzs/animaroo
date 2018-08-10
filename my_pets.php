@@ -121,8 +121,10 @@ $r = @mysqli_query ($dbc, $q); // Run the query.
 								<td align="left">' . $row['age'] . '</td>
 								<td align="left">' . $row['species'] . '</td>
 								<td align="left">' . $row['breed'] . '</td>
-								<td align="left" style="width: 35px;"><img style="width:80%;" src="images/pets/' . $row['image'] . '"></td>
+								<td align="left" style="width: 35px;"><img style="width:80%;" src="data:image/png;base64,' . base64_encode($row['image'
+								]) . '"></td>
 							</tr>
+
 							';
 						} // End of WHILE loop.
 

@@ -75,7 +75,12 @@ include ('header.php');
 						$image = $row['image'];
 						$admin = $row['admin'];
 
-							echo "<img style='width:15%;border-radius: 50%;' src='images/users/".$row['image']."' >";
+							// echo "<img style='width:15%;border-radius: 50%;' src='images/users/".$row['image']."' >";
+
+							echo "<img style='width:15%;border-radius: 50%;' src='data:image/png;base64,".base64_encode($row['image'])."' >";
+
+
+
 						?>
 						<div>
 						<br><br>

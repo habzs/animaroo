@@ -69,14 +69,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	
 		// Upload picture
-		$image = $_FILES['image']['name'];
-		$target = "images/users/".basename($image);
-		$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
+		//$image = $_FILES['image']['name'];
+		//$target = "images/users/".basename($image);
+		//$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
+		
+
+		$image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
+		$image_name = addslashes($_FILES['image']['name']);
 
 		// Register the user in the database...
 		
 		// Make the query:
-		$q = "INSERT INTO users (first_name, last_name, email, pass, registration_date, image) VALUES ('$fn', '$ln', '$e', SHA1('$p'), NOW(), '$image'  )";		
+		$q = "INSERT INTO users (first_name, last_name, email, pass, registration_date, image, image_name) VALUES ('$fn', '$ln', '$e', SHA1('$p'), NOW(), '$image', '$image_name'  )";		
 		$r = @mysqli_query ($dbc, $q); // Run the query.
 		if ($r) { // If it ran OK.
 		
