@@ -68,14 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if (empty($errors)) { // If everything's OK.
 	
 	
-		// Upload picture
-		//$image = $_FILES['image']['name'];
-		//$target = "images/users/".basename($image);
-		//$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
+		//Upload picture
+		$image = $_FILES['image']['name'];
+		$target = "images/users/".basename($image);
+		$moveimg = move_uploaded_file($_FILES['image']['tmp_name'], $target);
 		
 
-		$image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
-		$image_name = addslashes($_FILES['image']['name']);
+		// $image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
+		// $image_name = addslashes($_FILES['image']['name']);
 
 		// Register the user in the database...
 		

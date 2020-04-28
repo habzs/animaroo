@@ -36,8 +36,8 @@ include('header.php');
                 or die(mysqli_connect_error());
         $num_posts = mysqli_fetch_array($get_num_posts_res,MYSQLI_BOTH);
         $post_id = 'post_id';
-        $num_posts = (count('post_id'));
-        //$num_posts = mysqli_fetch_array($get_num_posts_res);
+        //$num_posts = (count("post_id"));
+        $num_posts = mysqli_fetch_array($get_num_posts_res);
         //$num_posts = mysqli_fetch_array($get_num_posts_res, 'count(post_id');
   
          //add to display
